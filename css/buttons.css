@@ -1,0 +1,11 @@
+.button{align-items:center;border-radius:0.375rem;display:flex;justify-content:center;padding-top:0.500rem;padding-right:1.000rem;padding-bottom:0.500rem;padding-left:1.000rem;}
+.button-primary{background-color:rgba(17,24,39,1.00);color:rgba(255,255,255,1.00);}
+.button-primary:hover{background-color:rgba(17,24,39,0.90);}
+.button-secondary{background-color:rgba(229,231,235,1.00);color:rgba(17,24,39,1.00);}
+.button-secondary:hover{background-color:rgba(229,231,235,0.80);}
+.button-destructive{background-color:rgba(239,68,68,1.00);color:rgba(255,255,255,1.00);}
+.button-destructive:hover{background-color:rgba(239,68,68,0.90);}
+.button-outline{background-color:transparent;border-color:rgba(229,231,235,1.00);border-style:solid;border-width:1px;}
+.button-outline:hover{background-color:rgba(229,231,235,0.90);}
+.button-ghost{background-color:transparent;}
+.button-ghost:hover{background-color:rgba(229,231,235,0.90);}
