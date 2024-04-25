@@ -31,7 +31,7 @@ func main() {
 }
 
 func exportCSS(styles []style.Style, name string) {
-	f, fErr := os.Create(fmt.Sprintf("css/%s.css", name))
+	f, fErr := os.Create(fmt.Sprintf("docs/css/%s.css", name))
 	if fErr != nil {
 		panic(fErr)
 	}
