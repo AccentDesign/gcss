@@ -1,0 +1,1052 @@
+[
+  {
+    "Selector": ".input",
+    "Props": {
+      "AlignItems": "",
+      "BackgroundColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 255,
+          "G": 255,
+          "B": 255,
+          "A": 255
+        }
+      },
+      "BorderRadius": {
+        "Size": 0.375,
+        "UnitType": 4
+      },
+      "Border": {
+        "Width": {
+          "Size": 1,
+          "UnitType": 2
+        },
+        "Style": "solid",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 229,
+            "G": 231,
+            "B": 235,
+            "A": 255
+          }
+        }
+      },
+      "BorderTop": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderRight": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderBottom": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderLeft": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "BorderStyle": "",
+      "BorderWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "CaptionSide": "",
+      "Color": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "Display": "flex",
+      "FlexDirection": "",
+      "FontSize": {
+        "Size": 0.875,
+        "UnitType": 4
+      },
+      "FontWeight": "",
+      "Height": {
+        "Size": 40,
+        "UnitType": 2
+      },
+      "JustifyContent": "",
+      "LineHeight": {
+        "Size": 1.25,
+        "UnitType": 4
+      },
+      "Margin": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginTop": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginRight": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginBottom": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginLeft": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MaxWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "MinWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Padding": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingTop": {
+        "Size": 0.5,
+        "UnitType": 4
+      },
+      "PaddingRight": {
+        "Size": 0.75,
+        "UnitType": 4
+      },
+      "PaddingBottom": {
+        "Size": 0.5,
+        "UnitType": 4
+      },
+      "PaddingLeft": {
+        "Size": 0.75,
+        "UnitType": 4
+      },
+      "TextAlign": "",
+      "Width": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 100,
+          "UnitType": 3
+        }
+      }
+    }
+  },
+  {
+    "Selector": ".input::file-selector-button",
+    "Props": {
+      "AlignItems": "",
+      "BackgroundColor": {
+        "Keyword": "transparent",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "BorderRadius": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Border": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderTop": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderRight": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderBottom": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderLeft": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "BorderStyle": "",
+      "BorderWidth": {
+        "Size": 0,
+        "UnitType": 1
+      },
+      "CaptionSide": "",
+      "Color": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "Display": "",
+      "FlexDirection": "",
+      "FontSize": {
+        "Size": 0.875,
+        "UnitType": 4
+      },
+      "FontWeight": "500",
+      "Height": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "JustifyContent": "",
+      "LineHeight": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Margin": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginTop": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginRight": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginBottom": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginLeft": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MaxWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "MinWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Padding": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingTop": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingRight": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingBottom": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingLeft": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "TextAlign": "",
+      "Width": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      }
+    }
+  },
+  {
+    "Selector": ".input-label",
+    "Props": {
+      "AlignItems": "",
+      "BackgroundColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "BorderRadius": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Border": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderTop": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderRight": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderBottom": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderLeft": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "BorderStyle": "",
+      "BorderWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "CaptionSide": "",
+      "Color": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "Display": "",
+      "FlexDirection": "",
+      "FontSize": {
+        "Size": 0.875,
+        "UnitType": 4
+      },
+      "FontWeight": "500",
+      "Height": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "JustifyContent": "",
+      "LineHeight": {
+        "Size": 1.25,
+        "UnitType": 4
+      },
+      "Margin": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginTop": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginRight": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginBottom": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginLeft": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MaxWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "MinWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Padding": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingTop": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingRight": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingBottom": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingLeft": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "TextAlign": "",
+      "Width": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      }
+    }
+  },
+  {
+    "Selector": ".input-help",
+    "Props": {
+      "AlignItems": "",
+      "BackgroundColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "BorderRadius": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Border": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderTop": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderRight": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderBottom": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderLeft": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "BorderStyle": "",
+      "BorderWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "CaptionSide": "",
+      "Color": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 75,
+          "G": 85,
+          "B": 99,
+          "A": 255
+        }
+      },
+      "Display": "",
+      "FlexDirection": "",
+      "FontSize": {
+        "Size": 0.875,
+        "UnitType": 4
+      },
+      "FontWeight": "",
+      "Height": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "JustifyContent": "",
+      "LineHeight": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Margin": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginTop": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginRight": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginBottom": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginLeft": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MaxWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "MinWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Padding": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingTop": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingRight": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingBottom": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingLeft": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "TextAlign": "",
+      "Width": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      }
+    }
+  },
+  {
+    "Selector": ".input-error",
+    "Props": {
+      "AlignItems": "",
+      "BackgroundColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "BorderRadius": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Border": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderTop": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderRight": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderBottom": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderLeft": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "BorderStyle": "",
+      "BorderWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "CaptionSide": "",
+      "Color": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 185,
+          "G": 28,
+          "B": 28,
+          "A": 255
+        }
+      },
+      "Display": "",
+      "FlexDirection": "",
+      "FontSize": {
+        "Size": 0.875,
+        "UnitType": 4
+      },
+      "FontWeight": "",
+      "Height": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "JustifyContent": "",
+      "LineHeight": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Margin": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginTop": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginRight": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginBottom": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginLeft": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MaxWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "MinWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Padding": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingTop": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingRight": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingBottom": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingLeft": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "TextAlign": "",
+      "Width": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      }
+    }
+  }
+]

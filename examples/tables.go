@@ -12,14 +12,14 @@ var Tables = []style.Style{
 			CaptionSide: props.CaptionSideBottom,
 			FontSize:    props.Unit{0.875, props.UnitRem},
 			LineHeight:  props.Unit{1.25, props.UnitRem},
-			Width:       props.Unit{100, props.UnitPercent},
+			Width:       props.Width{Unit: props.Unit{100, props.UnitPercent}},
 		},
 	},
 	{
 		Selector: ".table-caption",
 		Props: style.Props{
-			Color:     gray600,
-			MarginTop: props.Unit{1, props.UnitRem},
+			Color:     props.Color{RGBA: gray600},
+			MarginTop: props.Margin{Unit: props.Unit{1, props.UnitRem}},
 		},
 	},
 	{
@@ -28,14 +28,14 @@ var Tables = []style.Style{
 			BorderBottom: props.Border{
 				Width: props.Unit{1, props.UnitPx},
 				Style: props.BorderStyleSolid,
-				Color: gray200,
+				Color: props.Color{RGBA: gray200},
 			},
 		},
 	},
 	{
 		Selector: ".table-tfoot-tr",
 		Props: style.Props{
-			BackgroundColor: gray100,
+			BackgroundColor: props.Color{RGBA: gray100},
 		},
 	},
 	{

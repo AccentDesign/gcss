@@ -6,11 +6,12 @@ import (
 )
 
 type (
-	Color interface {
-		String() string
+	Color struct {
+		Keyword ColorKeyword
+		RGBA    RGBA
 	}
 	ColorKeyword string
-	ColorRGBA    color.RGBA
+	RGBA         color.RGBA
 )
 
 const (
@@ -19,15 +20,18 @@ const (
 	ColorTransparent  ColorKeyword = "transparent"
 )
 
-func (c ColorKeyword) String() string {
-	return string(c)
+func (c Color) String() string {
+	if c.Keyword != "" {
+		return string(c.Keyword)
+	}
+	return c.RGBA.String()
 }
 
-func (c ColorRGBA) String() string {
+func (c RGBA) String() string {
 	return fmt.Sprintf("rgba(%d,%d,%d,%.2f)", c.R, c.G, c.B, float32(c.A)/255.0)
 }
 
-func (c ColorRGBA) Alpha(a uint8) Color {
+func (c RGBA) Alpha(a uint8) RGBA {
 	c.A = a
 	return c
 }

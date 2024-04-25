@@ -1,8 +1,9 @@
 package props
 
 type (
-	Margin interface {
-		String() string
+	Margin struct {
+		Keyword MarginKeyword
+		Unit    Unit
 	}
 	MarginKeyword string
 )
@@ -11,6 +12,9 @@ const (
 	MarginAuto MarginKeyword = "auto"
 )
 
-func (m MarginKeyword) String() string {
-	return string(m)
+func (m Margin) String() string {
+	if m.Keyword != "" {
+		return string(m.Keyword)
+	}
+	return m.Unit.String()
 }

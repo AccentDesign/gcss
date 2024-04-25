@@ -1,8 +1,9 @@
 package props
 
 type (
-	Width interface {
-		String() string
+	Width struct {
+		Keyword WidthKeyword
+		Unit    Unit
 	}
 	WidthKeyword string
 )
@@ -12,6 +13,9 @@ const (
 	WidthFitContent WidthKeyword = "fit-content"
 )
 
-func (w WidthKeyword) String() string {
-	return string(w)
+func (w Width) String() string {
+	if w.Keyword != "" {
+		return string(w.Keyword)
+	}
+	return w.Unit.String()
 }

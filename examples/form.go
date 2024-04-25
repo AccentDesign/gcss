@@ -9,11 +9,11 @@ var Form = []style.Style{
 	{
 		Selector: ".input",
 		Props: style.Props{
-			BackgroundColor: white,
+			BackgroundColor: props.Color{RGBA: white},
 			Border: props.Border{
 				Width: props.Unit{1, props.UnitPx},
 				Style: props.BorderStyleSolid,
-				Color: gray200,
+				Color: props.Color{RGBA: gray200},
 			},
 			BorderRadius:  radiusMd,
 			Display:       props.DisplayFlex,
@@ -24,13 +24,13 @@ var Form = []style.Style{
 			PaddingRight:  spacing3,
 			PaddingBottom: spacing2,
 			PaddingLeft:   spacing3,
-			Width:         props.Unit{100, props.UnitPercent},
+			Width:         props.Width{Unit: props.Unit{100, props.UnitPercent}},
 		},
 	},
 	{
 		Selector: ".input::file-selector-button",
 		Props: style.Props{
-			BackgroundColor: props.ColorTransparent,
+			BackgroundColor: props.Color{Keyword: props.ColorTransparent},
 			BorderWidth:     props.Unit{0, props.UnitNone},
 			FontSize:        props.Unit{0.875, props.UnitRem},
 			FontWeight:      props.FontWeight500,
@@ -47,14 +47,14 @@ var Form = []style.Style{
 	{
 		Selector: ".input-help",
 		Props: style.Props{
-			Color:    gray600,
+			Color:    props.Color{RGBA: gray600},
 			FontSize: props.Unit{0.875, props.UnitRem},
 		},
 	},
 	{
 		Selector: ".input-error",
 		Props: style.Props{
-			Color:    red800,
+			Color:    props.Color{RGBA: red800},
 			FontSize: props.Unit{0.875, props.UnitRem},
 		},
 	},

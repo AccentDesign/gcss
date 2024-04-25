@@ -3,13 +3,13 @@ package examples
 import "github.com/AccentDesign/gostyle/props"
 
 var (
-	white   = props.ColorRGBA{255, 255, 255, 255}
-	gray100 = props.ColorRGBA{245, 247, 250, 255}
-	gray200 = props.ColorRGBA{229, 231, 235, 255}
-	gray600 = props.ColorRGBA{75, 85, 99, 255}
-	gray900 = props.ColorRGBA{17, 24, 39, 255}
-	red500  = props.ColorRGBA{239, 68, 68, 255}
-	red800  = props.ColorRGBA{185, 28, 28, 255}
+	white   = props.RGBA{255, 255, 255, 255}
+	gray100 = props.RGBA{245, 247, 250, 255}
+	gray200 = props.RGBA{229, 231, 235, 255}
+	gray600 = props.RGBA{75, 85, 99, 255}
+	gray900 = props.RGBA{17, 24, 39, 255}
+	red500  = props.RGBA{239, 68, 68, 255}
+	red800  = props.RGBA{185, 28, 28, 255}
 
 	radiusMd = props.Unit{0.375, props.UnitRem}
 

@@ -22,69 +22,69 @@ var Buttons = []style.Style{
 	{
 		Selector: ".button-primary",
 		Props: style.Props{
-			BackgroundColor: gray900,
-			Color:           white,
+			BackgroundColor: props.Color{RGBA: gray900},
+			Color:           props.Color{RGBA: white},
 		},
 	},
 	{
 		Selector: ".button-primary:hover",
 		Props: style.Props{
-			BackgroundColor: gray900.Alpha(230),
+			BackgroundColor: props.Color{RGBA: gray900.Alpha(230)},
 		},
 	},
 	{
 		Selector: ".button-secondary",
 		Props: style.Props{
-			BackgroundColor: gray200,
-			Color:           gray900,
+			BackgroundColor: props.Color{RGBA: gray200},
+			Color:           props.Color{RGBA: gray900},
 		},
 	},
 	{
 		Selector: ".button-secondary:hover",
 		Props: style.Props{
-			BackgroundColor: gray200.Alpha(204),
+			BackgroundColor: props.Color{RGBA: gray200.Alpha(204)},
 		},
 	},
 	{
 		Selector: ".button-destructive",
 		Props: style.Props{
-			BackgroundColor: red500,
-			Color:           white,
+			BackgroundColor: props.Color{RGBA: red500},
+			Color:           props.Color{RGBA: white},
 		},
 	},
 	{
 		Selector: ".button-destructive:hover",
 		Props: style.Props{
-			BackgroundColor: red500.Alpha(230),
+			BackgroundColor: props.Color{RGBA: red500.Alpha(230)},
 		},
 	},
 	{
 		Selector: ".button-outline",
 		Props: style.Props{
-			BackgroundColor: props.ColorTransparent,
+			BackgroundColor: props.Color{Keyword: props.ColorTransparent},
 			Border: props.Border{
 				Width: props.Unit{1, props.UnitPx},
 				Style: props.BorderStyleSolid,
-				Color: gray200,
+				Color: props.Color{RGBA: gray200},
 			},
 		},
 	},
 	{
 		Selector: ".button-outline:hover",
 		Props: style.Props{
-			BackgroundColor: gray200.Alpha(230),
+			BackgroundColor: props.Color{RGBA: gray200.Alpha(230)},
 		},
 	},
 	{
 		Selector: ".button-ghost",
 		Props: style.Props{
-			BackgroundColor: props.ColorTransparent,
+			BackgroundColor: props.Color{Keyword: props.ColorTransparent},
 		},
 	},
 	{
 		Selector: ".button-ghost:hover",
 		Props: style.Props{
-			BackgroundColor: gray200.Alpha(230),
+			BackgroundColor: props.Color{RGBA: gray200.Alpha(230)},
 		},
 	},
 }
