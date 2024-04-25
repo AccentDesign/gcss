@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title</title>
+  <link href="css/buttons.css" rel="stylesheet">
+  <link href="css/form.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-6 grid gap-12">
+  <!-- buttons -->
+  <section class="grid gap-4">
+    <h2 class="text-xl">Buttons</h2>
+    <div class="flex flex-wrap gap-4">
+      <button class="button button-primary">button</button>
+      <button class="button button-secondary">button</button>
+      <button class="button button-destructive">button</button>
+      <button class="button button-outline">button</button>
+      <button class="button button-ghost">button</button>
+    </div>
+  </section>
+  <!-- forms -->
+  <section class="grid gap-4">
+    <h2 class="text-xl">Forms</h2>
+    <div class="space-y-6">
+      <div class="space-y-2">
+        <label class="input-label">Email</label>
+        <input class="input" placeholder="email address" type="email" />
+        <div class="input-help">This is your help text</div>
+      </div>
+      <div class="space-y-2">
+        <label class="input-label">File</label>
+        <input class="input" type="file" />
+      </div>
+      <div class="space-y-2">
+        <label class="input-label">Name</label>
+        <input class="input" placeholder="your name" type="text" />
+        <div class="input-error">This field is required</div>
+      </div>
+      <div class="space-y-2">
+        <label class="input-label">Message</label>
+        <textarea class="input min-h-[80px]" placeholder="add your message"></textarea>
+      </div>
+      <div class="flex w-full max-w-sm items-center space-x-2">
+        <input class="input" placeholder="email address" type="email" />
+        <button class="button button-primary">button</button>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

@@ -17,6 +17,7 @@ func main() {
 
 	all := map[string][]style.Style{
 		"buttons": examples.Buttons,
+		"form":    examples.Form,
 	}
 
 	// Print CSS examples

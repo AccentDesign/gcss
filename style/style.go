@@ -18,8 +18,11 @@ type (
 		BorderWidth     props.Unit           `css:"border-width"`
 		Color           props.Color          `css:"color"`
 		Display         props.Display        `css:"display"`
+		FontSize        props.Unit           `css:"font-size"`
+		FontWeight      props.FontWeight     `css:"font-weight"`
 		Height          props.Unit           `css:"height"`
 		JustifyContent  props.JustifyContent `css:"justify-content"`
+		LineHeight      props.Unit           `css:"line-height"`
 		Margin          props.Margin         `css:"margin"`
 		MarginTop       props.Margin         `css:"margin-top"`
 		MarginRight     props.Margin         `css:"margin-right"`
