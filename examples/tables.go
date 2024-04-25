@@ -18,7 +18,6 @@ var Tables = []style.Style{
 	{
 		Selector: ".table-caption",
 		Props: style.Props{
-			Color:     props.Color{RGBA: gray600},
 			MarginTop: props.Margin{Unit: props.Unit{1, props.UnitRem}},
 		},
 	},
@@ -28,14 +27,15 @@ var Tables = []style.Style{
 			BorderBottom: props.Border{
 				Width: props.Unit{1, props.UnitPx},
 				Style: props.BorderStyleSolid,
-				Color: props.Color{RGBA: gray200},
+				Color: props.Color{RGBA: border},
 			},
 		},
 	},
 	{
 		Selector: ".table-tfoot-tr",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: gray100},
+			Color:           props.Color{RGBA: mutedForeground},
+			BackgroundColor: props.Color{RGBA: muted},
 		},
 	},
 	{

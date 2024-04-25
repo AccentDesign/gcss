@@ -22,40 +22,40 @@ var Buttons = []style.Style{
 	{
 		Selector: ".button-primary",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: gray900},
-			Color:           props.Color{RGBA: white},
+			BackgroundColor: props.Color{RGBA: primary},
+			Color:           props.Color{RGBA: primaryForeground},
 		},
 	},
 	{
 		Selector: ".button-primary:hover",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: gray900.Alpha(230)},
+			BackgroundColor: props.Color{RGBA: primary.Alpha(230)},
 		},
 	},
 	{
 		Selector: ".button-secondary",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: gray200},
-			Color:           props.Color{RGBA: gray900},
+			BackgroundColor: props.Color{RGBA: secondary},
+			Color:           props.Color{RGBA: secondaryForeground},
 		},
 	},
 	{
 		Selector: ".button-secondary:hover",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: gray200.Alpha(204)},
+			BackgroundColor: props.Color{RGBA: secondary.Alpha(204)},
 		},
 	},
 	{
 		Selector: ".button-destructive",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: red500},
-			Color:           props.Color{RGBA: white},
+			BackgroundColor: props.Color{RGBA: destructive},
+			Color:           props.Color{RGBA: destructiveForeground},
 		},
 	},
 	{
 		Selector: ".button-destructive:hover",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: red500.Alpha(230)},
+			BackgroundColor: props.Color{RGBA: destructive.Alpha(230)},
 		},
 	},
 	{
@@ -65,14 +65,14 @@ var Buttons = []style.Style{
 			Border: props.Border{
 				Width: props.Unit{1, props.UnitPx},
 				Style: props.BorderStyleSolid,
-				Color: props.Color{RGBA: gray200},
+				Color: props.Color{RGBA: border},
 			},
 		},
 	},
 	{
 		Selector: ".button-outline:hover",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: gray200.Alpha(230)},
+			BackgroundColor: props.Color{RGBA: secondary.Alpha(230)},
 		},
 	},
 	{
@@ -84,7 +84,7 @@ var Buttons = []style.Style{
 	{
 		Selector: ".button-ghost:hover",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: gray200.Alpha(230)},
+			BackgroundColor: props.Color{RGBA: secondary.Alpha(230)},
 		},
 	},
 }
