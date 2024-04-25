@@ -13,11 +13,18 @@ type (
 		AlignItems      props.AlignItems     `css:"align-items"`
 		BackgroundColor props.Color          `css:"background-color"`
 		BorderRadius    props.Unit           `css:"border-radius"`
+		Border          props.Border         `css:"border"`
+		BorderTop       props.Border         `css:"border-top"`
+		BorderRight     props.Border         `css:"border-right"`
+		BorderBottom    props.Border         `css:"border-bottom"`
+		BorderLeft      props.Border         `css:"border-left"`
 		BorderColor     props.Color          `css:"border-color"`
 		BorderStyle     props.BorderStyle    `css:"border-style"`
 		BorderWidth     props.Unit           `css:"border-width"`
+		CaptionSide     props.CaptionSide    `css:"caption-side"`
 		Color           props.Color          `css:"color"`
 		Display         props.Display        `css:"display"`
+		FlexDirection   props.FlexDirection  `css:"flex-direction"`
 		FontSize        props.Unit           `css:"font-size"`
 		FontWeight      props.FontWeight     `css:"font-weight"`
 		Height          props.Unit           `css:"height"`
@@ -35,6 +42,7 @@ type (
 		PaddingRight    props.Unit           `css:"padding-right"`
 		PaddingBottom   props.Unit           `css:"padding-bottom"`
 		PaddingLeft     props.Unit           `css:"padding-left"`
+		TextAlign       props.TextAlign      `css:"text-align"`
 		Width           props.Width          `css:"width"`
 	}
 	Style struct {

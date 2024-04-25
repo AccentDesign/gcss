@@ -14,6 +14,7 @@ const (
 	Px      Measurement = "px"
 	Percent Measurement = "%"
 	Rem     Measurement = "rem"
+	None    Measurement = "-"
 )
 
 func (u Unit) String() string {
@@ -24,6 +25,8 @@ func (u Unit) String() string {
 		return fmt.Sprintf("%.2f%s", u.Size, u.Measurement)
 	case Rem:
 		return fmt.Sprintf("%.3f%s", u.Size, u.Measurement)
+	case None:
+		return fmt.Sprintf("%.0f", u.Size)
 	}
 	return ""
 }

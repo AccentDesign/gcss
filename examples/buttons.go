@@ -62,9 +62,11 @@ var Buttons = []style.Style{
 		Selector: ".button-outline",
 		Props: style.Props{
 			BackgroundColor: props.ColorTransparent,
-			BorderColor:     gray200,
-			BorderStyle:     props.BorderStyleSolid,
-			BorderWidth:     props.Unit{1, props.Px},
+			Border: props.Border{
+				Width: props.Unit{1, props.Px},
+				Style: props.BorderStyleSolid,
+				Color: gray200,
+			},
 		},
 	},
 	{

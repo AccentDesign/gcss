@@ -8,7 +8,8 @@ type (
 )
 
 const (
-	WidthAuto WidthKeyword = "auto"
+	WidthAuto       WidthKeyword = "auto"
+	WidthFitContent WidthKeyword = "fit-content"
 )
 
 func (w WidthKeyword) String() string {

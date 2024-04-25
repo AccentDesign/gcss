@@ -5,7 +5,7 @@
 .button-secondary:hover{background-color:rgba(229,231,235,0.80);}
 .button-destructive{background-color:rgba(239,68,68,1.00);color:rgba(255,255,255,1.00);}
 .button-destructive:hover{background-color:rgba(239,68,68,0.90);}
-.button-outline{background-color:transparent;border-color:rgba(229,231,235,1.00);border-style:solid;border-width:1px;}
+.button-outline{background-color:transparent;border:1px solid rgba(229,231,235,1.00);}
 .button-outline:hover{background-color:rgba(229,231,235,0.90);}
 .button-ghost{background-color:transparent;}
 .button-ghost:hover{background-color:rgba(229,231,235,0.90);}

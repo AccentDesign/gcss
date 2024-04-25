@@ -4,6 +4,7 @@ import "github.com/AccentDesign/gostyle/props"
 
 var (
 	white   = props.ColorRGBA{255, 255, 255, 255}
+	gray100 = props.ColorRGBA{245, 247, 250, 255}
 	gray200 = props.ColorRGBA{229, 231, 235, 255}
 	gray600 = props.ColorRGBA{75, 85, 99, 255}
 	gray900 = props.ColorRGBA{17, 24, 39, 255}

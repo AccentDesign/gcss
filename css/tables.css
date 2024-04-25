@@ -1,0 +1,5 @@
+.table{caption-side:bottom;font-size:0.875rem;line-height:1.250rem;width:100.00%;}
+.table-caption{color:rgba(75,85,99,1.00);margin-top:1.000rem;}
+.table-tr{border-bottom:1px solid rgba(229,231,235,1.00);}
+.table-tfoot-tr{background-color:rgba(245,247,250,1.00);}
+.table-td, .table-th{padding-top:0.500rem;padding-right:0.750rem;padding-bottom:0.500rem;padding-left:0.750rem;text-align:left;}
