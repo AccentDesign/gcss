@@ -3,30 +3,31 @@ package props
 import "fmt"
 
 type (
-	Measurement string
-	Unit        struct {
-		Size        float64
-		Measurement Measurement
+	UnitType int
+	Unit     struct {
+		Size     float64
+		UnitType UnitType
 	}
 )
 
 const (
-	Px      Measurement = "px"
-	Percent Measurement = "%"
-	Rem     Measurement = "rem"
-	None    Measurement = "-"
+	_ UnitType = iota
+	UnitNone
+	UnitPx
+	UnitPercent
+	UnitRem
 )
 
 func (u Unit) String() string {
-	switch u.Measurement {
-	case Px:
-		return fmt.Sprintf("%.0f%s", u.Size, u.Measurement)
-	case Percent:
-		return fmt.Sprintf("%.2f%s", u.Size, u.Measurement)
-	case Rem:
-		return fmt.Sprintf("%.3f%s", u.Size, u.Measurement)
-	case None:
+	switch u.UnitType {
+	case UnitNone:
 		return fmt.Sprintf("%.0f", u.Size)
+	case UnitPx:
+		return fmt.Sprintf("%.0fpx", u.Size)
+	case UnitPercent:
+		return fmt.Sprintf("%.2f%%", u.Size)
+	case UnitRem:
+		return fmt.Sprintf("%.3frem", u.Size)
 	}
 	return ""
 }

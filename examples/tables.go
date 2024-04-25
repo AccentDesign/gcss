@@ -10,23 +10,23 @@ var Tables = []style.Style{
 		Selector: ".table",
 		Props: style.Props{
 			CaptionSide: props.CaptionSideBottom,
-			FontSize:    props.Unit{0.875, props.Rem},
-			LineHeight:  props.Unit{1.25, props.Rem},
-			Width:       props.Unit{100, props.Percent},
+			FontSize:    props.Unit{0.875, props.UnitRem},
+			LineHeight:  props.Unit{1.25, props.UnitRem},
+			Width:       props.Unit{100, props.UnitPercent},
 		},
 	},
 	{
 		Selector: ".table-caption",
 		Props: style.Props{
 			Color:     gray600,
-			MarginTop: props.Unit{1, props.Rem},
+			MarginTop: props.Unit{1, props.UnitRem},
 		},
 	},
 	{
 		Selector: ".table-tr",
 		Props: style.Props{
 			BorderBottom: props.Border{
-				Width: props.Unit{1, props.Px},
+				Width: props.Unit{1, props.UnitPx},
 				Style: props.BorderStyleSolid,
 				Color: gray200,
 			},

@@ -63,7 +63,7 @@ var Buttons = []style.Style{
 		Props: style.Props{
 			BackgroundColor: props.ColorTransparent,
 			Border: props.Border{
-				Width: props.Unit{1, props.Px},
+				Width: props.Unit{1, props.UnitPx},
 				Style: props.BorderStyleSolid,
 				Color: gray200,
 			},

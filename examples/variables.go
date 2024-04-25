@@ -11,9 +11,9 @@ var (
 	red500  = props.ColorRGBA{239, 68, 68, 255}
 	red800  = props.ColorRGBA{185, 28, 28, 255}
 
-	radiusMd = props.Unit{0.375, props.Rem}
+	radiusMd = props.Unit{0.375, props.UnitRem}
 
-	spacing2 = props.Unit{0.5, props.Rem}
-	spacing3 = props.Unit{0.75, props.Rem}
-	spacing4 = props.Unit{1, props.Rem}
+	spacing2 = props.Unit{0.5, props.UnitRem}
+	spacing3 = props.Unit{0.75, props.UnitRem}
+	spacing4 = props.Unit{1, props.UnitRem}
 )
