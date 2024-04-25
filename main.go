@@ -17,6 +17,7 @@ func main() {
 	}(time.Now())
 
 	all := map[string][]style.Style{
+		"alerts":  examples.Alerts,
 		"buttons": examples.Buttons,
 		"form":    examples.Form,
 		"tables":  examples.Tables,

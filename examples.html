@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Title</title>
+  <link href="css/alerts.css" rel="stylesheet">
   <link href="css/buttons.css" rel="stylesheet">
   <link href="css/form.css" rel="stylesheet">
   <link href="css/tables.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="p-6 grid gap-12">
+<body class="p-6 grid gap-16 antialiased">
   <!-- buttons -->
   <section class="grid gap-4">
     <h2 class="text-xl">Buttons</h2>
@@ -113,6 +114,18 @@
         </tr>
       </tfoot>
     </table>
+  </section>
+  <!-- alerts -->
+  <section class="grid gap-4">
+    <h2 class="text-xl">Alerts</h2>
+    <div class="alert alert-primary">
+      <h5 class="font-medium">This is a primary alert</h5>
+      <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+    </div>
+    <div class="alert alert-destructive">
+      <h5 class="font-medium">This is a destructive alert</h5>
+      <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+    </div>
   </section>
 </body>
 </html>
