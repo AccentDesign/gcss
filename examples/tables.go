@@ -11,7 +11,7 @@ var Tables = []style.Style{
 		Props: style.Props{
 			CaptionSide: props.CaptionSideBottom,
 			FontSize:    props.Unit{0.875, props.UnitRem},
-			LineHeight:  props.Unit{1.25, props.UnitRem},
+			LineHeight:  leadingTight,
 			Width:       props.Width{Unit: props.Unit{100, props.UnitPercent}},
 		},
 	},

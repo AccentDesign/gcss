@@ -19,7 +19,7 @@ var Form = []style.Style{
 			Display:       props.DisplayFlex,
 			FontSize:      props.Unit{0.875, props.UnitRem},
 			Height:        props.Unit{40, props.UnitPx},
-			LineHeight:    props.Unit{1.25, props.UnitRem},
+			LineHeight:    leadingTight,
 			PaddingTop:    spacing2,
 			PaddingRight:  spacing3,
 			PaddingBottom: spacing2,
@@ -41,7 +41,7 @@ var Form = []style.Style{
 		Props: style.Props{
 			FontSize:   props.Unit{0.875, props.UnitRem},
 			FontWeight: props.FontWeight500,
-			LineHeight: props.Unit{1.25, props.UnitRem},
+			LineHeight: leadingTight,
 		},
 	},
 	{

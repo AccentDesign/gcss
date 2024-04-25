@@ -14,10 +14,9 @@ var (
 	border                = props.RGBA{229, 231, 235, 255}
 	muted                 = props.RGBA{229, 231, 235, 255}
 	mutedForeground       = props.RGBA{75, 85, 99, 255}
-
-	radiusMd = props.Unit{0.375, props.UnitRem}
-
-	spacing2 = props.Unit{0.5, props.UnitRem}
-	spacing3 = props.Unit{0.75, props.UnitRem}
-	spacing4 = props.Unit{1, props.UnitRem}
+	leadingTight          = props.Unit{1.25, props.UnitRem}
+	radiusMd              = props.Unit{0.375, props.UnitRem}
+	spacing2              = props.Unit{0.5, props.UnitRem}
+	spacing3              = props.Unit{0.75, props.UnitRem}
+	spacing4              = props.Unit{1, props.UnitRem}
 )
