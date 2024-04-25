@@ -1,8 +1,8 @@
 [
   {
-    "Selector": ".table",
+    "Selector": ".badge",
     "Props": {
-      "AlignItems": "",
+      "AlignItems": "center",
       "BackgroundColor": {
         "Keyword": "",
         "RGBA": {
@@ -13,218 +13,8 @@
         }
       },
       "BorderRadius": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "Border": {
-        "Width": {
-          "Size": 0,
-          "UnitType": 0
-        },
-        "Style": "",
-        "Color": {
-          "Keyword": "",
-          "RGBA": {
-            "R": 0,
-            "G": 0,
-            "B": 0,
-            "A": 0
-          }
-        }
-      },
-      "BorderTop": {
-        "Width": {
-          "Size": 0,
-          "UnitType": 0
-        },
-        "Style": "",
-        "Color": {
-          "Keyword": "",
-          "RGBA": {
-            "R": 0,
-            "G": 0,
-            "B": 0,
-            "A": 0
-          }
-        }
-      },
-      "BorderRight": {
-        "Width": {
-          "Size": 0,
-          "UnitType": 0
-        },
-        "Style": "",
-        "Color": {
-          "Keyword": "",
-          "RGBA": {
-            "R": 0,
-            "G": 0,
-            "B": 0,
-            "A": 0
-          }
-        }
-      },
-      "BorderBottom": {
-        "Width": {
-          "Size": 0,
-          "UnitType": 0
-        },
-        "Style": "",
-        "Color": {
-          "Keyword": "",
-          "RGBA": {
-            "R": 0,
-            "G": 0,
-            "B": 0,
-            "A": 0
-          }
-        }
-      },
-      "BorderLeft": {
-        "Width": {
-          "Size": 0,
-          "UnitType": 0
-        },
-        "Style": "",
-        "Color": {
-          "Keyword": "",
-          "RGBA": {
-            "R": 0,
-            "G": 0,
-            "B": 0,
-            "A": 0
-          }
-        }
-      },
-      "BorderColor": {
-        "Keyword": "",
-        "RGBA": {
-          "R": 0,
-          "G": 0,
-          "B": 0,
-          "A": 0
-        }
-      },
-      "BorderStyle": "",
-      "BorderWidth": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "CaptionSide": "bottom",
-      "Color": {
-        "Keyword": "",
-        "RGBA": {
-          "R": 0,
-          "G": 0,
-          "B": 0,
-          "A": 0
-        }
-      },
-      "Display": "",
-      "FlexDirection": "",
-      "FontSize": {
-        "Size": 0.875,
-        "UnitType": 4
-      },
-      "FontWeight": "",
-      "Height": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "JustifyContent": "",
-      "LineHeight": {
-        "Size": 1.25,
-        "UnitType": 4
-      },
-      "Margin": {
-        "Keyword": "",
-        "Unit": {
-          "Size": 0,
-          "UnitType": 0
-        }
-      },
-      "MarginTop": {
-        "Keyword": "",
-        "Unit": {
-          "Size": 0,
-          "UnitType": 0
-        }
-      },
-      "MarginRight": {
-        "Keyword": "",
-        "Unit": {
-          "Size": 0,
-          "UnitType": 0
-        }
-      },
-      "MarginBottom": {
-        "Keyword": "",
-        "Unit": {
-          "Size": 0,
-          "UnitType": 0
-        }
-      },
-      "MarginLeft": {
-        "Keyword": "",
-        "Unit": {
-          "Size": 0,
-          "UnitType": 0
-        }
-      },
-      "MaxWidth": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "MinWidth": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "Padding": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "PaddingTop": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "PaddingRight": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "PaddingBottom": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "PaddingLeft": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "TextAlign": "",
-      "Width": {
-        "Keyword": "",
-        "Unit": {
-          "Size": 100,
-          "UnitType": 3
-        }
-      }
-    }
-  },
-  {
-    "Selector": ".table-caption",
-    "Props": {
-      "AlignItems": "",
-      "BackgroundColor": {
-        "Keyword": "",
-        "RGBA": {
-          "R": 0,
-          "G": 0,
-          "B": 0,
-          "A": 0
-        }
-      },
-      "BorderRadius": {
-        "Size": 0,
-        "UnitType": 0
+        "Size": 9999,
+        "UnitType": 2
       },
       "Border": {
         "Width": {
@@ -330,6 +120,216 @@
           "A": 0
         }
       },
+      "Display": "inline-flex",
+      "FlexDirection": "",
+      "FontSize": {
+        "Size": 0.75,
+        "UnitType": 4
+      },
+      "FontWeight": "600",
+      "Height": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "JustifyContent": "",
+      "LineHeight": {
+        "Size": 1,
+        "UnitType": 4
+      },
+      "Margin": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginTop": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginRight": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginBottom": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginLeft": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MaxWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "MinWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Padding": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingTop": {
+        "Size": 0.25,
+        "UnitType": 4
+      },
+      "PaddingRight": {
+        "Size": 0.75,
+        "UnitType": 4
+      },
+      "PaddingBottom": {
+        "Size": 0.25,
+        "UnitType": 4
+      },
+      "PaddingLeft": {
+        "Size": 0.75,
+        "UnitType": 4
+      },
+      "TextAlign": "",
+      "Width": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      }
+    }
+  },
+  {
+    "Selector": ".badge-primary",
+    "Props": {
+      "AlignItems": "",
+      "BackgroundColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 17,
+          "G": 24,
+          "B": 39,
+          "A": 255
+        }
+      },
+      "BorderRadius": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Border": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderTop": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderRight": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderBottom": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderLeft": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "BorderStyle": "",
+      "BorderWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "CaptionSide": "",
+      "Color": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 255,
+          "G": 255,
+          "B": 255,
+          "A": 255
+        }
+      },
       "Display": "",
       "FlexDirection": "",
       "FontSize": {
@@ -356,8 +356,8 @@
       "MarginTop": {
         "Keyword": "",
         "Unit": {
-          "Size": 1,
-          "UnitType": 4
+          "Size": 0,
+          "UnitType": 0
         }
       },
       "MarginRight": {
@@ -420,16 +420,16 @@
     }
   },
   {
-    "Selector": ".table-tr",
+    "Selector": ".badge-secondary",
     "Props": {
       "AlignItems": "",
       "BackgroundColor": {
         "Keyword": "",
         "RGBA": {
-          "R": 0,
-          "G": 0,
-          "B": 0,
-          "A": 0
+          "R": 229,
+          "G": 231,
+          "B": 235,
+          "A": 255
         }
       },
       "BorderRadius": {
@@ -485,6 +485,378 @@
         }
       },
       "BorderBottom": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderLeft": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "BorderStyle": "",
+      "BorderWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "CaptionSide": "",
+      "Color": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 17,
+          "G": 24,
+          "B": 39,
+          "A": 255
+        }
+      },
+      "Display": "",
+      "FlexDirection": "",
+      "FontSize": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "FontWeight": "",
+      "Height": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "JustifyContent": "",
+      "LineHeight": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Margin": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginTop": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginRight": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginBottom": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginLeft": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MaxWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "MinWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Padding": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingTop": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingRight": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingBottom": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingLeft": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "TextAlign": "",
+      "Width": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      }
+    }
+  },
+  {
+    "Selector": ".badge-destructive",
+    "Props": {
+      "AlignItems": "",
+      "BackgroundColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 239,
+          "G": 68,
+          "B": 68,
+          "A": 255
+        }
+      },
+      "BorderRadius": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Border": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderTop": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderRight": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderBottom": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderLeft": {
+        "Width": {
+          "Size": 0,
+          "UnitType": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "BorderStyle": "",
+      "BorderWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "CaptionSide": "",
+      "Color": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 255,
+          "G": 255,
+          "B": 255,
+          "A": 255
+        }
+      },
+      "Display": "",
+      "FlexDirection": "",
+      "FontSize": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "FontWeight": "",
+      "Height": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "JustifyContent": "",
+      "LineHeight": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Margin": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginTop": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginRight": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginBottom": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MarginLeft": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      },
+      "MaxWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "MinWidth": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Padding": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingTop": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingRight": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingBottom": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "PaddingLeft": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "TextAlign": "",
+      "Width": {
+        "Keyword": "",
+        "Unit": {
+          "Size": 0,
+          "UnitType": 0
+        }
+      }
+    }
+  },
+  {
+    "Selector": ".badge-outline",
+    "Props": {
+      "AlignItems": "",
+      "BackgroundColor": {
+        "Keyword": "transparent",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "BorderRadius": {
+        "Size": 0,
+        "UnitType": 0
+      },
+      "Border": {
         "Width": {
           "Size": 1,
           "UnitType": 2
@@ -500,378 +872,6 @@
           }
         }
       },
-      "BorderLeft": {
-        "Width": {
-          "Size": 0,
-          "UnitType": 0
-        },
-        "Style": "",
-        "Color": {
-          "Keyword": "",
-          "RGBA": {
-            "R": 0,
-            "G": 0,
-            "B": 0,
-            "A": 0
-          }
-        }
-      },
-      "BorderColor": {
-        "Keyword": "",
-        "RGBA": {
-          "R": 0,
-          "G": 0,
-          "B": 0,
-          "A": 0
-        }
-      },
-      "BorderStyle": "",
-      "BorderWidth": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "CaptionSide": "",
-      "Color": {
-        "Keyword": "",
-        "RGBA": {
-          "R": 0,
-          "G": 0,
-          "B": 0,
-          "A": 0
-        }
-      },
-      "Display": "",
-      "FlexDirection": "",
-      "FontSize": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "FontWeight": "",
-      "Height": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "JustifyContent": "",
-      "LineHeight": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "Margin": {
-        "Keyword": "",
-        "Unit": {
-          "Size": 0,
-          "UnitType": 0
-        }
-      },
-      "MarginTop": {
-        "Keyword": "",
-        "Unit": {
-          "Size": 0,
-          "UnitType": 0
-        }
-      },
-      "MarginRight": {
-        "Keyword": "",
-        "Unit": {
-          "Size": 0,
-          "UnitType": 0
-        }
-      },
-      "MarginBottom": {
-        "Keyword": "",
-        "Unit": {
-          "Size": 0,
-          "UnitType": 0
-        }
-      },
-      "MarginLeft": {
-        "Keyword": "",
-        "Unit": {
-          "Size": 0,
-          "UnitType": 0
-        }
-      },
-      "MaxWidth": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "MinWidth": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "Padding": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "PaddingTop": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "PaddingRight": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "PaddingBottom": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "PaddingLeft": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "TextAlign": "",
-      "Width": {
-        "Keyword": "",
-        "Unit": {
-          "Size": 0,
-          "UnitType": 0
-        }
-      }
-    }
-  },
-  {
-    "Selector": ".table-tfoot-tr",
-    "Props": {
-      "AlignItems": "",
-      "BackgroundColor": {
-        "Keyword": "",
-        "RGBA": {
-          "R": 243,
-          "G": 244,
-          "B": 246,
-          "A": 255
-        }
-      },
-      "BorderRadius": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "Border": {
-        "Width": {
-          "Size": 0,
-          "UnitType": 0
-        },
-        "Style": "",
-        "Color": {
-          "Keyword": "",
-          "RGBA": {
-            "R": 0,
-            "G": 0,
-            "B": 0,
-            "A": 0
-          }
-        }
-      },
-      "BorderTop": {
-        "Width": {
-          "Size": 0,
-          "UnitType": 0
-        },
-        "Style": "",
-        "Color": {
-          "Keyword": "",
-          "RGBA": {
-            "R": 0,
-            "G": 0,
-            "B": 0,
-            "A": 0
-          }
-        }
-      },
-      "BorderRight": {
-        "Width": {
-          "Size": 0,
-          "UnitType": 0
-        },
-        "Style": "",
-        "Color": {
-          "Keyword": "",
-          "RGBA": {
-            "R": 0,
-            "G": 0,
-            "B": 0,
-            "A": 0
-          }
-        }
-      },
-      "BorderBottom": {
-        "Width": {
-          "Size": 0,
-          "UnitType": 0
-        },
-        "Style": "",
-        "Color": {
-          "Keyword": "",
-          "RGBA": {
-            "R": 0,
-            "G": 0,
-            "B": 0,
-            "A": 0
-          }
-        }
-      },
-      "BorderLeft": {
-        "Width": {
-          "Size": 0,
-          "UnitType": 0
-        },
-        "Style": "",
-        "Color": {
-          "Keyword": "",
-          "RGBA": {
-            "R": 0,
-            "G": 0,
-            "B": 0,
-            "A": 0
-          }
-        }
-      },
-      "BorderColor": {
-        "Keyword": "",
-        "RGBA": {
-          "R": 0,
-          "G": 0,
-          "B": 0,
-          "A": 0
-        }
-      },
-      "BorderStyle": "",
-      "BorderWidth": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "CaptionSide": "",
-      "Color": {
-        "Keyword": "",
-        "RGBA": {
-          "R": 75,
-          "G": 85,
-          "B": 99,
-          "A": 255
-        }
-      },
-      "Display": "",
-      "FlexDirection": "",
-      "FontSize": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "FontWeight": "",
-      "Height": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "JustifyContent": "",
-      "LineHeight": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "Margin": {
-        "Keyword": "",
-        "Unit": {
-          "Size": 0,
-          "UnitType": 0
-        }
-      },
-      "MarginTop": {
-        "Keyword": "",
-        "Unit": {
-          "Size": 0,
-          "UnitType": 0
-        }
-      },
-      "MarginRight": {
-        "Keyword": "",
-        "Unit": {
-          "Size": 0,
-          "UnitType": 0
-        }
-      },
-      "MarginBottom": {
-        "Keyword": "",
-        "Unit": {
-          "Size": 0,
-          "UnitType": 0
-        }
-      },
-      "MarginLeft": {
-        "Keyword": "",
-        "Unit": {
-          "Size": 0,
-          "UnitType": 0
-        }
-      },
-      "MaxWidth": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "MinWidth": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "Padding": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "PaddingTop": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "PaddingRight": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "PaddingBottom": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "PaddingLeft": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "TextAlign": "",
-      "Width": {
-        "Keyword": "",
-        "Unit": {
-          "Size": 0,
-          "UnitType": 0
-        }
-      }
-    }
-  },
-  {
-    "Selector": ".table-td, .table-th",
-    "Props": {
-      "AlignItems": "",
-      "BackgroundColor": {
-        "Keyword": "",
-        "RGBA": {
-          "R": 0,
-          "G": 0,
-          "B": 0,
-          "A": 0
-        }
-      },
-      "BorderRadius": {
-        "Size": 0,
-        "UnitType": 0
-      },
-      "Border": {
-        "Width": {
-          "Size": 0,
-          "UnitType": 0
-        },
-        "Style": "",
-        "Color": {
-          "Keyword": "",
-          "RGBA": {
-            "R": 0,
-            "G": 0,
-            "B": 0,
-            "A": 0
-          }
-        }
-      },
       "BorderTop": {
         "Width": {
           "Size": 0,
@@ -1024,22 +1024,22 @@
         "UnitType": 0
       },
       "PaddingTop": {
-        "Size": 0.5,
-        "UnitType": 4
+        "Size": 0,
+        "UnitType": 0
       },
       "PaddingRight": {
-        "Size": 0.75,
-        "UnitType": 4
+        "Size": 0,
+        "UnitType": 0
       },
       "PaddingBottom": {
-        "Size": 0.5,
-        "UnitType": 4
+        "Size": 0,
+        "UnitType": 0
       },
       "PaddingLeft": {
-        "Size": 0.75,
-        "UnitType": 4
+        "Size": 0,
+        "UnitType": 0
       },
-      "TextAlign": "left",
+      "TextAlign": "",
       "Width": {
         "Keyword": "",
         "Unit": {

@@ -12,7 +12,7 @@ var Alerts = []style.Style{
 			BackgroundColor: props.Color{Keyword: props.ColorTransparent},
 			BorderStyle:     props.BorderStyleSolid,
 			BorderWidth:     props.Unit{1, props.UnitPx},
-			BorderRadius:    radiusMd,
+			BorderRadius:    radius,
 			Padding:         spacing4,
 		},
 	},

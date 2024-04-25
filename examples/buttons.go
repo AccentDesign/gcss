@@ -10,7 +10,7 @@ var Buttons = []style.Style{
 		Selector: ".button",
 		Props: style.Props{
 			AlignItems:     props.AlignItemsCenter,
-			BorderRadius:   radiusMd,
+			BorderRadius:   radius,
 			Display:        props.DisplayFlex,
 			JustifyContent: props.JustifyContentCenter,
 			PaddingTop:     spacing2,

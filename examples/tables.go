@@ -10,7 +10,7 @@ var Tables = []style.Style{
 		Selector: ".table",
 		Props: style.Props{
 			CaptionSide: props.CaptionSideBottom,
-			FontSize:    props.Unit{0.875, props.UnitRem},
+			FontSize:    fontSm,
 			LineHeight:  leadingTight,
 			Width:       props.Width{Unit: props.Unit{100, props.UnitPercent}},
 		},

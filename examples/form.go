@@ -15,9 +15,9 @@ var Form = []style.Style{
 				Style: props.BorderStyleSolid,
 				Color: props.Color{RGBA: border},
 			},
-			BorderRadius:  radiusMd,
+			BorderRadius:  radius,
 			Display:       props.DisplayFlex,
-			FontSize:      props.Unit{0.875, props.UnitRem},
+			FontSize:      fontSm,
 			Height:        props.Unit{40, props.UnitPx},
 			LineHeight:    leadingTight,
 			PaddingTop:    spacing2,
@@ -32,14 +32,14 @@ var Form = []style.Style{
 		Props: style.Props{
 			BackgroundColor: props.Color{Keyword: props.ColorTransparent},
 			BorderWidth:     props.Unit{0, props.UnitNone},
-			FontSize:        props.Unit{0.875, props.UnitRem},
+			FontSize:        fontSm,
 			FontWeight:      props.FontWeight500,
 		},
 	},
 	{
 		Selector: ".input-label",
 		Props: style.Props{
-			FontSize:   props.Unit{0.875, props.UnitRem},
+			FontSize:   fontSm,
 			FontWeight: props.FontWeight500,
 			LineHeight: leadingTight,
 		},
@@ -48,14 +48,14 @@ var Form = []style.Style{
 		Selector: ".input-help",
 		Props: style.Props{
 			Color:    props.Color{RGBA: mutedForeground},
-			FontSize: props.Unit{0.875, props.UnitRem},
+			FontSize: fontSm,
 		},
 	},
 	{
 		Selector: ".input-error",
 		Props: style.Props{
 			Color:    props.Color{RGBA: destructive},
-			FontSize: props.Unit{0.875, props.UnitRem},
+			FontSize: fontSm,
 		},
 	},
 }
