@@ -1,4 +1,4 @@
-package props
+package colors
 
 import (
 	"fmt"
@@ -7,22 +7,15 @@ import (
 
 type (
 	Color struct {
-		Keyword ColorKeyword
+		Keyword string
 		RGBA    RGBA
 	}
-	ColorKeyword string
-	RGBA         color.RGBA
-)
-
-const (
-	ColorCurrentColor ColorKeyword = "currentColor"
-	ColorInherit      ColorKeyword = "inherit"
-	ColorTransparent  ColorKeyword = "transparent"
+	RGBA color.RGBA
 )
 
 func (c Color) String() string {
 	if c.Keyword != "" {
-		return string(c.Keyword)
+		return c.Keyword
 	}
 	return c.RGBA.String()
 }
@@ -34,4 +27,16 @@ func (c RGBA) String() string {
 func (c RGBA) Alpha(a uint8) RGBA {
 	c.A = a
 	return c
+}
+
+func CurrentColor() Color {
+	return Color{Keyword: "currentColor"}
+}
+
+func Inherit() Color {
+	return Color{Keyword: "inherit"}
+}
+
+func Transparent() Color {
+	return Color{Keyword: "transparent"}
 }

@@ -1,7 +1,11 @@
 package examples
 
 import (
-	"github.com/AccentDesign/gostyle/props"
+	"github.com/AccentDesign/gostyle/props/align"
+	"github.com/AccentDesign/gostyle/props/border"
+	"github.com/AccentDesign/gostyle/props/colors"
+	"github.com/AccentDesign/gostyle/props/display"
+	"github.com/AccentDesign/gostyle/props/font"
 	"github.com/AccentDesign/gostyle/props/unit"
 	"github.com/AccentDesign/gostyle/style"
 )
@@ -10,11 +14,11 @@ var Badges = []style.Style{
 	{
 		Selector: ".badge",
 		Props: style.Props{
-			AlignItems:    props.AlignItemsCenter,
-			Display:       props.DisplayInlineFlex,
+			AlignItems:    align.ItemsCenter,
+			Display:       display.InlineFlex,
 			BorderRadius:  radiusFull,
 			FontSize:      fontXs,
-			FontWeight:    props.FontWeight600,
+			FontWeight:    font.Weight600,
 			LineHeight:    leadingNone,
 			PaddingTop:    spacing1,
 			PaddingRight:  spacing3,
@@ -25,31 +29,31 @@ var Badges = []style.Style{
 	{
 		Selector: ".badge-primary",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: primary},
-			Color:           props.Color{RGBA: primaryForeground},
+			BackgroundColor: colors.Color{RGBA: primary},
+			Color:           colors.Color{RGBA: primaryForeground},
 		},
 	},
 	{
 		Selector: ".badge-secondary",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: secondary},
-			Color:           props.Color{RGBA: secondaryForeground},
+			BackgroundColor: colors.Color{RGBA: secondary},
+			Color:           colors.Color{RGBA: secondaryForeground},
 		},
 	},
 	{
 		Selector: ".badge-destructive",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: destructive},
-			Color:           props.Color{RGBA: destructiveForeground},
+			BackgroundColor: colors.Color{RGBA: destructive},
+			Color:           colors.Color{RGBA: destructiveForeground},
 		},
 	},
 	{
 		Selector: ".badge-outline",
 		Props: style.Props{
-			BackgroundColor: props.Color{Keyword: props.ColorTransparent},
-			Border: props.Border{
-				Color: props.Color{RGBA: border},
-				Style: props.BorderStyleSolid,
+			BackgroundColor: colors.Transparent(),
+			Border: border.Border{
+				Color: colors.Color{RGBA: borderColor},
+				Style: border.StyleSolid,
 				Width: unit.Px(1),
 			},
 		},

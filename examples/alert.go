@@ -1,7 +1,8 @@
 package examples
 
 import (
-	"github.com/AccentDesign/gostyle/props"
+	"github.com/AccentDesign/gostyle/props/border"
+	"github.com/AccentDesign/gostyle/props/colors"
 	"github.com/AccentDesign/gostyle/props/unit"
 	"github.com/AccentDesign/gostyle/style"
 )
@@ -10,8 +11,8 @@ var Alerts = []style.Style{
 	{
 		Selector: ".alert",
 		Props: style.Props{
-			BackgroundColor: props.Color{Keyword: props.ColorTransparent},
-			BorderStyle:     props.BorderStyleSolid,
+			BackgroundColor: colors.Transparent(),
+			BorderStyle:     border.StyleSolid,
 			BorderWidth:     unit.Px(1),
 			BorderRadius:    radius,
 			Padding:         spacing4,
@@ -20,15 +21,15 @@ var Alerts = []style.Style{
 	{
 		Selector: ".alert-primary",
 		Props: style.Props{
-			BorderColor: props.Color{RGBA: primary},
-			Color:       props.Color{RGBA: primary},
+			BorderColor: colors.Color{RGBA: primary},
+			Color:       colors.Color{RGBA: primary},
 		},
 	},
 	{
 		Selector: ".alert-destructive",
 		Props: style.Props{
-			BorderColor: props.Color{RGBA: destructive},
-			Color:       props.Color{RGBA: destructive},
+			BorderColor: colors.Color{RGBA: destructive},
+			Color:       colors.Color{RGBA: destructive},
 		},
 	},
 }

@@ -1,4 +1,4 @@
-package props
+package table
 
 type CaptionSide string
 

@@ -888,7 +888,7 @@
     }
   },
   {
-    "Selector": ".table-td, .table-th",
+    "Selector": ".table-td,.table-th",
     "Props": {
       "AlignItems": "",
       "Appearance": "",

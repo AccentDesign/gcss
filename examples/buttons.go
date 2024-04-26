@@ -1,7 +1,11 @@
 package examples
 
 import (
-	"github.com/AccentDesign/gostyle/props"
+	"github.com/AccentDesign/gostyle/props/align"
+	"github.com/AccentDesign/gostyle/props/border"
+	"github.com/AccentDesign/gostyle/props/colors"
+	"github.com/AccentDesign/gostyle/props/display"
+	"github.com/AccentDesign/gostyle/props/justify"
 	"github.com/AccentDesign/gostyle/props/unit"
 	"github.com/AccentDesign/gostyle/style"
 )
@@ -10,10 +14,10 @@ var Buttons = []style.Style{
 	{
 		Selector: ".button",
 		Props: style.Props{
-			AlignItems:     props.AlignItemsCenter,
+			AlignItems:     align.ItemsCenter,
 			BorderRadius:   radius,
-			Display:        props.DisplayFlex,
-			JustifyContent: props.JustifyContentCenter,
+			Display:        display.Flex,
+			JustifyContent: justify.ContentCenter,
 			PaddingTop:     spacing2,
 			PaddingRight:   spacing4,
 			PaddingBottom:  spacing2,
@@ -23,69 +27,69 @@ var Buttons = []style.Style{
 	{
 		Selector: ".button-primary",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: primary},
-			Color:           props.Color{RGBA: primaryForeground},
+			BackgroundColor: colors.Color{RGBA: primary},
+			Color:           colors.Color{RGBA: primaryForeground},
 		},
 	},
 	{
 		Selector: ".button-primary:hover",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: primary.Alpha(230)},
+			BackgroundColor: colors.Color{RGBA: primary.Alpha(230)},
 		},
 	},
 	{
 		Selector: ".button-secondary",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: secondary},
-			Color:           props.Color{RGBA: secondaryForeground},
+			BackgroundColor: colors.Color{RGBA: secondary},
+			Color:           colors.Color{RGBA: secondaryForeground},
 		},
 	},
 	{
 		Selector: ".button-secondary:hover",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: secondary.Alpha(204)},
+			BackgroundColor: colors.Color{RGBA: secondary.Alpha(204)},
 		},
 	},
 	{
 		Selector: ".button-destructive",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: destructive},
-			Color:           props.Color{RGBA: destructiveForeground},
+			BackgroundColor: colors.Color{RGBA: destructive},
+			Color:           colors.Color{RGBA: destructiveForeground},
 		},
 	},
 	{
 		Selector: ".button-destructive:hover",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: destructive.Alpha(230)},
+			BackgroundColor: colors.Color{RGBA: destructive.Alpha(230)},
 		},
 	},
 	{
 		Selector: ".button-outline",
 		Props: style.Props{
-			BackgroundColor: props.Color{Keyword: props.ColorTransparent},
-			Border: props.Border{
+			BackgroundColor: colors.Transparent(),
+			Border: border.Border{
 				Width: unit.Px(1),
-				Style: props.BorderStyleSolid,
-				Color: props.Color{RGBA: border},
+				Style: border.StyleSolid,
+				Color: colors.Color{RGBA: borderColor},
 			},
 		},
 	},
 	{
 		Selector: ".button-outline:hover",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: secondary.Alpha(230)},
+			BackgroundColor: colors.Color{RGBA: secondary.Alpha(230)},
 		},
 	},
 	{
 		Selector: ".button-ghost",
 		Props: style.Props{
-			BackgroundColor: props.Color{Keyword: props.ColorTransparent},
+			BackgroundColor: colors.Transparent(),
 		},
 	},
 	{
 		Selector: ".button-ghost:hover",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: secondary.Alpha(230)},
+			BackgroundColor: colors.Color{RGBA: secondary.Alpha(230)},
 		},
 	},
 }

@@ -1,23 +1,23 @@
 package examples
 
 import (
-	"github.com/AccentDesign/gostyle/props"
 	"github.com/AccentDesign/gostyle/props/background"
+	"github.com/AccentDesign/gostyle/props/colors"
 	"github.com/AccentDesign/gostyle/props/unit"
 )
 
 var (
-	white                 = props.RGBA{255, 255, 255, 255}
+	white                 = colors.RGBA{255, 255, 255, 255}
 	backGround            = white
-	primary               = props.RGBA{17, 24, 39, 255}
+	primary               = colors.RGBA{17, 24, 39, 255}
 	primaryForeground     = white
-	secondary             = props.RGBA{229, 231, 235, 255}
-	secondaryForeground   = props.RGBA{17, 24, 39, 255}
-	destructive           = props.RGBA{239, 68, 68, 255}
+	secondary             = colors.RGBA{229, 231, 235, 255}
+	secondaryForeground   = colors.RGBA{17, 24, 39, 255}
+	destructive           = colors.RGBA{239, 68, 68, 255}
 	destructiveForeground = white
-	border                = props.RGBA{229, 231, 235, 255}
-	muted                 = props.RGBA{243, 244, 246, 255}
-	mutedForeground       = props.RGBA{75, 85, 99, 255}
+	borderColor           = colors.RGBA{229, 231, 235, 255}
+	muted                 = colors.RGBA{243, 244, 246, 255}
+	mutedForeground       = colors.RGBA{75, 85, 99, 255}
 	fontXs                = unit.Rem(0.75)
 	fontSm                = unit.Rem(0.875)
 	leadingNone           = unit.Rem(1)
