@@ -16,6 +16,8 @@ const (
 	UnitPx
 	UnitPercent
 	UnitRem
+	UnitEm
+	UnitAuto
 )
 
 func (u Unit) String() string {
@@ -28,6 +30,10 @@ func (u Unit) String() string {
 		return fmt.Sprintf("%.2f%%", u.Size)
 	case UnitRem:
 		return fmt.Sprintf("%.3frem", u.Size)
+	case UnitEm:
+		return fmt.Sprintf("%.3fem", u.Size)
+	case UnitAuto:
+		return "auto"
 	}
 	return ""
 }

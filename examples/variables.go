@@ -1,10 +1,13 @@
 package examples
 
-import "github.com/AccentDesign/gostyle/props"
+import (
+	"github.com/AccentDesign/gostyle/props"
+	"github.com/AccentDesign/gostyle/props/background"
+)
 
 var (
 	white                 = props.RGBA{255, 255, 255, 255}
-	background            = white
+	backGround            = white
 	primary               = props.RGBA{17, 24, 39, 255}
 	primaryForeground     = white
 	secondary             = props.RGBA{229, 231, 235, 255}
@@ -25,4 +28,6 @@ var (
 	spacing3              = props.Unit{0.75, props.UnitRem}
 	spacing4              = props.Unit{1, props.UnitRem}
 	spacing10             = props.Unit{2.5, props.UnitRem}
+
+	imageCaretUrl = background.ImageURL("data:image/svg+xml;charset=utf-8,%3Csvg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 10 6'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m1 1 4 4 4-4'/%3E%3C/svg%3E")
 )

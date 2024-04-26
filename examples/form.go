@@ -2,6 +2,7 @@ package examples
 
 import (
 	"github.com/AccentDesign/gostyle/props"
+	"github.com/AccentDesign/gostyle/props/background"
 	"github.com/AccentDesign/gostyle/style"
 )
 
@@ -9,7 +10,7 @@ var Form = []style.Style{
 	{
 		Selector: ".input",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: background},
+			BackgroundColor: props.Color{RGBA: backGround},
 			Border: props.Border{
 				Width: props.Unit{1, props.UnitPx},
 				Style: props.BorderStyleSolid,
@@ -61,7 +62,7 @@ var Form = []style.Style{
 	{
 		Selector: ".select",
 		Props: style.Props{
-			BackgroundColor: props.Color{RGBA: background},
+			BackgroundColor: props.Color{RGBA: backGround},
 			Border: props.Border{
 				Width: props.Unit{1, props.UnitPx},
 				Style: props.BorderStyleSolid,
@@ -85,7 +86,13 @@ var Form = []style.Style{
 			Appearance:       props.AppearanceNone,
 			PaddingRight:     spacing10,
 			PrintColorAdjust: props.PrintColorAdjustExact,
-			// background in `docs/css/unhandled.css`
+			BackgroundImage:  background.ImageLayers(imageCaretUrl),
+			BackgroundPosition: background.PositionEdgeOffset(
+				background.PositionEdgeItem{Edge: background.PositionEdgeRight, Unit: spacing3},
+				background.PositionEdgeItem{Edge: background.PositionEdgeCenter},
+			),
+			BackgroundRepeat: background.RepeatNoRepeat,
+			BackgroundSize:   background.SizeDimension(props.Unit{.75, props.UnitEm}, props.Unit{.75, props.UnitEm}),
 		},
 	},
 }

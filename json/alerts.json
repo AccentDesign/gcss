@@ -13,6 +13,16 @@
           "A": 0
         }
       },
+      "BackgroundImage": {
+        "Value": ""
+      },
+      "BackgroundPosition": {
+        "Value": ""
+      },
+      "BackgroundRepeat": "",
+      "BackgroundSize": {
+        "Value": ""
+      },
       "BorderRadius": {
         "Size": 0.375,
         "UnitType": 4
@@ -225,6 +235,16 @@
           "A": 0
         }
       },
+      "BackgroundImage": {
+        "Value": ""
+      },
+      "BackgroundPosition": {
+        "Value": ""
+      },
+      "BackgroundRepeat": "",
+      "BackgroundSize": {
+        "Value": ""
+      },
       "BorderRadius": {
         "Size": 0,
         "UnitType": 0
@@ -436,6 +456,16 @@
           "B": 0,
           "A": 0
         }
+      },
+      "BackgroundImage": {
+        "Value": ""
+      },
+      "BackgroundPosition": {
+        "Value": ""
+      },
+      "BackgroundRepeat": "",
+      "BackgroundSize": {
+        "Value": ""
       },
       "BorderRadius": {
         "Size": 0,

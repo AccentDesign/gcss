@@ -13,6 +13,16 @@
           "A": 0
         }
       },
+      "BackgroundImage": {
+        "Value": ""
+      },
+      "BackgroundPosition": {
+        "Value": ""
+      },
+      "BackgroundRepeat": "",
+      "BackgroundSize": {
+        "Value": ""
+      },
       "BorderRadius": {
         "Size": 9999,
         "UnitType": 2
@@ -224,6 +234,16 @@
           "B": 39,
           "A": 255
         }
+      },
+      "BackgroundImage": {
+        "Value": ""
+      },
+      "BackgroundPosition": {
+        "Value": ""
+      },
+      "BackgroundRepeat": "",
+      "BackgroundSize": {
+        "Value": ""
       },
       "BorderRadius": {
         "Size": 0,
@@ -437,6 +457,16 @@
           "A": 255
         }
       },
+      "BackgroundImage": {
+        "Value": ""
+      },
+      "BackgroundPosition": {
+        "Value": ""
+      },
+      "BackgroundRepeat": "",
+      "BackgroundSize": {
+        "Value": ""
+      },
       "BorderRadius": {
         "Size": 0,
         "UnitType": 0
@@ -649,6 +679,16 @@
           "A": 255
         }
       },
+      "BackgroundImage": {
+        "Value": ""
+      },
+      "BackgroundPosition": {
+        "Value": ""
+      },
+      "BackgroundRepeat": "",
+      "BackgroundSize": {
+        "Value": ""
+      },
       "BorderRadius": {
         "Size": 0,
         "UnitType": 0
@@ -860,6 +900,16 @@
           "B": 0,
           "A": 0
         }
+      },
+      "BackgroundImage": {
+        "Value": ""
+      },
+      "BackgroundPosition": {
+        "Value": ""
+      },
+      "BackgroundRepeat": "",
+      "BackgroundSize": {
+        "Value": ""
       },
       "BorderRadius": {
         "Size": 0,

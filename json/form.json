@@ -13,6 +13,16 @@
           "A": 255
         }
       },
+      "BackgroundImage": {
+        "Value": ""
+      },
+      "BackgroundPosition": {
+        "Value": ""
+      },
+      "BackgroundRepeat": "",
+      "BackgroundSize": {
+        "Value": ""
+      },
       "BorderRadius": {
         "Size": 0.375,
         "UnitType": 4
@@ -224,6 +234,16 @@
           "B": 0,
           "A": 0
         }
+      },
+      "BackgroundImage": {
+        "Value": ""
+      },
+      "BackgroundPosition": {
+        "Value": ""
+      },
+      "BackgroundRepeat": "",
+      "BackgroundSize": {
+        "Value": ""
       },
       "BorderRadius": {
         "Size": 0,
@@ -437,6 +457,16 @@
           "A": 0
         }
       },
+      "BackgroundImage": {
+        "Value": ""
+      },
+      "BackgroundPosition": {
+        "Value": ""
+      },
+      "BackgroundRepeat": "",
+      "BackgroundSize": {
+        "Value": ""
+      },
       "BorderRadius": {
         "Size": 0,
         "UnitType": 0
@@ -648,6 +678,16 @@
           "B": 0,
           "A": 0
         }
+      },
+      "BackgroundImage": {
+        "Value": ""
+      },
+      "BackgroundPosition": {
+        "Value": ""
+      },
+      "BackgroundRepeat": "",
+      "BackgroundSize": {
+        "Value": ""
       },
       "BorderRadius": {
         "Size": 0,
@@ -861,6 +901,16 @@
           "A": 0
         }
       },
+      "BackgroundImage": {
+        "Value": ""
+      },
+      "BackgroundPosition": {
+        "Value": ""
+      },
+      "BackgroundRepeat": "",
+      "BackgroundSize": {
+        "Value": ""
+      },
       "BorderRadius": {
         "Size": 0,
         "UnitType": 0
@@ -1073,6 +1123,16 @@
           "A": 255
         }
       },
+      "BackgroundImage": {
+        "Value": ""
+      },
+      "BackgroundPosition": {
+        "Value": ""
+      },
+      "BackgroundRepeat": "",
+      "BackgroundSize": {
+        "Value": ""
+      },
       "BorderRadius": {
         "Size": 0.375,
         "UnitType": 4
@@ -1284,6 +1344,16 @@
           "B": 0,
           "A": 0
         }
+      },
+      "BackgroundImage": {
+        "Value": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 10 6'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m1 1 4 4 4-4'/%3E%3C/svg%3E\")"
+      },
+      "BackgroundPosition": {
+        "Value": "right 0.750rem center"
+      },
+      "BackgroundRepeat": "no-repeat",
+      "BackgroundSize": {
+        "Value": "0.750em 0.750em"
       },
       "BorderRadius": {
         "Size": 0,
