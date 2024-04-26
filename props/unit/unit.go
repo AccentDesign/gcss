@@ -62,7 +62,7 @@ func Raw(size interface{}) Unit {
 	return Unit{Size: size, Type: TypeRaw}
 }
 
-func Px(size float64) Unit {
+func Px(size int) Unit {
 	return Unit{Size: size, Type: TypePx}
 }
 
