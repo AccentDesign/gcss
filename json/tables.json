@@ -146,6 +146,7 @@
         "Size": 0.875,
         "Type": 4
       },
+      "FontStyle": "",
       "FontWeight": "",
       "Height": {
         "Size": null,
@@ -377,6 +378,7 @@
         "Size": null,
         "Type": 0
       },
+      "FontStyle": "",
       "FontWeight": "",
       "Height": {
         "Size": null,
@@ -608,6 +610,7 @@
         "Size": null,
         "Type": 0
       },
+      "FontStyle": "",
       "FontWeight": "",
       "Height": {
         "Size": null,
@@ -839,6 +842,7 @@
         "Size": null,
         "Type": 0
       },
+      "FontStyle": "",
       "FontWeight": "",
       "Height": {
         "Size": null,
@@ -1070,6 +1074,7 @@
         "Size": null,
         "Type": 0
       },
+      "FontStyle": "",
       "FontWeight": "",
       "Height": {
         "Size": null,

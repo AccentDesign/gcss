@@ -48,6 +48,7 @@ type (
 		FlexWrap           flex.Wrap             `css:"flex-wrap"`
 		FlexShrink         unit.Unit             `css:"flex-shrink"`
 		FontSize           unit.Unit             `css:"font-size"`
+		FontStyle          font.Style            `css:"font-style"`
 		FontWeight         font.Weight           `css:"font-weight"`
 		Height             unit.Unit             `css:"height"`
 		JustifyContent     justify.Content       `css:"justify-content"`
