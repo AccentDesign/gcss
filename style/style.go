@@ -14,7 +14,6 @@ import (
 	"github.com/AccentDesign/gostyle/props/flex"
 	"github.com/AccentDesign/gostyle/props/font"
 	"github.com/AccentDesign/gostyle/props/justify"
-	"github.com/AccentDesign/gostyle/props/margin"
 	"github.com/AccentDesign/gostyle/props/print"
 	"github.com/AccentDesign/gostyle/props/table"
 	"github.com/AccentDesign/gostyle/props/text"
@@ -54,11 +53,11 @@ type (
 		justifyItems       justify.Items         `css:"justify-items"`
 		justifySelf        justify.Self          `css:"justify-self"`
 		LineHeight         unit.Unit             `css:"line-height"`
-		Margin             margin.Margin         `css:"margin"`
-		MarginBottom       margin.Margin         `css:"margin-bottom"`
-		MarginLeft         margin.Margin         `css:"margin-left"`
-		MarginRight        margin.Margin         `css:"margin-right"`
-		MarginTop          margin.Margin         `css:"margin-top"`
+		Margin             unit.Unit             `css:"margin"`
+		MarginBottom       unit.Unit             `css:"margin-bottom"`
+		MarginLeft         unit.Unit             `css:"margin-left"`
+		MarginRight        unit.Unit             `css:"margin-right"`
+		MarginTop          unit.Unit             `css:"margin-top"`
 		MaxWidth           unit.Unit             `css:"max-width"`
 		MinWidth           unit.Unit             `css:"min-width"`
 		Padding            unit.Unit             `css:"padding"`

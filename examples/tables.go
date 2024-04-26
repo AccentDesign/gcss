@@ -2,7 +2,6 @@ package examples
 
 import (
 	"github.com/AccentDesign/gostyle/props/border"
-	"github.com/AccentDesign/gostyle/props/margin"
 	"github.com/AccentDesign/gostyle/props/table"
 	"github.com/AccentDesign/gostyle/props/text"
 	"github.com/AccentDesign/gostyle/props/unit"
@@ -22,7 +21,7 @@ var Tables = []style.Style{
 	{
 		Selector: ".table-caption",
 		Props: style.Props{
-			MarginTop: margin.Margin{Unit: size4},
+			MarginTop: size4,
 		},
 	},
 	{
