@@ -3,6 +3,7 @@
     "Selector": ".table",
     "Props": {
       "AlignItems": "",
+      "Appearance": "",
       "BackgroundColor": {
         "Keyword": "",
         "RGBA": {
@@ -199,6 +200,7 @@
         "Size": 0,
         "UnitType": 0
       },
+      "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
         "Keyword": "",
@@ -213,6 +215,7 @@
     "Selector": ".table-caption",
     "Props": {
       "AlignItems": "",
+      "Appearance": "",
       "BackgroundColor": {
         "Keyword": "",
         "RGBA": {
@@ -409,6 +412,7 @@
         "Size": 0,
         "UnitType": 0
       },
+      "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
         "Keyword": "",
@@ -423,6 +427,7 @@
     "Selector": ".table-tr",
     "Props": {
       "AlignItems": "",
+      "Appearance": "",
       "BackgroundColor": {
         "Keyword": "",
         "RGBA": {
@@ -619,6 +624,7 @@
         "Size": 0,
         "UnitType": 0
       },
+      "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
         "Keyword": "",
@@ -633,6 +639,7 @@
     "Selector": ".table-tfoot-tr",
     "Props": {
       "AlignItems": "",
+      "Appearance": "",
       "BackgroundColor": {
         "Keyword": "",
         "RGBA": {
@@ -829,6 +836,7 @@
         "Size": 0,
         "UnitType": 0
       },
+      "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
         "Keyword": "",
@@ -843,6 +851,7 @@
     "Selector": ".table-td, .table-th",
     "Props": {
       "AlignItems": "",
+      "Appearance": "",
       "BackgroundColor": {
         "Keyword": "",
         "RGBA": {
@@ -1039,6 +1048,7 @@
         "Size": 0.75,
         "UnitType": 4
       },
+      "PrintColorAdjust": "",
       "TextAlign": "left",
       "Width": {
         "Keyword": "",

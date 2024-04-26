@@ -9,6 +9,7 @@
   <link href="css/buttons.css" rel="stylesheet">
   <link href="css/form.css" rel="stylesheet">
   <link href="css/tables.css" rel="stylesheet">
+  <link href="css/unhandled.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="p-6 grid gap-16 antialiased">
@@ -16,7 +17,6 @@
   <header>
     <h1 class="text-3xl mb-4">Golang CSS Examples</h1>
     <p>A collection of CSS examples styled in Go. See <a class="font-medium" href="https://github.com/AccentDesign/gostyle">Github</a> for more info.</p>
-
   </header>
   <!-- buttons -->
   <section class="grid gap-4">
@@ -46,6 +46,16 @@
         <label class="input-label">Name</label>
         <input class="input" placeholder="your name" type="text" />
         <div class="input-error">This field is required</div>
+      </div>
+      <div class="space-y-2">
+        <label class="input-label">Country</label>
+        <select class="select">
+          <option selected>Choose a country</option>
+          <option value="US">United States</option>
+          <option value="CA">Canada</option>
+          <option value="FR">France</option>
+          <option value="DE">Germany</option>
+        </select>
       </div>
       <div class="space-y-2">
         <label class="input-label">Message</label>

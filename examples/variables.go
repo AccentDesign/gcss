@@ -24,4 +24,5 @@ var (
 	spacing2              = props.Unit{0.5, props.UnitRem}
 	spacing3              = props.Unit{0.75, props.UnitRem}
 	spacing4              = props.Unit{1, props.UnitRem}
+	spacing10             = props.Unit{2.5, props.UnitRem}
 )

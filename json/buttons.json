@@ -3,6 +3,7 @@
     "Selector": ".button",
     "Props": {
       "AlignItems": "center",
+      "Appearance": "",
       "BackgroundColor": {
         "Keyword": "",
         "RGBA": {
@@ -199,6 +200,7 @@
         "Size": 1,
         "UnitType": 4
       },
+      "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
         "Keyword": "",
@@ -213,6 +215,7 @@
     "Selector": ".button-primary",
     "Props": {
       "AlignItems": "",
+      "Appearance": "",
       "BackgroundColor": {
         "Keyword": "",
         "RGBA": {
@@ -409,6 +412,7 @@
         "Size": 0,
         "UnitType": 0
       },
+      "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
         "Keyword": "",
@@ -423,6 +427,7 @@
     "Selector": ".button-primary:hover",
     "Props": {
       "AlignItems": "",
+      "Appearance": "",
       "BackgroundColor": {
         "Keyword": "",
         "RGBA": {
@@ -619,6 +624,7 @@
         "Size": 0,
         "UnitType": 0
       },
+      "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
         "Keyword": "",
@@ -633,6 +639,7 @@
     "Selector": ".button-secondary",
     "Props": {
       "AlignItems": "",
+      "Appearance": "",
       "BackgroundColor": {
         "Keyword": "",
         "RGBA": {
@@ -829,6 +836,7 @@
         "Size": 0,
         "UnitType": 0
       },
+      "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
         "Keyword": "",
@@ -843,6 +851,7 @@
     "Selector": ".button-secondary:hover",
     "Props": {
       "AlignItems": "",
+      "Appearance": "",
       "BackgroundColor": {
         "Keyword": "",
         "RGBA": {
@@ -1039,6 +1048,7 @@
         "Size": 0,
         "UnitType": 0
       },
+      "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
         "Keyword": "",
@@ -1053,6 +1063,7 @@
     "Selector": ".button-destructive",
     "Props": {
       "AlignItems": "",
+      "Appearance": "",
       "BackgroundColor": {
         "Keyword": "",
         "RGBA": {
@@ -1249,6 +1260,7 @@
         "Size": 0,
         "UnitType": 0
       },
+      "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
         "Keyword": "",
@@ -1263,6 +1275,7 @@
     "Selector": ".button-destructive:hover",
     "Props": {
       "AlignItems": "",
+      "Appearance": "",
       "BackgroundColor": {
         "Keyword": "",
         "RGBA": {
@@ -1459,6 +1472,7 @@
         "Size": 0,
         "UnitType": 0
       },
+      "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
         "Keyword": "",
@@ -1473,6 +1487,7 @@
     "Selector": ".button-outline",
     "Props": {
       "AlignItems": "",
+      "Appearance": "",
       "BackgroundColor": {
         "Keyword": "transparent",
         "RGBA": {
@@ -1669,6 +1684,7 @@
         "Size": 0,
         "UnitType": 0
       },
+      "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
         "Keyword": "",
@@ -1683,6 +1699,7 @@
     "Selector": ".button-outline:hover",
     "Props": {
       "AlignItems": "",
+      "Appearance": "",
       "BackgroundColor": {
         "Keyword": "",
         "RGBA": {
@@ -1879,6 +1896,7 @@
         "Size": 0,
         "UnitType": 0
       },
+      "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
         "Keyword": "",
@@ -1893,6 +1911,7 @@
     "Selector": ".button-ghost",
     "Props": {
       "AlignItems": "",
+      "Appearance": "",
       "BackgroundColor": {
         "Keyword": "transparent",
         "RGBA": {
@@ -2089,6 +2108,7 @@
         "Size": 0,
         "UnitType": 0
       },
+      "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
         "Keyword": "",
@@ -2103,6 +2123,7 @@
     "Selector": ".button-ghost:hover",
     "Props": {
       "AlignItems": "",
+      "Appearance": "",
       "BackgroundColor": {
         "Keyword": "",
         "RGBA": {
@@ -2299,6 +2320,7 @@
         "Size": 0,
         "UnitType": 0
       },
+      "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
         "Keyword": "",

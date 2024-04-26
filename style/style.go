@@ -10,40 +10,42 @@ import (
 
 type (
 	Props struct {
-		AlignItems      props.AlignItems     `css:"align-items"`
-		BackgroundColor props.Color          `css:"background-color"`
-		BorderRadius    props.Unit           `css:"border-radius"`
-		Border          props.Border         `css:"border"`
-		BorderTop       props.Border         `css:"border-top"`
-		BorderRight     props.Border         `css:"border-right"`
-		BorderBottom    props.Border         `css:"border-bottom"`
-		BorderLeft      props.Border         `css:"border-left"`
-		BorderColor     props.Color          `css:"border-color"`
-		BorderStyle     props.BorderStyle    `css:"border-style"`
-		BorderWidth     props.Unit           `css:"border-width"`
-		CaptionSide     props.CaptionSide    `css:"caption-side"`
-		Color           props.Color          `css:"color"`
-		Display         props.Display        `css:"display"`
-		FlexDirection   props.FlexDirection  `css:"flex-direction"`
-		FontSize        props.Unit           `css:"font-size"`
-		FontWeight      props.FontWeight     `css:"font-weight"`
-		Height          props.Unit           `css:"height"`
-		JustifyContent  props.JustifyContent `css:"justify-content"`
-		LineHeight      props.Unit           `css:"line-height"`
-		Margin          props.Margin         `css:"margin"`
-		MarginTop       props.Margin         `css:"margin-top"`
-		MarginRight     props.Margin         `css:"margin-right"`
-		MarginBottom    props.Margin         `css:"margin-bottom"`
-		MarginLeft      props.Margin         `css:"margin-left"`
-		MaxWidth        props.Unit           `css:"max-width"`
-		MinWidth        props.Unit           `css:"min-width"`
-		Padding         props.Unit           `css:"padding"`
-		PaddingTop      props.Unit           `css:"padding-top"`
-		PaddingRight    props.Unit           `css:"padding-right"`
-		PaddingBottom   props.Unit           `css:"padding-bottom"`
-		PaddingLeft     props.Unit           `css:"padding-left"`
-		TextAlign       props.TextAlign      `css:"text-align"`
-		Width           props.Width          `css:"width"`
+		AlignItems       props.AlignItems       `css:"align-items"`
+		Appearance       props.Appearance       `css:"appearance"`
+		BackgroundColor  props.Color            `css:"background-color"`
+		BorderRadius     props.Unit             `css:"border-radius"`
+		Border           props.Border           `css:"border"`
+		BorderTop        props.Border           `css:"border-top"`
+		BorderRight      props.Border           `css:"border-right"`
+		BorderBottom     props.Border           `css:"border-bottom"`
+		BorderLeft       props.Border           `css:"border-left"`
+		BorderColor      props.Color            `css:"border-color"`
+		BorderStyle      props.BorderStyle      `css:"border-style"`
+		BorderWidth      props.Unit             `css:"border-width"`
+		CaptionSide      props.CaptionSide      `css:"caption-side"`
+		Color            props.Color            `css:"color"`
+		Display          props.Display          `css:"display"`
+		FlexDirection    props.FlexDirection    `css:"flex-direction"`
+		FontSize         props.Unit             `css:"font-size"`
+		FontWeight       props.FontWeight       `css:"font-weight"`
+		Height           props.Unit             `css:"height"`
+		JustifyContent   props.JustifyContent   `css:"justify-content"`
+		LineHeight       props.Unit             `css:"line-height"`
+		Margin           props.Margin           `css:"margin"`
+		MarginTop        props.Margin           `css:"margin-top"`
+		MarginRight      props.Margin           `css:"margin-right"`
+		MarginBottom     props.Margin           `css:"margin-bottom"`
+		MarginLeft       props.Margin           `css:"margin-left"`
+		MaxWidth         props.Unit             `css:"max-width"`
+		MinWidth         props.Unit             `css:"min-width"`
+		Padding          props.Unit             `css:"padding"`
+		PaddingTop       props.Unit             `css:"padding-top"`
+		PaddingRight     props.Unit             `css:"padding-right"`
+		PaddingBottom    props.Unit             `css:"padding-bottom"`
+		PaddingLeft      props.Unit             `css:"padding-left"`
+		PrintColorAdjust props.PrintColorAdjust `css:"print-color-adjust"`
+		TextAlign        props.TextAlign        `css:"text-align"`
+		Width            props.Width            `css:"width"`
 	}
 	Style struct {
 		Selector string

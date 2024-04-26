@@ -3,6 +3,7 @@
     "Selector": ".alert",
     "Props": {
       "AlignItems": "",
+      "Appearance": "",
       "BackgroundColor": {
         "Keyword": "transparent",
         "RGBA": {
@@ -199,6 +200,7 @@
         "Size": 0,
         "UnitType": 0
       },
+      "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
         "Keyword": "",
@@ -213,6 +215,7 @@
     "Selector": ".alert-primary",
     "Props": {
       "AlignItems": "",
+      "Appearance": "",
       "BackgroundColor": {
         "Keyword": "",
         "RGBA": {
@@ -409,6 +412,7 @@
         "Size": 0,
         "UnitType": 0
       },
+      "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
         "Keyword": "",
@@ -423,6 +427,7 @@
     "Selector": ".alert-destructive",
     "Props": {
       "AlignItems": "",
+      "Appearance": "",
       "BackgroundColor": {
         "Keyword": "",
         "RGBA": {
@@ -619,6 +624,7 @@
         "Size": 0,
         "UnitType": 0
       },
+      "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
         "Keyword": "",

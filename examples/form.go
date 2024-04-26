@@ -58,4 +58,34 @@ var Form = []style.Style{
 			FontSize: fontSm,
 		},
 	},
+	{
+		Selector: ".select",
+		Props: style.Props{
+			BackgroundColor: props.Color{RGBA: background},
+			Border: props.Border{
+				Width: props.Unit{1, props.UnitPx},
+				Style: props.BorderStyleSolid,
+				Color: props.Color{RGBA: border},
+			},
+			BorderRadius:  radius,
+			Display:       props.DisplayFlex,
+			FontSize:      fontSm,
+			Height:        props.Unit{40, props.UnitPx},
+			LineHeight:    leadingTight,
+			PaddingTop:    spacing2,
+			PaddingRight:  spacing3,
+			PaddingBottom: spacing2,
+			PaddingLeft:   spacing3,
+			Width:         props.Width{Unit: props.Unit{100, props.UnitPercent}},
+		},
+	},
+	{
+		Selector: ".select:not([size])",
+		Props: style.Props{
+			Appearance:       props.AppearanceNone,
+			PaddingRight:     spacing10,
+			PrintColorAdjust: props.PrintColorAdjustExact,
+			// background in `docs/css/unhandled.css`
+		},
+	},
 }
