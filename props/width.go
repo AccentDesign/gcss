@@ -1,9 +1,11 @@
 package props
 
+import "github.com/AccentDesign/gostyle/props/unit"
+
 type (
 	Width struct {
 		Keyword WidthKeyword
-		Unit    Unit
+		Unit    unit.Unit
 	}
 	WidthKeyword string
 )

@@ -3,6 +3,7 @@ package examples
 import (
 	"github.com/AccentDesign/gostyle/props"
 	"github.com/AccentDesign/gostyle/props/background"
+	"github.com/AccentDesign/gostyle/props/unit"
 	"github.com/AccentDesign/gostyle/style"
 )
 
@@ -12,27 +13,27 @@ var Form = []style.Style{
 		Props: style.Props{
 			BackgroundColor: props.Color{RGBA: backGround},
 			Border: props.Border{
-				Width: props.Unit{1, props.UnitPx},
+				Width: unit.Px(1),
 				Style: props.BorderStyleSolid,
 				Color: props.Color{RGBA: border},
 			},
 			BorderRadius:  radius,
 			Display:       props.DisplayFlex,
 			FontSize:      fontSm,
-			Height:        props.Unit{40, props.UnitPx},
+			Height:        unit.Px(40),
 			LineHeight:    leadingTight,
 			PaddingTop:    spacing2,
 			PaddingRight:  spacing3,
 			PaddingBottom: spacing2,
 			PaddingLeft:   spacing3,
-			Width:         props.Width{Unit: props.Unit{100, props.UnitPercent}},
+			Width:         props.Width{Unit: unit.Percent(100)},
 		},
 	},
 	{
 		Selector: ".input::file-selector-button",
 		Props: style.Props{
 			BackgroundColor: props.Color{Keyword: props.ColorTransparent},
-			BorderWidth:     props.Unit{0, props.UnitNone},
+			BorderWidth:     unit.None(0),
 			FontSize:        fontSm,
 			FontWeight:      props.FontWeight500,
 		},
@@ -64,20 +65,20 @@ var Form = []style.Style{
 		Props: style.Props{
 			BackgroundColor: props.Color{RGBA: backGround},
 			Border: props.Border{
-				Width: props.Unit{1, props.UnitPx},
+				Width: unit.Px(1),
 				Style: props.BorderStyleSolid,
 				Color: props.Color{RGBA: border},
 			},
 			BorderRadius:  radius,
 			Display:       props.DisplayFlex,
 			FontSize:      fontSm,
-			Height:        props.Unit{40, props.UnitPx},
+			Height:        unit.Px(40),
 			LineHeight:    leadingTight,
 			PaddingTop:    spacing2,
 			PaddingRight:  spacing3,
 			PaddingBottom: spacing2,
 			PaddingLeft:   spacing3,
-			Width:         props.Width{Unit: props.Unit{100, props.UnitPercent}},
+			Width:         props.Width{Unit: unit.Percent(100)},
 		},
 	},
 	{
@@ -92,7 +93,7 @@ var Form = []style.Style{
 				background.PositionEdgeItem{Edge: background.PositionEdgeCenter},
 			),
 			BackgroundRepeat: background.RepeatNoRepeat,
-			BackgroundSize:   background.SizeDimension(props.Unit{.75, props.UnitEm}, props.Unit{.75, props.UnitEm}),
+			BackgroundSize:   background.SizeDimension(unit.Em(0.75), unit.Em(0.75)),
 		},
 	},
 }

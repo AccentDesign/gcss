@@ -2,6 +2,7 @@ package examples
 
 import (
 	"github.com/AccentDesign/gostyle/props"
+	"github.com/AccentDesign/gostyle/props/unit"
 	"github.com/AccentDesign/gostyle/style"
 )
 
@@ -12,20 +13,20 @@ var Tables = []style.Style{
 			CaptionSide: props.CaptionSideBottom,
 			FontSize:    fontSm,
 			LineHeight:  leadingTight,
-			Width:       props.Width{Unit: props.Unit{100, props.UnitPercent}},
+			Width:       props.Width{Unit: unit.Percent(100)},
 		},
 	},
 	{
 		Selector: ".table-caption",
 		Props: style.Props{
-			MarginTop: props.Margin{Unit: props.Unit{1, props.UnitRem}},
+			MarginTop: props.Margin{Unit: spacing4},
 		},
 	},
 	{
 		Selector: ".table-tr",
 		Props: style.Props{
 			BorderBottom: props.Border{
-				Width: props.Unit{1, props.UnitPx},
+				Width: unit.Px(1),
 				Style: props.BorderStyleSolid,
 				Color: props.Color{RGBA: border},
 			},

@@ -1,6 +1,8 @@
 package background
 
-import "github.com/AccentDesign/gostyle/props"
+import (
+	"github.com/AccentDesign/gostyle/props/unit"
+)
 
 type Size struct {
 	Value string
@@ -10,11 +12,11 @@ func (b Size) String() string {
 	return b.Value
 }
 
-func SizeWidth(unit props.Unit) Size {
+func SizeWidth(unit unit.Unit) Size {
 	return Size{unit.String()}
 }
 
-func SizeDimension(width props.Unit, height props.Unit) Size {
+func SizeDimension(width unit.Unit, height unit.Unit) Size {
 	return Size{width.String() + " " + height.String()}
 }
 

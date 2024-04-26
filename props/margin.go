@@ -1,9 +1,11 @@
 package props
 
+import "github.com/AccentDesign/gostyle/props/unit"
+
 type (
 	Margin struct {
 		Keyword MarginKeyword
-		Unit    Unit
+		Unit    unit.Unit
 	}
 	MarginKeyword string
 )

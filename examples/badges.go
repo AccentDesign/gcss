@@ -2,6 +2,7 @@ package examples
 
 import (
 	"github.com/AccentDesign/gostyle/props"
+	"github.com/AccentDesign/gostyle/props/unit"
 	"github.com/AccentDesign/gostyle/style"
 )
 
@@ -49,7 +50,7 @@ var Badges = []style.Style{
 			Border: props.Border{
 				Color: props.Color{RGBA: border},
 				Style: props.BorderStyleSolid,
-				Width: props.Unit{1, props.UnitPx},
+				Width: unit.Px(1),
 			},
 		},
 	},

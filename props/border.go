@@ -1,10 +1,13 @@
 package props
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/AccentDesign/gostyle/props/unit"
+)
 
 type (
 	Border struct {
-		Width Unit
+		Width unit.Unit
 		Style BorderStyle
 		Color Color
 	}

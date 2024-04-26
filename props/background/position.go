@@ -1,7 +1,7 @@
 package background
 
 import (
-	"github.com/AccentDesign/gostyle/props"
+	"github.com/AccentDesign/gostyle/props/unit"
 	"strings"
 )
 
@@ -12,7 +12,7 @@ type (
 	PositionEdge     string
 	PositionEdgeItem struct {
 		Edge PositionEdge
-		Unit props.Unit
+		Unit unit.Unit
 	}
 )
 
@@ -32,7 +32,7 @@ func (b Position) String() string {
 	return b.Value
 }
 
-func PositionXY(x, y props.Unit) Position {
+func PositionXY(x, y unit.Unit) Position {
 	return Position{x.String() + " " + y.String()}
 }
 

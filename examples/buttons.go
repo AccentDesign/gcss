@@ -2,6 +2,7 @@ package examples
 
 import (
 	"github.com/AccentDesign/gostyle/props"
+	"github.com/AccentDesign/gostyle/props/unit"
 	"github.com/AccentDesign/gostyle/style"
 )
 
@@ -63,7 +64,7 @@ var Buttons = []style.Style{
 		Props: style.Props{
 			BackgroundColor: props.Color{Keyword: props.ColorTransparent},
 			Border: props.Border{
-				Width: props.Unit{1, props.UnitPx},
+				Width: unit.Px(1),
 				Style: props.BorderStyleSolid,
 				Color: props.Color{RGBA: border},
 			},

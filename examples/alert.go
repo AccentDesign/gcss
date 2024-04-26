@@ -2,6 +2,7 @@ package examples
 
 import (
 	"github.com/AccentDesign/gostyle/props"
+	"github.com/AccentDesign/gostyle/props/unit"
 	"github.com/AccentDesign/gostyle/style"
 )
 
@@ -11,7 +12,7 @@ var Alerts = []style.Style{
 		Props: style.Props{
 			BackgroundColor: props.Color{Keyword: props.ColorTransparent},
 			BorderStyle:     props.BorderStyleSolid,
-			BorderWidth:     props.Unit{1, props.UnitPx},
+			BorderWidth:     unit.Px(1),
 			BorderRadius:    radius,
 			Padding:         spacing4,
 		},

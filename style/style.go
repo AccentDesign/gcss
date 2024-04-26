@@ -2,11 +2,12 @@ package style
 
 import (
 	"fmt"
-	"github.com/AccentDesign/gostyle/props/background"
 	"io"
 	"reflect"
 
 	"github.com/AccentDesign/gostyle/props"
+	"github.com/AccentDesign/gostyle/props/background"
+	"github.com/AccentDesign/gostyle/props/unit"
 )
 
 type (
@@ -18,7 +19,7 @@ type (
 		BackgroundPosition background.Position    `css:"background-position"`
 		BackgroundRepeat   background.Repeat      `css:"background-repeat"`
 		BackgroundSize     background.Size        `css:"background-size"`
-		BorderRadius       props.Unit             `css:"border-radius"`
+		BorderRadius       unit.Unit              `css:"border-radius"`
 		Border             props.Border           `css:"border"`
 		BorderTop          props.Border           `css:"border-top"`
 		BorderRight        props.Border           `css:"border-right"`
@@ -26,28 +27,28 @@ type (
 		BorderLeft         props.Border           `css:"border-left"`
 		BorderColor        props.Color            `css:"border-color"`
 		BorderStyle        props.BorderStyle      `css:"border-style"`
-		BorderWidth        props.Unit             `css:"border-width"`
+		BorderWidth        unit.Unit              `css:"border-width"`
 		CaptionSide        props.CaptionSide      `css:"caption-side"`
 		Color              props.Color            `css:"color"`
 		Display            props.Display          `css:"display"`
 		FlexDirection      props.FlexDirection    `css:"flex-direction"`
-		FontSize           props.Unit             `css:"font-size"`
+		FontSize           unit.Unit              `css:"font-size"`
 		FontWeight         props.FontWeight       `css:"font-weight"`
-		Height             props.Unit             `css:"height"`
+		Height             unit.Unit              `css:"height"`
 		JustifyContent     props.JustifyContent   `css:"justify-content"`
-		LineHeight         props.Unit             `css:"line-height"`
+		LineHeight         unit.Unit              `css:"line-height"`
 		Margin             props.Margin           `css:"margin"`
 		MarginTop          props.Margin           `css:"margin-top"`
 		MarginRight        props.Margin           `css:"margin-right"`
 		MarginBottom       props.Margin           `css:"margin-bottom"`
 		MarginLeft         props.Margin           `css:"margin-left"`
-		MaxWidth           props.Unit             `css:"max-width"`
-		MinWidth           props.Unit             `css:"min-width"`
-		Padding            props.Unit             `css:"padding"`
-		PaddingTop         props.Unit             `css:"padding-top"`
-		PaddingRight       props.Unit             `css:"padding-right"`
-		PaddingBottom      props.Unit             `css:"padding-bottom"`
-		PaddingLeft        props.Unit             `css:"padding-left"`
+		MaxWidth           unit.Unit              `css:"max-width"`
+		MinWidth           unit.Unit              `css:"min-width"`
+		Padding            unit.Unit              `css:"padding"`
+		PaddingTop         unit.Unit              `css:"padding-top"`
+		PaddingRight       unit.Unit              `css:"padding-right"`
+		PaddingBottom      unit.Unit              `css:"padding-bottom"`
+		PaddingLeft        unit.Unit              `css:"padding-left"`
 		PrintColorAdjust   props.PrintColorAdjust `css:"print-color-adjust"`
 		TextAlign          props.TextAlign        `css:"text-align"`
 		Width              props.Width            `css:"width"`
