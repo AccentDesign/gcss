@@ -5,28 +5,25 @@ import (
 	"image/color"
 )
 
-type (
-	Color struct {
-		Keyword string
-		RGBA    RGBA
-	}
-	RGBA color.RGBA
-)
+type Color struct {
+	Keyword string
+	RGBA    color.RGBA
+}
 
 func (c Color) String() string {
 	if c.Keyword != "" {
 		return c.Keyword
 	}
-	return c.RGBA.String()
+	return fmt.Sprintf("rgba(%d,%d,%d,%.2f)", c.RGBA.R, c.RGBA.G, c.RGBA.B, float32(c.RGBA.A)/255.0)
 }
 
-func (c RGBA) String() string {
-	return fmt.Sprintf("rgba(%d,%d,%d,%.2f)", c.R, c.G, c.B, float32(c.A)/255.0)
-}
-
-func (c RGBA) Alpha(a uint8) RGBA {
-	c.A = a
+func (c Color) Alpha(a uint8) Color {
+	c.RGBA.A = a
 	return c
+}
+
+func RGBA(r, g, b, a uint8) Color {
+	return Color{RGBA: color.RGBA{r, g, b, a}}
 }
 
 func CurrentColor() Color {

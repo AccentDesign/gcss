@@ -27,40 +27,40 @@ var Buttons = []style.Style{
 	{
 		Selector: ".button-primary",
 		Props: style.Props{
-			BackgroundColor: colors.Color{RGBA: primary},
-			Color:           colors.Color{RGBA: primaryForeground},
+			BackgroundColor: primary,
+			Color:           primaryForeground,
 		},
 	},
 	{
 		Selector: ".button-primary:hover",
 		Props: style.Props{
-			BackgroundColor: colors.Color{RGBA: primary.Alpha(230)},
+			BackgroundColor: primary.Alpha(230),
 		},
 	},
 	{
 		Selector: ".button-secondary",
 		Props: style.Props{
-			BackgroundColor: colors.Color{RGBA: secondary},
-			Color:           colors.Color{RGBA: secondaryForeground},
+			BackgroundColor: secondary,
+			Color:           secondaryForeground,
 		},
 	},
 	{
 		Selector: ".button-secondary:hover",
 		Props: style.Props{
-			BackgroundColor: colors.Color{RGBA: secondary.Alpha(204)},
+			BackgroundColor: secondary.Alpha(204),
 		},
 	},
 	{
 		Selector: ".button-destructive",
 		Props: style.Props{
-			BackgroundColor: colors.Color{RGBA: destructive},
-			Color:           colors.Color{RGBA: destructiveForeground},
+			BackgroundColor: destructive,
+			Color:           destructiveForeground,
 		},
 	},
 	{
 		Selector: ".button-destructive:hover",
 		Props: style.Props{
-			BackgroundColor: colors.Color{RGBA: destructive.Alpha(230)},
+			BackgroundColor: destructive.Alpha(230),
 		},
 	},
 	{
@@ -70,14 +70,14 @@ var Buttons = []style.Style{
 			Border: border.Border{
 				Width: unit.Px(1),
 				Style: border.StyleSolid,
-				Color: colors.Color{RGBA: borderColor},
+				Color: borderColor,
 			},
 		},
 	},
 	{
 		Selector: ".button-outline:hover",
 		Props: style.Props{
-			BackgroundColor: colors.Color{RGBA: secondary.Alpha(230)},
+			BackgroundColor: secondary.Alpha(230),
 		},
 	},
 	{
@@ -89,7 +89,7 @@ var Buttons = []style.Style{
 	{
 		Selector: ".button-ghost:hover",
 		Props: style.Props{
-			BackgroundColor: colors.Color{RGBA: secondary.Alpha(230)},
+			BackgroundColor: secondary.Alpha(230),
 		},
 	},
 }

@@ -7,17 +7,17 @@ import (
 )
 
 var (
-	white                 = colors.RGBA{255, 255, 255, 255}
+	white                 = colors.RGBA(255, 255, 255, 255)
 	backGround            = white
-	primary               = colors.RGBA{17, 24, 39, 255}
+	primary               = colors.RGBA(17, 24, 39, 255)
 	primaryForeground     = white
-	secondary             = colors.RGBA{229, 231, 235, 255}
-	secondaryForeground   = colors.RGBA{17, 24, 39, 255}
-	destructive           = colors.RGBA{239, 68, 68, 255}
+	secondary             = colors.RGBA(229, 231, 235, 255)
+	secondaryForeground   = colors.RGBA(17, 24, 39, 255)
+	destructive           = colors.RGBA(239, 68, 68, 255)
 	destructiveForeground = white
-	borderColor           = colors.RGBA{229, 231, 235, 255}
-	muted                 = colors.RGBA{243, 244, 246, 255}
-	mutedForeground       = colors.RGBA{75, 85, 99, 255}
+	borderColor           = colors.RGBA(229, 231, 235, 255)
+	muted                 = colors.RGBA(243, 244, 246, 255)
+	mutedForeground       = colors.RGBA(75, 85, 99, 255)
 	fontXs                = unit.Rem(0.75)
 	fontSm                = unit.Rem(0.875)
 	leadingNone           = unit.Rem(1)

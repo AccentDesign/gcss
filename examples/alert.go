@@ -21,15 +21,15 @@ var Alerts = []style.Style{
 	{
 		Selector: ".alert-primary",
 		Props: style.Props{
-			BorderColor: colors.Color{RGBA: primary},
-			Color:       colors.Color{RGBA: primary},
+			BorderColor: primary,
+			Color:       primary,
 		},
 	},
 	{
 		Selector: ".alert-destructive",
 		Props: style.Props{
-			BorderColor: colors.Color{RGBA: destructive},
-			Color:       colors.Color{RGBA: destructive},
+			BorderColor: destructive,
+			Color:       destructive,
 		},
 	},
 }

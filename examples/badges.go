@@ -29,22 +29,22 @@ var Badges = []style.Style{
 	{
 		Selector: ".badge-primary",
 		Props: style.Props{
-			BackgroundColor: colors.Color{RGBA: primary},
-			Color:           colors.Color{RGBA: primaryForeground},
+			BackgroundColor: primary,
+			Color:           primaryForeground,
 		},
 	},
 	{
 		Selector: ".badge-secondary",
 		Props: style.Props{
-			BackgroundColor: colors.Color{RGBA: secondary},
-			Color:           colors.Color{RGBA: secondaryForeground},
+			BackgroundColor: secondary,
+			Color:           secondaryForeground,
 		},
 	},
 	{
 		Selector: ".badge-destructive",
 		Props: style.Props{
-			BackgroundColor: colors.Color{RGBA: destructive},
-			Color:           colors.Color{RGBA: destructiveForeground},
+			BackgroundColor: destructive,
+			Color:           destructiveForeground,
 		},
 	},
 	{
@@ -52,7 +52,7 @@ var Badges = []style.Style{
 		Props: style.Props{
 			BackgroundColor: colors.Transparent(),
 			Border: border.Border{
-				Color: colors.Color{RGBA: borderColor},
+				Color: borderColor,
 				Style: border.StyleSolid,
 				Width: unit.Px(1),
 			},

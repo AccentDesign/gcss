@@ -2,7 +2,6 @@ package examples
 
 import (
 	"github.com/AccentDesign/gostyle/props/border"
-	"github.com/AccentDesign/gostyle/props/colors"
 	"github.com/AccentDesign/gostyle/props/margin"
 	"github.com/AccentDesign/gostyle/props/table"
 	"github.com/AccentDesign/gostyle/props/text"
@@ -33,15 +32,15 @@ var Tables = []style.Style{
 			BorderBottom: border.Border{
 				Width: unit.Px(1),
 				Style: border.StyleSolid,
-				Color: colors.Color{RGBA: borderColor},
+				Color: borderColor,
 			},
 		},
 	},
 	{
 		Selector: ".table-tfoot-tr",
 		Props: style.Props{
-			Color:           colors.Color{RGBA: mutedForeground},
-			BackgroundColor: colors.Color{RGBA: muted},
+			Color:           mutedForeground,
+			BackgroundColor: muted,
 		},
 	},
 	{

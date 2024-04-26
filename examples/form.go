@@ -17,11 +17,11 @@ var Form = []style.Style{
 	{
 		Selector: ".input",
 		Props: style.Props{
-			BackgroundColor: colors.Color{RGBA: backGround},
+			BackgroundColor: backGround,
 			Border: border.Border{
 				Width: unit.Px(1),
 				Style: border.StyleSolid,
-				Color: colors.Color{RGBA: borderColor},
+				Color: borderColor,
 			},
 			BorderRadius:  radius,
 			Display:       display.Flex,
@@ -55,25 +55,25 @@ var Form = []style.Style{
 	{
 		Selector: ".input-help",
 		Props: style.Props{
-			Color:    colors.Color{RGBA: mutedForeground},
+			Color:    mutedForeground,
 			FontSize: fontSm,
 		},
 	},
 	{
 		Selector: ".input-error",
 		Props: style.Props{
-			Color:    colors.Color{RGBA: destructive},
+			Color:    destructive,
 			FontSize: fontSm,
 		},
 	},
 	{
 		Selector: ".select",
 		Props: style.Props{
-			BackgroundColor: colors.Color{RGBA: backGround},
+			BackgroundColor: backGround,
 			Border: border.Border{
 				Width: unit.Px(1),
 				Style: border.StyleSolid,
-				Color: colors.Color{RGBA: borderColor},
+				Color: borderColor,
 			},
 			BorderRadius:  radius,
 			Display:       display.Flex,
