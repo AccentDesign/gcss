@@ -39,7 +39,7 @@ var Form = []style.Style{
 		Selector: ".input::file-selector-button",
 		Props: style.Props{
 			BackgroundColor: colors.Transparent(),
-			BorderWidth:     unit.None(0),
+			BorderWidth:     unit.Raw(0),
 			FontSize:        fontSm,
 			FontWeight:      font.Weight500,
 		},

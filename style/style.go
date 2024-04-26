@@ -44,10 +44,15 @@ type (
 		Color              colors.Color          `css:"color"`
 		Display            display.Display       `css:"display"`
 		FlexDirection      flex.Direction        `css:"flex-direction"`
+		FlexGrow           unit.Unit             `css:"flex-grow"`
+		FlexWrap           flex.Wrap             `css:"flex-wrap"`
+		FlexShrink         unit.Unit             `css:"flex-shrink"`
 		FontSize           unit.Unit             `css:"font-size"`
 		FontWeight         font.Weight           `css:"font-weight"`
 		Height             unit.Unit             `css:"height"`
 		JustifyContent     justify.Content       `css:"justify-content"`
+		justifyItems       justify.Items         `css:"justify-items"`
+		justifySelf        justify.Self          `css:"justify-self"`
 		LineHeight         unit.Unit             `css:"line-height"`
 		Margin             margin.Margin         `css:"margin"`
 		MarginTop          margin.Margin         `css:"margin-top"`
