@@ -30,22 +30,22 @@ type (
 		BackgroundPosition background.Position   `css:"background-position"`
 		BackgroundRepeat   background.Repeat     `css:"background-repeat"`
 		BackgroundSize     background.Size       `css:"background-size"`
-		BorderRadius       unit.Unit             `css:"border-radius"`
+		BorderColor        colors.Color          `css:"border-color"`
 		Border             border.Border         `css:"border"`
-		BorderTop          border.Border         `css:"border-top"`
-		BorderRight        border.Border         `css:"border-right"`
 		BorderBottom       border.Border         `css:"border-bottom"`
 		BorderLeft         border.Border         `css:"border-left"`
-		BorderColor        colors.Color          `css:"border-color"`
+		BorderRadius       unit.Unit             `css:"border-radius"`
+		BorderRight        border.Border         `css:"border-right"`
 		BorderStyle        border.Style          `css:"border-style"`
+		BorderTop          border.Border         `css:"border-top"`
 		BorderWidth        unit.Unit             `css:"border-width"`
 		CaptionSide        table.CaptionSide     `css:"caption-side"`
 		Color              colors.Color          `css:"color"`
 		Display            display.Display       `css:"display"`
 		FlexDirection      flex.Direction        `css:"flex-direction"`
 		FlexGrow           unit.Unit             `css:"flex-grow"`
-		FlexWrap           flex.Wrap             `css:"flex-wrap"`
 		FlexShrink         unit.Unit             `css:"flex-shrink"`
+		FlexWrap           flex.Wrap             `css:"flex-wrap"`
 		FontSize           unit.Unit             `css:"font-size"`
 		FontStyle          font.Style            `css:"font-style"`
 		FontWeight         font.Weight           `css:"font-weight"`
@@ -55,17 +55,17 @@ type (
 		justifySelf        justify.Self          `css:"justify-self"`
 		LineHeight         unit.Unit             `css:"line-height"`
 		Margin             margin.Margin         `css:"margin"`
-		MarginTop          margin.Margin         `css:"margin-top"`
-		MarginRight        margin.Margin         `css:"margin-right"`
 		MarginBottom       margin.Margin         `css:"margin-bottom"`
 		MarginLeft         margin.Margin         `css:"margin-left"`
+		MarginRight        margin.Margin         `css:"margin-right"`
+		MarginTop          margin.Margin         `css:"margin-top"`
 		MaxWidth           unit.Unit             `css:"max-width"`
 		MinWidth           unit.Unit             `css:"min-width"`
 		Padding            unit.Unit             `css:"padding"`
-		PaddingTop         unit.Unit             `css:"padding-top"`
-		PaddingRight       unit.Unit             `css:"padding-right"`
 		PaddingBottom      unit.Unit             `css:"padding-bottom"`
 		PaddingLeft        unit.Unit             `css:"padding-left"`
+		PaddingRight       unit.Unit             `css:"padding-right"`
+		PaddingTop         unit.Unit             `css:"padding-top"`
 		PrintColorAdjust   print.ColorAdjust     `css:"print-color-adjust"`
 		TextAlign          text.Align            `css:"text-align"`
 		Width              unit.Unit             `css:"width"`

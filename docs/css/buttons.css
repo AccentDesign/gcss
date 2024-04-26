@@ -1,4 +1,4 @@
-.button{align-items:center;border-radius:0.375rem;display:inline-flex;font-size:0.875rem;font-weight:500;height:2.500rem;justify-content:center;line-height:1.250rem;padding-top:0.500rem;padding-right:1.000rem;padding-bottom:0.500rem;padding-left:1.000rem;}
+.button{align-items:center;border-radius:0.375rem;display:inline-flex;font-size:0.875rem;font-weight:500;height:2.500rem;justify-content:center;line-height:1.250rem;padding-bottom:0.500rem;padding-left:1.000rem;padding-right:1.000rem;padding-top:0.500rem;}
 .button-primary{background-color:rgba(17,24,39,1.00);color:rgba(255,255,255,1.00);}
 .button-primary:hover{background-color:rgba(17,24,39,0.90);}
 .button-secondary{background-color:rgba(229,231,235,1.00);color:rgba(17,24,39,1.00);}

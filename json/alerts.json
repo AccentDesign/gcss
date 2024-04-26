@@ -23,43 +23,16 @@
       "BackgroundSize": {
         "Value": ""
       },
-      "BorderRadius": {
-        "Size": 0.375,
-        "Type": 4
+      "BorderColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
       },
       "Border": {
-        "Width": {
-          "Size": null,
-          "Type": 0
-        },
-        "Style": "",
-        "Color": {
-          "Keyword": "",
-          "RGBA": {
-            "R": 0,
-            "G": 0,
-            "B": 0,
-            "A": 0
-          }
-        }
-      },
-      "BorderTop": {
-        "Width": {
-          "Size": null,
-          "Type": 0
-        },
-        "Style": "",
-        "Color": {
-          "Keyword": "",
-          "RGBA": {
-            "R": 0,
-            "G": 0,
-            "B": 0,
-            "A": 0
-          }
-        }
-      },
-      "BorderRight": {
         "Width": {
           "Size": null,
           "Type": 0
@@ -107,16 +80,43 @@
           }
         }
       },
-      "BorderColor": {
-        "Keyword": "",
-        "RGBA": {
-          "R": 0,
-          "G": 0,
-          "B": 0,
-          "A": 0
+      "BorderRadius": {
+        "Size": 0.375,
+        "Type": 4
+      },
+      "BorderRight": {
+        "Width": {
+          "Size": null,
+          "Type": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
         }
       },
       "BorderStyle": "solid",
+      "BorderTop": {
+        "Width": {
+          "Size": null,
+          "Type": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
       "BorderWidth": {
         "Size": 1,
         "Type": 2
@@ -137,11 +137,11 @@
         "Size": null,
         "Type": 0
       },
-      "FlexWrap": "",
       "FlexShrink": {
         "Size": null,
         "Type": 0
       },
+      "FlexWrap": "",
       "FontSize": {
         "Size": null,
         "Type": 0
@@ -164,7 +164,14 @@
           "Type": 0
         }
       },
-      "MarginTop": {
+      "MarginBottom": {
+        "Keyword": "",
+        "Unit": {
+          "Size": null,
+          "Type": 0
+        }
+      },
+      "MarginLeft": {
         "Keyword": "",
         "Unit": {
           "Size": null,
@@ -178,14 +185,7 @@
           "Type": 0
         }
       },
-      "MarginBottom": {
-        "Keyword": "",
-        "Unit": {
-          "Size": null,
-          "Type": 0
-        }
-      },
-      "MarginLeft": {
+      "MarginTop": {
         "Keyword": "",
         "Unit": {
           "Size": null,
@@ -204,7 +204,11 @@
         "Size": 1,
         "Type": 4
       },
-      "PaddingTop": {
+      "PaddingBottom": {
+        "Size": null,
+        "Type": 0
+      },
+      "PaddingLeft": {
         "Size": null,
         "Type": 0
       },
@@ -212,11 +216,7 @@
         "Size": null,
         "Type": 0
       },
-      "PaddingBottom": {
-        "Size": null,
-        "Type": 0
-      },
-      "PaddingLeft": {
+      "PaddingTop": {
         "Size": null,
         "Type": 0
       },
@@ -252,43 +252,16 @@
       "BackgroundSize": {
         "Value": ""
       },
-      "BorderRadius": {
-        "Size": null,
-        "Type": 0
+      "BorderColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 17,
+          "G": 24,
+          "B": 39,
+          "A": 255
+        }
       },
       "Border": {
-        "Width": {
-          "Size": null,
-          "Type": 0
-        },
-        "Style": "",
-        "Color": {
-          "Keyword": "",
-          "RGBA": {
-            "R": 0,
-            "G": 0,
-            "B": 0,
-            "A": 0
-          }
-        }
-      },
-      "BorderTop": {
-        "Width": {
-          "Size": null,
-          "Type": 0
-        },
-        "Style": "",
-        "Color": {
-          "Keyword": "",
-          "RGBA": {
-            "R": 0,
-            "G": 0,
-            "B": 0,
-            "A": 0
-          }
-        }
-      },
-      "BorderRight": {
         "Width": {
           "Size": null,
           "Type": 0
@@ -336,16 +309,43 @@
           }
         }
       },
-      "BorderColor": {
-        "Keyword": "",
-        "RGBA": {
-          "R": 17,
-          "G": 24,
-          "B": 39,
-          "A": 255
+      "BorderRadius": {
+        "Size": null,
+        "Type": 0
+      },
+      "BorderRight": {
+        "Width": {
+          "Size": null,
+          "Type": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
         }
       },
       "BorderStyle": "",
+      "BorderTop": {
+        "Width": {
+          "Size": null,
+          "Type": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
       "BorderWidth": {
         "Size": null,
         "Type": 0
@@ -366,11 +366,11 @@
         "Size": null,
         "Type": 0
       },
-      "FlexWrap": "",
       "FlexShrink": {
         "Size": null,
         "Type": 0
       },
+      "FlexWrap": "",
       "FontSize": {
         "Size": null,
         "Type": 0
@@ -393,7 +393,14 @@
           "Type": 0
         }
       },
-      "MarginTop": {
+      "MarginBottom": {
+        "Keyword": "",
+        "Unit": {
+          "Size": null,
+          "Type": 0
+        }
+      },
+      "MarginLeft": {
         "Keyword": "",
         "Unit": {
           "Size": null,
@@ -407,14 +414,7 @@
           "Type": 0
         }
       },
-      "MarginBottom": {
-        "Keyword": "",
-        "Unit": {
-          "Size": null,
-          "Type": 0
-        }
-      },
-      "MarginLeft": {
+      "MarginTop": {
         "Keyword": "",
         "Unit": {
           "Size": null,
@@ -433,7 +433,11 @@
         "Size": null,
         "Type": 0
       },
-      "PaddingTop": {
+      "PaddingBottom": {
+        "Size": null,
+        "Type": 0
+      },
+      "PaddingLeft": {
         "Size": null,
         "Type": 0
       },
@@ -441,11 +445,7 @@
         "Size": null,
         "Type": 0
       },
-      "PaddingBottom": {
-        "Size": null,
-        "Type": 0
-      },
-      "PaddingLeft": {
+      "PaddingTop": {
         "Size": null,
         "Type": 0
       },
@@ -481,43 +481,16 @@
       "BackgroundSize": {
         "Value": ""
       },
-      "BorderRadius": {
-        "Size": null,
-        "Type": 0
+      "BorderColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 239,
+          "G": 68,
+          "B": 68,
+          "A": 255
+        }
       },
       "Border": {
-        "Width": {
-          "Size": null,
-          "Type": 0
-        },
-        "Style": "",
-        "Color": {
-          "Keyword": "",
-          "RGBA": {
-            "R": 0,
-            "G": 0,
-            "B": 0,
-            "A": 0
-          }
-        }
-      },
-      "BorderTop": {
-        "Width": {
-          "Size": null,
-          "Type": 0
-        },
-        "Style": "",
-        "Color": {
-          "Keyword": "",
-          "RGBA": {
-            "R": 0,
-            "G": 0,
-            "B": 0,
-            "A": 0
-          }
-        }
-      },
-      "BorderRight": {
         "Width": {
           "Size": null,
           "Type": 0
@@ -565,16 +538,43 @@
           }
         }
       },
-      "BorderColor": {
-        "Keyword": "",
-        "RGBA": {
-          "R": 239,
-          "G": 68,
-          "B": 68,
-          "A": 255
+      "BorderRadius": {
+        "Size": null,
+        "Type": 0
+      },
+      "BorderRight": {
+        "Width": {
+          "Size": null,
+          "Type": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
         }
       },
       "BorderStyle": "",
+      "BorderTop": {
+        "Width": {
+          "Size": null,
+          "Type": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
       "BorderWidth": {
         "Size": null,
         "Type": 0
@@ -595,11 +595,11 @@
         "Size": null,
         "Type": 0
       },
-      "FlexWrap": "",
       "FlexShrink": {
         "Size": null,
         "Type": 0
       },
+      "FlexWrap": "",
       "FontSize": {
         "Size": null,
         "Type": 0
@@ -622,7 +622,14 @@
           "Type": 0
         }
       },
-      "MarginTop": {
+      "MarginBottom": {
+        "Keyword": "",
+        "Unit": {
+          "Size": null,
+          "Type": 0
+        }
+      },
+      "MarginLeft": {
         "Keyword": "",
         "Unit": {
           "Size": null,
@@ -636,14 +643,7 @@
           "Type": 0
         }
       },
-      "MarginBottom": {
-        "Keyword": "",
-        "Unit": {
-          "Size": null,
-          "Type": 0
-        }
-      },
-      "MarginLeft": {
+      "MarginTop": {
         "Keyword": "",
         "Unit": {
           "Size": null,
@@ -662,7 +662,11 @@
         "Size": null,
         "Type": 0
       },
-      "PaddingTop": {
+      "PaddingBottom": {
+        "Size": null,
+        "Type": 0
+      },
+      "PaddingLeft": {
         "Size": null,
         "Type": 0
       },
@@ -670,11 +674,7 @@
         "Size": null,
         "Type": 0
       },
-      "PaddingBottom": {
-        "Size": null,
-        "Type": 0
-      },
-      "PaddingLeft": {
+      "PaddingTop": {
         "Size": null,
         "Type": 0
       },
