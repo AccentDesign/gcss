@@ -6,7 +6,6 @@ import (
 	"github.com/AccentDesign/gostyle/props/table"
 	"github.com/AccentDesign/gostyle/props/text"
 	"github.com/AccentDesign/gostyle/props/unit"
-	"github.com/AccentDesign/gostyle/props/width"
 	"github.com/AccentDesign/gostyle/style"
 )
 
@@ -17,13 +16,13 @@ var Tables = []style.Style{
 			CaptionSide: table.CaptionSideBottom,
 			FontSize:    fontSm,
 			LineHeight:  leadingTight,
-			Width:       width.Width{Unit: unit.Percent(100)},
+			Width:       unit.Percent(100),
 		},
 	},
 	{
 		Selector: ".table-caption",
 		Props: style.Props{
-			MarginTop: margin.Margin{Unit: spacing4},
+			MarginTop: margin.Margin{Unit: size4},
 		},
 	},
 	{
@@ -46,10 +45,10 @@ var Tables = []style.Style{
 	{
 		Selector: ".table-td,.table-th",
 		Props: style.Props{
-			PaddingTop:    spacing2,
-			PaddingRight:  spacing3,
-			PaddingBottom: spacing2,
-			PaddingLeft:   spacing3,
+			PaddingTop:    size2,
+			PaddingRight:  size3,
+			PaddingBottom: size2,
+			PaddingLeft:   size3,
 			TextAlign:     text.AlignLeft,
 		},
 	},

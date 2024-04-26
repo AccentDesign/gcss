@@ -5,6 +5,7 @@ import (
 	"github.com/AccentDesign/gostyle/props/border"
 	"github.com/AccentDesign/gostyle/props/colors"
 	"github.com/AccentDesign/gostyle/props/display"
+	"github.com/AccentDesign/gostyle/props/font"
 	"github.com/AccentDesign/gostyle/props/justify"
 	"github.com/AccentDesign/gostyle/props/unit"
 	"github.com/AccentDesign/gostyle/style"
@@ -16,12 +17,16 @@ var Buttons = []style.Style{
 		Props: style.Props{
 			AlignItems:     align.ItemsCenter,
 			BorderRadius:   radius,
-			Display:        display.Flex,
+			Display:        display.InlineFlex,
+			FontSize:       fontSm,
+			FontWeight:     font.WeightMedium,
+			Height:         size10,
 			JustifyContent: justify.ContentCenter,
-			PaddingTop:     spacing2,
-			PaddingRight:   spacing4,
-			PaddingBottom:  spacing2,
-			PaddingLeft:    spacing4,
+			LineHeight:     leadingTight,
+			PaddingTop:     size2,
+			PaddingRight:   size4,
+			PaddingBottom:  size2,
+			PaddingLeft:    size4,
 		},
 	},
 	{
@@ -88,6 +93,25 @@ var Buttons = []style.Style{
 	},
 	{
 		Selector: ".button-ghost:hover",
+		Props: style.Props{
+			BackgroundColor: secondary.Alpha(230),
+		},
+	},
+	{
+		Selector: ".button-icon",
+		Props: style.Props{
+			BackgroundColor: colors.Transparent(),
+			Border: border.Border{
+				Width: unit.Px(1),
+				Style: border.StyleSolid,
+				Color: borderColor,
+			},
+			Padding: unit.Initial(), // if sizes are added this can be removed as the base padding will be set by the sizes
+			Width:   size10,
+		},
+	},
+	{
+		Selector: ".button-icon:hover",
 		Props: style.Props{
 			BackgroundColor: secondary.Alpha(230),
 		},

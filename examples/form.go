@@ -9,7 +9,6 @@ import (
 	"github.com/AccentDesign/gostyle/props/font"
 	"github.com/AccentDesign/gostyle/props/print"
 	"github.com/AccentDesign/gostyle/props/unit"
-	"github.com/AccentDesign/gostyle/props/width"
 	"github.com/AccentDesign/gostyle/style"
 )
 
@@ -26,13 +25,13 @@ var Form = []style.Style{
 			BorderRadius:  radius,
 			Display:       display.Flex,
 			FontSize:      fontSm,
-			Height:        unit.Px(40),
+			Height:        size10,
 			LineHeight:    leadingTight,
-			PaddingTop:    spacing2,
-			PaddingRight:  spacing3,
-			PaddingBottom: spacing2,
-			PaddingLeft:   spacing3,
-			Width:         width.Width{Unit: unit.Percent(100)},
+			PaddingTop:    size2,
+			PaddingRight:  size3,
+			PaddingBottom: size2,
+			PaddingLeft:   size3,
+			Width:         unit.Percent(100),
 		},
 	},
 	{
@@ -78,28 +77,28 @@ var Form = []style.Style{
 			BorderRadius:  radius,
 			Display:       display.Flex,
 			FontSize:      fontSm,
-			Height:        unit.Px(40),
+			Height:        size10,
 			LineHeight:    leadingTight,
-			PaddingTop:    spacing2,
-			PaddingRight:  spacing3,
-			PaddingBottom: spacing2,
-			PaddingLeft:   spacing3,
-			Width:         width.Width{Unit: unit.Percent(100)},
+			PaddingTop:    size2,
+			PaddingRight:  size3,
+			PaddingBottom: size2,
+			PaddingLeft:   size3,
+			Width:         unit.Percent(100),
 		},
 	},
 	{
 		Selector: ".select:not([size])",
 		Props: style.Props{
 			Appearance:       appearance.None,
-			PaddingRight:     spacing10,
+			PaddingRight:     size10,
 			PrintColorAdjust: print.ColorAdjustExact,
-			BackgroundImage:  background.ImageLayers(imageCaretUrl),
+			BackgroundImage:  background.ImageLayers(iconChevronDown),
 			BackgroundPosition: background.PositionEdgeOffset(
-				background.PositionEdgeItem{Edge: background.PositionEdgeRight, Unit: spacing3},
+				background.PositionEdgeItem{Edge: background.PositionEdgeRight, Unit: size3},
 				background.PositionEdgeItem{Edge: background.PositionEdgeCenter},
 			),
 			BackgroundRepeat: background.RepeatNoRepeat,
-			BackgroundSize:   background.SizeDimension(unit.Em(0.75), unit.Em(0.75)),
+			BackgroundSize:   background.SizeDimension(unit.Em(1), unit.Em(1)),
 		},
 	},
 }

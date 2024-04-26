@@ -19,7 +19,6 @@ import (
 	"github.com/AccentDesign/gostyle/props/table"
 	"github.com/AccentDesign/gostyle/props/text"
 	"github.com/AccentDesign/gostyle/props/unit"
-	"github.com/AccentDesign/gostyle/props/width"
 )
 
 type (
@@ -69,7 +68,7 @@ type (
 		PaddingLeft        unit.Unit             `css:"padding-left"`
 		PrintColorAdjust   print.ColorAdjust     `css:"print-color-adjust"`
 		TextAlign          text.Align            `css:"text-align"`
-		Width              width.Width           `css:"width"`
+		Width              unit.Unit             `css:"width"`
 	}
 	Style struct {
 		Selector string

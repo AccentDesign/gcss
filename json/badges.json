@@ -223,11 +223,8 @@
       "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
-        "Keyword": "",
-        "Unit": {
-          "Size": null,
-          "Type": 0
-        }
+        "Size": null,
+        "Type": 0
       }
     }
   },
@@ -455,11 +452,8 @@
       "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
-        "Keyword": "",
-        "Unit": {
-          "Size": null,
-          "Type": 0
-        }
+        "Size": null,
+        "Type": 0
       }
     }
   },
@@ -687,11 +681,8 @@
       "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
-        "Keyword": "",
-        "Unit": {
-          "Size": null,
-          "Type": 0
-        }
+        "Size": null,
+        "Type": 0
       }
     }
   },
@@ -919,11 +910,8 @@
       "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
-        "Keyword": "",
-        "Unit": {
-          "Size": null,
-          "Type": 0
-        }
+        "Size": null,
+        "Type": 0
       }
     }
   },
@@ -1151,11 +1139,8 @@
       "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
-        "Keyword": "",
-        "Unit": {
-          "Size": null,
-          "Type": 0
-        }
+        "Size": null,
+        "Type": 0
       }
     }
   }

@@ -15,7 +15,7 @@ var Alerts = []style.Style{
 			BorderStyle:     border.StyleSolid,
 			BorderWidth:     unit.Px(1),
 			BorderRadius:    radius,
-			Padding:         spacing4,
+			Padding:         size4,
 		},
 	},
 	{

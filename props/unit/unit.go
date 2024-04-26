@@ -18,6 +18,8 @@ const (
 	TypeRem
 	TypeEm
 	TypeAuto
+	TypeInherit
+	TypeInitial
 )
 
 func (u Unit) String() string {
@@ -54,6 +56,10 @@ func (u Unit) String() string {
 		}
 	case TypeAuto:
 		return "auto"
+	case TypeInherit:
+		return "inherit"
+	case TypeInitial:
+		return "initial"
 	}
 	return ""
 }
@@ -80,4 +86,12 @@ func Em(size float64) Unit {
 
 func Auto() Unit {
 	return Unit{Type: TypeAuto}
+}
+
+func Inherit() Unit {
+	return Unit{Type: TypeInherit}
+}
+
+func Initial() Unit {
+	return Unit{Type: TypeInitial}
 }

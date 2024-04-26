@@ -131,7 +131,7 @@
           "A": 0
         }
       },
-      "Display": "flex",
+      "Display": "inline-flex",
       "FlexDirection": "",
       "FlexGrow": {
         "Size": null,
@@ -143,19 +143,19 @@
         "Type": 0
       },
       "FontSize": {
-        "Size": null,
-        "Type": 0
+        "Size": 0.875,
+        "Type": 4
       },
       "FontStyle": "",
-      "FontWeight": "",
+      "FontWeight": "500",
       "Height": {
-        "Size": null,
-        "Type": 0
+        "Size": 2.5,
+        "Type": 4
       },
       "JustifyContent": "center",
       "LineHeight": {
-        "Size": null,
-        "Type": 0
+        "Size": 1.25,
+        "Type": 4
       },
       "Margin": {
         "Keyword": "",
@@ -223,11 +223,8 @@
       "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
-        "Keyword": "",
-        "Unit": {
-          "Size": null,
-          "Type": 0
-        }
+        "Size": null,
+        "Type": 0
       }
     }
   },
@@ -455,11 +452,8 @@
       "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
-        "Keyword": "",
-        "Unit": {
-          "Size": null,
-          "Type": 0
-        }
+        "Size": null,
+        "Type": 0
       }
     }
   },
@@ -687,11 +681,8 @@
       "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
-        "Keyword": "",
-        "Unit": {
-          "Size": null,
-          "Type": 0
-        }
+        "Size": null,
+        "Type": 0
       }
     }
   },
@@ -919,11 +910,8 @@
       "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
-        "Keyword": "",
-        "Unit": {
-          "Size": null,
-          "Type": 0
-        }
+        "Size": null,
+        "Type": 0
       }
     }
   },
@@ -1151,11 +1139,8 @@
       "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
-        "Keyword": "",
-        "Unit": {
-          "Size": null,
-          "Type": 0
-        }
+        "Size": null,
+        "Type": 0
       }
     }
   },
@@ -1383,11 +1368,8 @@
       "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
-        "Keyword": "",
-        "Unit": {
-          "Size": null,
-          "Type": 0
-        }
+        "Size": null,
+        "Type": 0
       }
     }
   },
@@ -1615,11 +1597,8 @@
       "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
-        "Keyword": "",
-        "Unit": {
-          "Size": null,
-          "Type": 0
-        }
+        "Size": null,
+        "Type": 0
       }
     }
   },
@@ -1847,11 +1826,8 @@
       "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
-        "Keyword": "",
-        "Unit": {
-          "Size": null,
-          "Type": 0
-        }
+        "Size": null,
+        "Type": 0
       }
     }
   },
@@ -2079,11 +2055,8 @@
       "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
-        "Keyword": "",
-        "Unit": {
-          "Size": null,
-          "Type": 0
-        }
+        "Size": null,
+        "Type": 0
       }
     }
   },
@@ -2311,11 +2284,8 @@
       "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
-        "Keyword": "",
-        "Unit": {
-          "Size": null,
-          "Type": 0
-        }
+        "Size": null,
+        "Type": 0
       }
     }
   },
@@ -2543,11 +2513,466 @@
       "PrintColorAdjust": "",
       "TextAlign": "",
       "Width": {
+        "Size": null,
+        "Type": 0
+      }
+    }
+  },
+  {
+    "Selector": ".button-icon",
+    "Props": {
+      "AlignItems": "",
+      "Appearance": "",
+      "BackgroundColor": {
+        "Keyword": "transparent",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "BackgroundImage": {
+        "Value": ""
+      },
+      "BackgroundPosition": {
+        "Value": ""
+      },
+      "BackgroundRepeat": "",
+      "BackgroundSize": {
+        "Value": ""
+      },
+      "BorderRadius": {
+        "Size": null,
+        "Type": 0
+      },
+      "Border": {
+        "Width": {
+          "Size": 1,
+          "Type": 2
+        },
+        "Style": "solid",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 229,
+            "G": 231,
+            "B": 235,
+            "A": 255
+          }
+        }
+      },
+      "BorderTop": {
+        "Width": {
+          "Size": null,
+          "Type": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderRight": {
+        "Width": {
+          "Size": null,
+          "Type": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderBottom": {
+        "Width": {
+          "Size": null,
+          "Type": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderLeft": {
+        "Width": {
+          "Size": null,
+          "Type": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "BorderStyle": "",
+      "BorderWidth": {
+        "Size": null,
+        "Type": 0
+      },
+      "CaptionSide": "",
+      "Color": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "Display": "",
+      "FlexDirection": "",
+      "FlexGrow": {
+        "Size": null,
+        "Type": 0
+      },
+      "FlexWrap": "",
+      "FlexShrink": {
+        "Size": null,
+        "Type": 0
+      },
+      "FontSize": {
+        "Size": null,
+        "Type": 0
+      },
+      "FontStyle": "",
+      "FontWeight": "",
+      "Height": {
+        "Size": null,
+        "Type": 0
+      },
+      "JustifyContent": "",
+      "LineHeight": {
+        "Size": null,
+        "Type": 0
+      },
+      "Margin": {
         "Keyword": "",
         "Unit": {
           "Size": null,
           "Type": 0
         }
+      },
+      "MarginTop": {
+        "Keyword": "",
+        "Unit": {
+          "Size": null,
+          "Type": 0
+        }
+      },
+      "MarginRight": {
+        "Keyword": "",
+        "Unit": {
+          "Size": null,
+          "Type": 0
+        }
+      },
+      "MarginBottom": {
+        "Keyword": "",
+        "Unit": {
+          "Size": null,
+          "Type": 0
+        }
+      },
+      "MarginLeft": {
+        "Keyword": "",
+        "Unit": {
+          "Size": null,
+          "Type": 0
+        }
+      },
+      "MaxWidth": {
+        "Size": null,
+        "Type": 0
+      },
+      "MinWidth": {
+        "Size": null,
+        "Type": 0
+      },
+      "Padding": {
+        "Size": null,
+        "Type": 8
+      },
+      "PaddingTop": {
+        "Size": null,
+        "Type": 0
+      },
+      "PaddingRight": {
+        "Size": null,
+        "Type": 0
+      },
+      "PaddingBottom": {
+        "Size": null,
+        "Type": 0
+      },
+      "PaddingLeft": {
+        "Size": null,
+        "Type": 0
+      },
+      "PrintColorAdjust": "",
+      "TextAlign": "",
+      "Width": {
+        "Size": 2.5,
+        "Type": 4
+      }
+    }
+  },
+  {
+    "Selector": ".button-icon:hover",
+    "Props": {
+      "AlignItems": "",
+      "Appearance": "",
+      "BackgroundColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 229,
+          "G": 231,
+          "B": 235,
+          "A": 230
+        }
+      },
+      "BackgroundImage": {
+        "Value": ""
+      },
+      "BackgroundPosition": {
+        "Value": ""
+      },
+      "BackgroundRepeat": "",
+      "BackgroundSize": {
+        "Value": ""
+      },
+      "BorderRadius": {
+        "Size": null,
+        "Type": 0
+      },
+      "Border": {
+        "Width": {
+          "Size": null,
+          "Type": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderTop": {
+        "Width": {
+          "Size": null,
+          "Type": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderRight": {
+        "Width": {
+          "Size": null,
+          "Type": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderBottom": {
+        "Width": {
+          "Size": null,
+          "Type": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderLeft": {
+        "Width": {
+          "Size": null,
+          "Type": 0
+        },
+        "Style": "",
+        "Color": {
+          "Keyword": "",
+          "RGBA": {
+            "R": 0,
+            "G": 0,
+            "B": 0,
+            "A": 0
+          }
+        }
+      },
+      "BorderColor": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "BorderStyle": "",
+      "BorderWidth": {
+        "Size": null,
+        "Type": 0
+      },
+      "CaptionSide": "",
+      "Color": {
+        "Keyword": "",
+        "RGBA": {
+          "R": 0,
+          "G": 0,
+          "B": 0,
+          "A": 0
+        }
+      },
+      "Display": "",
+      "FlexDirection": "",
+      "FlexGrow": {
+        "Size": null,
+        "Type": 0
+      },
+      "FlexWrap": "",
+      "FlexShrink": {
+        "Size": null,
+        "Type": 0
+      },
+      "FontSize": {
+        "Size": null,
+        "Type": 0
+      },
+      "FontStyle": "",
+      "FontWeight": "",
+      "Height": {
+        "Size": null,
+        "Type": 0
+      },
+      "JustifyContent": "",
+      "LineHeight": {
+        "Size": null,
+        "Type": 0
+      },
+      "Margin": {
+        "Keyword": "",
+        "Unit": {
+          "Size": null,
+          "Type": 0
+        }
+      },
+      "MarginTop": {
+        "Keyword": "",
+        "Unit": {
+          "Size": null,
+          "Type": 0
+        }
+      },
+      "MarginRight": {
+        "Keyword": "",
+        "Unit": {
+          "Size": null,
+          "Type": 0
+        }
+      },
+      "MarginBottom": {
+        "Keyword": "",
+        "Unit": {
+          "Size": null,
+          "Type": 0
+        }
+      },
+      "MarginLeft": {
+        "Keyword": "",
+        "Unit": {
+          "Size": null,
+          "Type": 0
+        }
+      },
+      "MaxWidth": {
+        "Size": null,
+        "Type": 0
+      },
+      "MinWidth": {
+        "Size": null,
+        "Type": 0
+      },
+      "Padding": {
+        "Size": null,
+        "Type": 0
+      },
+      "PaddingTop": {
+        "Size": null,
+        "Type": 0
+      },
+      "PaddingRight": {
+        "Size": null,
+        "Type": 0
+      },
+      "PaddingBottom": {
+        "Size": null,
+        "Type": 0
+      },
+      "PaddingLeft": {
+        "Size": null,
+        "Type": 0
+      },
+      "PrintColorAdjust": "",
+      "TextAlign": "",
+      "Width": {
+        "Size": null,
+        "Type": 0
       }
     }
   }
