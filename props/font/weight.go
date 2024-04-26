@@ -3,15 +3,15 @@ package font
 type Weight string
 
 const (
-	Weight100 Weight = "100"
-	Weight200 Weight = "200"
-	Weight300 Weight = "300"
-	Weight400 Weight = "400"
-	Weight500 Weight = "500"
-	Weight600 Weight = "600"
-	Weight700 Weight = "700"
-	Weight800 Weight = "800"
-	Weight900 Weight = "900"
+	WeightThin       Weight = "100"
+	WeightExtraLight Weight = "200"
+	WeightLight      Weight = "300"
+	WeightNormal     Weight = "400"
+	WeightMedium     Weight = "500"
+	WeightSemiBold   Weight = "600"
+	WeightBold       Weight = "700"
+	WeightExtraBold  Weight = "800"
+	WeightBlack      Weight = "900"
 )
 
 func (a Weight) String() string {

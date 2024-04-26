@@ -18,7 +18,7 @@ var Badges = []style.Style{
 			Display:       display.InlineFlex,
 			BorderRadius:  radiusFull,
 			FontSize:      fontXs,
-			FontWeight:    font.Weight600,
+			FontWeight:    font.WeightSemiBold,
 			LineHeight:    leadingNone,
 			PaddingTop:    spacing1,
 			PaddingRight:  spacing3,

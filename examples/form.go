@@ -41,14 +41,14 @@ var Form = []style.Style{
 			BackgroundColor: colors.Transparent(),
 			BorderWidth:     unit.Raw(0),
 			FontSize:        fontSm,
-			FontWeight:      font.Weight500,
+			FontWeight:      font.WeightMedium,
 		},
 	},
 	{
 		Selector: ".input-label",
 		Props: style.Props{
 			FontSize:   fontSm,
-			FontWeight: font.Weight500,
+			FontWeight: font.WeightMedium,
 			LineHeight: leadingTight,
 		},
 	},
