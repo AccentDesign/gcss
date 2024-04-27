@@ -23,7 +23,7 @@ const (
 	InlineGrid       Display = "inline-grid"
 	Contents         Display = "contents"
 	ListItem         Display = "list-item"
-	Hidden           Display = "none"
+	None             Display = "none"
 )
 
 func (d Display) String() string {

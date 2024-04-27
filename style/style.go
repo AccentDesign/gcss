@@ -41,6 +41,7 @@ type (
 		CaptionSide        table.CaptionSide     `css:"caption-side"`
 		Color              colors.Color          `css:"color"`
 		Display            display.Display       `css:"display"`
+		FlexBasis          unit.Unit             `css:"flex-basis"`
 		FlexDirection      flex.Direction        `css:"flex-direction"`
 		FlexGrow           unit.Unit             `css:"flex-grow"`
 		FlexShrink         unit.Unit             `css:"flex-shrink"`
