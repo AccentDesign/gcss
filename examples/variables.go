@@ -1,9 +1,9 @@
 package examples
 
 import (
-	"github.com/AccentDesign/gostyle/props/background"
-	"github.com/AccentDesign/gostyle/props/colors"
-	"github.com/AccentDesign/gostyle/props/unit"
+	"github.com/AccentDesign/gcss/props/background"
+	"github.com/AccentDesign/gcss/props/colors"
+	"github.com/AccentDesign/gcss/props/unit"
 )
 
 var (

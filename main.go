@@ -6,8 +6,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/AccentDesign/gostyle/examples"
-	"github.com/AccentDesign/gostyle/style"
+	"github.com/AccentDesign/gcss/examples"
+	"github.com/AccentDesign/gcss/style"
 )
 
 func main() {

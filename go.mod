@@ -1,3 +1,3 @@
-module github.com/AccentDesign/gostyle
+module github.com/AccentDesign/gcss
 
 go 1.22

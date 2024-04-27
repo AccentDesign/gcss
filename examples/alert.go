@@ -1,10 +1,10 @@
 package examples
 
 import (
-	"github.com/AccentDesign/gostyle/props/border"
-	"github.com/AccentDesign/gostyle/props/colors"
-	"github.com/AccentDesign/gostyle/props/unit"
-	"github.com/AccentDesign/gostyle/style"
+	"github.com/AccentDesign/gcss/props/border"
+	"github.com/AccentDesign/gcss/props/colors"
+	"github.com/AccentDesign/gcss/props/unit"
+	"github.com/AccentDesign/gcss/style"
 )
 
 var Alerts = []style.Style{

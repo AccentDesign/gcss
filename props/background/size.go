@@ -1,7 +1,7 @@
 package background
 
 import (
-	"github.com/AccentDesign/gostyle/props/unit"
+	"github.com/AccentDesign/gcss/props/unit"
 )
 
 type Size struct {

@@ -1,14 +1,14 @@
 package examples
 
 import (
-	"github.com/AccentDesign/gostyle/props/align"
-	"github.com/AccentDesign/gostyle/props/border"
-	"github.com/AccentDesign/gostyle/props/colors"
-	"github.com/AccentDesign/gostyle/props/display"
-	"github.com/AccentDesign/gostyle/props/font"
-	"github.com/AccentDesign/gostyle/props/justify"
-	"github.com/AccentDesign/gostyle/props/unit"
-	"github.com/AccentDesign/gostyle/style"
+	"github.com/AccentDesign/gcss/props/align"
+	"github.com/AccentDesign/gcss/props/border"
+	"github.com/AccentDesign/gcss/props/colors"
+	"github.com/AccentDesign/gcss/props/display"
+	"github.com/AccentDesign/gcss/props/font"
+	"github.com/AccentDesign/gcss/props/justify"
+	"github.com/AccentDesign/gcss/props/unit"
+	"github.com/AccentDesign/gcss/style"
 )
 
 var Buttons = []style.Style{

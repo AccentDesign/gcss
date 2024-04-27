@@ -1,11 +1,11 @@
 package examples
 
 import (
-	"github.com/AccentDesign/gostyle/props/border"
-	"github.com/AccentDesign/gostyle/props/table"
-	"github.com/AccentDesign/gostyle/props/text"
-	"github.com/AccentDesign/gostyle/props/unit"
-	"github.com/AccentDesign/gostyle/style"
+	"github.com/AccentDesign/gcss/props/border"
+	"github.com/AccentDesign/gcss/props/table"
+	"github.com/AccentDesign/gcss/props/text"
+	"github.com/AccentDesign/gcss/props/unit"
+	"github.com/AccentDesign/gcss/style"
 )
 
 var Tables = []style.Style{
