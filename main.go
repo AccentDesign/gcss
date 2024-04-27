@@ -3,11 +3,10 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"os"
-	"time"
-
 	"github.com/AccentDesign/gcss/examples"
 	"github.com/AccentDesign/gcss/style"
+	"os"
+	"time"
 )
 
 func main() {

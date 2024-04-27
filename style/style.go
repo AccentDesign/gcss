@@ -2,10 +2,6 @@ package style
 
 import (
 	"fmt"
-	"github.com/AccentDesign/gcss/props/overflow"
-	"io"
-	"reflect"
-
 	"github.com/AccentDesign/gcss/props/align"
 	"github.com/AccentDesign/gcss/props/appearance"
 	"github.com/AccentDesign/gcss/props/background"
@@ -15,10 +11,13 @@ import (
 	"github.com/AccentDesign/gcss/props/flex"
 	"github.com/AccentDesign/gcss/props/font"
 	"github.com/AccentDesign/gcss/props/justify"
+	"github.com/AccentDesign/gcss/props/overflow"
 	"github.com/AccentDesign/gcss/props/print"
 	"github.com/AccentDesign/gcss/props/table"
 	"github.com/AccentDesign/gcss/props/text"
 	"github.com/AccentDesign/gcss/props/unit"
+	"io"
+	"reflect"
 )
 
 type (
