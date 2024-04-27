@@ -185,6 +185,9 @@
         "Size": null,
         "Type": 0
       },
+      "Overflow": "",
+      "OverflowX": "",
+      "OverflowY": "",
       "Padding": {
         "Size": 1,
         "Type": 4
@@ -399,6 +402,9 @@
         "Size": null,
         "Type": 0
       },
+      "Overflow": "",
+      "OverflowX": "",
+      "OverflowY": "",
       "Padding": {
         "Size": null,
         "Type": 0
@@ -613,6 +619,9 @@
         "Size": null,
         "Type": 0
       },
+      "Overflow": "",
+      "OverflowX": "",
+      "OverflowY": "",
       "Padding": {
         "Size": null,
         "Type": 0

@@ -2,6 +2,7 @@ package style
 
 import (
 	"fmt"
+	"github.com/AccentDesign/gcss/props/overflow"
 	"io"
 	"reflect"
 
@@ -60,6 +61,9 @@ type (
 		MarginTop          unit.Unit             `css:"margin-top"`
 		MaxWidth           unit.Unit             `css:"max-width"`
 		MinWidth           unit.Unit             `css:"min-width"`
+		Overflow           overflow.Overflow     `css:"overflow"`
+		OverflowX          overflow.Overflow     `css:"overflow-x"`
+		OverflowY          overflow.Overflow     `css:"overflow-y"`
 		Padding            unit.Unit             `css:"padding"`
 		PaddingBottom      unit.Unit             `css:"padding-bottom"`
 		PaddingLeft        unit.Unit             `css:"padding-left"`

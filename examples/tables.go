@@ -2,6 +2,7 @@ package examples
 
 import (
 	"github.com/AccentDesign/gcss/props/border"
+	"github.com/AccentDesign/gcss/props/overflow"
 	"github.com/AccentDesign/gcss/props/table"
 	"github.com/AccentDesign/gcss/props/text"
 	"github.com/AccentDesign/gcss/props/unit"
@@ -49,6 +50,12 @@ var Tables = []style.Style{
 			PaddingBottom: size2,
 			PaddingLeft:   size3,
 			TextAlign:     text.AlignLeft,
+		},
+	},
+	{
+		Selector: ".table-scroller",
+		Props: style.Props{
+			OverflowX: overflow.Auto,
 		},
 	},
 }
