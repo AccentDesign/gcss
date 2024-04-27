@@ -146,6 +146,7 @@
         "Type": 0
       },
       "FlexWrap": "",
+      "Float": "",
       "FontSize": {
         "Size": 0.75,
         "Type": 4
@@ -367,6 +368,7 @@
         "Type": 0
       },
       "FlexWrap": "",
+      "Float": "",
       "FontSize": {
         "Size": null,
         "Type": 0
@@ -588,6 +590,7 @@
         "Type": 0
       },
       "FlexWrap": "",
+      "Float": "",
       "FontSize": {
         "Size": null,
         "Type": 0
@@ -809,6 +812,7 @@
         "Type": 0
       },
       "FlexWrap": "",
+      "Float": "",
       "FontSize": {
         "Size": null,
         "Type": 0
@@ -1030,6 +1034,7 @@
         "Type": 0
       },
       "FlexWrap": "",
+      "Float": "",
       "FontSize": {
         "Size": null,
         "Type": 0

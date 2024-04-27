@@ -9,6 +9,7 @@ import (
 	"github.com/AccentDesign/gcss/props/colors"
 	"github.com/AccentDesign/gcss/props/display"
 	"github.com/AccentDesign/gcss/props/flex"
+	"github.com/AccentDesign/gcss/props/float"
 	"github.com/AccentDesign/gcss/props/font"
 	"github.com/AccentDesign/gcss/props/justify"
 	"github.com/AccentDesign/gcss/props/overflow"
@@ -46,6 +47,7 @@ type (
 		FlexGrow           unit.Unit             `css:"flex-grow"`
 		FlexShrink         unit.Unit             `css:"flex-shrink"`
 		FlexWrap           flex.Wrap             `css:"flex-wrap"`
+		Float              float.Float           `css:"float"`
 		FontSize           unit.Unit             `css:"font-size"`
 		FontStyle          font.Style            `css:"font-style"`
 		FontWeight         font.Weight           `css:"font-weight"`
