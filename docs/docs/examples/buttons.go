@@ -1,6 +1,7 @@
 package examples
 
 import (
+	"github.com/AccentDesign/gcss"
 	"github.com/AccentDesign/gcss/props/align"
 	"github.com/AccentDesign/gcss/props/border"
 	"github.com/AccentDesign/gcss/props/colors"
@@ -8,13 +9,12 @@ import (
 	"github.com/AccentDesign/gcss/props/font"
 	"github.com/AccentDesign/gcss/props/justify"
 	"github.com/AccentDesign/gcss/props/unit"
-	"github.com/AccentDesign/gcss/style"
 )
 
-var Buttons = []style.Style{
+var Buttons = []gcss.Style{
 	{
 		Selector: ".button",
-		Props: style.Props{
+		Props: gcss.Props{
 			AlignItems:     align.ItemsCenter,
 			BorderRadius:   radius,
 			Display:        display.InlineFlex,
@@ -31,46 +31,46 @@ var Buttons = []style.Style{
 	},
 	{
 		Selector: ".button-primary",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: primary,
 			Color:           primaryForeground,
 		},
 	},
 	{
 		Selector: ".button-primary:hover",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: primary.Alpha(230),
 		},
 	},
 	{
 		Selector: ".button-secondary",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: secondary,
 			Color:           secondaryForeground,
 		},
 	},
 	{
 		Selector: ".button-secondary:hover",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: secondary.Alpha(204),
 		},
 	},
 	{
 		Selector: ".button-destructive",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: destructive,
 			Color:           destructiveForeground,
 		},
 	},
 	{
 		Selector: ".button-destructive:hover",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: destructive.Alpha(230),
 		},
 	},
 	{
 		Selector: ".button-outline",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: colors.Transparent(),
 			Border: border.Border{
 				Width: unit.Px(1),
@@ -81,25 +81,25 @@ var Buttons = []style.Style{
 	},
 	{
 		Selector: ".button-outline:hover",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: secondary.Alpha(230),
 		},
 	},
 	{
 		Selector: ".button-ghost",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: colors.Transparent(),
 		},
 	},
 	{
 		Selector: ".button-ghost:hover",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: secondary.Alpha(230),
 		},
 	},
 	{
 		Selector: ".button-icon",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: colors.Transparent(),
 			Border: border.Border{
 				Width: unit.Px(1),
@@ -112,7 +112,7 @@ var Buttons = []style.Style{
 	},
 	{
 		Selector: ".button-icon:hover",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: secondary.Alpha(230),
 		},
 	},

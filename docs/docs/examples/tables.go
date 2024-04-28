@@ -1,18 +1,18 @@
 package examples
 
 import (
+	"github.com/AccentDesign/gcss"
 	"github.com/AccentDesign/gcss/props/border"
 	"github.com/AccentDesign/gcss/props/overflow"
 	"github.com/AccentDesign/gcss/props/table"
 	"github.com/AccentDesign/gcss/props/text"
 	"github.com/AccentDesign/gcss/props/unit"
-	"github.com/AccentDesign/gcss/style"
 )
 
-var Tables = []style.Style{
+var Tables = []gcss.Style{
 	{
 		Selector: ".table",
-		Props: style.Props{
+		Props: gcss.Props{
 			CaptionSide: table.CaptionSideBottom,
 			FontSize:    fontSm,
 			LineHeight:  leadingTight,
@@ -21,13 +21,13 @@ var Tables = []style.Style{
 	},
 	{
 		Selector: ".table-caption",
-		Props: style.Props{
+		Props: gcss.Props{
 			MarginTop: size4,
 		},
 	},
 	{
 		Selector: ".table-tr",
-		Props: style.Props{
+		Props: gcss.Props{
 			BorderBottom: border.Border{
 				Width: unit.Px(1),
 				Style: border.StyleSolid,
@@ -37,14 +37,14 @@ var Tables = []style.Style{
 	},
 	{
 		Selector: ".table-tfoot-tr",
-		Props: style.Props{
+		Props: gcss.Props{
 			Color:           mutedForeground,
 			BackgroundColor: muted,
 		},
 	},
 	{
 		Selector: ".table-td,.table-th",
-		Props: style.Props{
+		Props: gcss.Props{
 			PaddingTop:    size2,
 			PaddingRight:  size3,
 			PaddingBottom: size2,
@@ -54,7 +54,7 @@ var Tables = []style.Style{
 	},
 	{
 		Selector: ".table-scroller",
-		Props: style.Props{
+		Props: gcss.Props{
 			OverflowX: overflow.Auto,
 		},
 	},

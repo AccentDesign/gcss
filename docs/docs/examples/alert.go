@@ -1,16 +1,16 @@
 package examples
 
 import (
+	"github.com/AccentDesign/gcss"
 	"github.com/AccentDesign/gcss/props/border"
 	"github.com/AccentDesign/gcss/props/colors"
 	"github.com/AccentDesign/gcss/props/unit"
-	"github.com/AccentDesign/gcss/style"
 )
 
-var Alerts = []style.Style{
+var Alerts = []gcss.Style{
 	{
 		Selector: ".alert",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: colors.Transparent(),
 			BorderStyle:     border.StyleSolid,
 			BorderWidth:     unit.Px(1),
@@ -20,14 +20,14 @@ var Alerts = []style.Style{
 	},
 	{
 		Selector: ".alert-primary",
-		Props: style.Props{
+		Props: gcss.Props{
 			BorderColor: primary,
 			Color:       primary,
 		},
 	},
 	{
 		Selector: ".alert-destructive",
-		Props: style.Props{
+		Props: gcss.Props{
 			BorderColor: destructive,
 			Color:       destructive,
 		},

@@ -1,6 +1,7 @@
 package examples
 
 import (
+	"github.com/AccentDesign/gcss"
 	"github.com/AccentDesign/gcss/props/appearance"
 	"github.com/AccentDesign/gcss/props/background"
 	"github.com/AccentDesign/gcss/props/border"
@@ -9,13 +10,12 @@ import (
 	"github.com/AccentDesign/gcss/props/font"
 	"github.com/AccentDesign/gcss/props/print"
 	"github.com/AccentDesign/gcss/props/unit"
-	"github.com/AccentDesign/gcss/style"
 )
 
-var Form = []style.Style{
+var Form = []gcss.Style{
 	{
 		Selector: ".input",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: backGround,
 			Border: border.Border{
 				Width: unit.Px(1),
@@ -36,7 +36,7 @@ var Form = []style.Style{
 	},
 	{
 		Selector: ".input::file-selector-button",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: colors.Transparent(),
 			BorderWidth:     unit.Raw(0),
 			FontSize:        fontSm,
@@ -45,7 +45,7 @@ var Form = []style.Style{
 	},
 	{
 		Selector: ".input-label",
-		Props: style.Props{
+		Props: gcss.Props{
 			FontSize:   fontSm,
 			FontWeight: font.WeightMedium,
 			LineHeight: leadingTight,
@@ -53,21 +53,21 @@ var Form = []style.Style{
 	},
 	{
 		Selector: ".input-help",
-		Props: style.Props{
+		Props: gcss.Props{
 			Color:    mutedForeground,
 			FontSize: fontSm,
 		},
 	},
 	{
 		Selector: ".input-error",
-		Props: style.Props{
+		Props: gcss.Props{
 			Color:    destructive,
 			FontSize: fontSm,
 		},
 	},
 	{
 		Selector: ".select",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: backGround,
 			Border: border.Border{
 				Width: unit.Px(1),
@@ -88,7 +88,7 @@ var Form = []style.Style{
 	},
 	{
 		Selector: ".select:not([size])",
-		Props: style.Props{
+		Props: gcss.Props{
 			Appearance:       appearance.None,
 			PaddingRight:     size10,
 			PrintColorAdjust: print.ColorAdjustExact,

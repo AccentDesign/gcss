@@ -1,19 +1,19 @@
 package examples
 
 import (
+	"github.com/AccentDesign/gcss"
 	"github.com/AccentDesign/gcss/props/align"
 	"github.com/AccentDesign/gcss/props/border"
 	"github.com/AccentDesign/gcss/props/colors"
 	"github.com/AccentDesign/gcss/props/display"
 	"github.com/AccentDesign/gcss/props/font"
 	"github.com/AccentDesign/gcss/props/unit"
-	"github.com/AccentDesign/gcss/style"
 )
 
-var Badges = []style.Style{
+var Badges = []gcss.Style{
 	{
 		Selector: ".badge",
-		Props: style.Props{
+		Props: gcss.Props{
 			AlignItems:    align.ItemsCenter,
 			Display:       display.InlineFlex,
 			BorderRadius:  radiusFull,
@@ -28,28 +28,28 @@ var Badges = []style.Style{
 	},
 	{
 		Selector: ".badge-primary",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: primary,
 			Color:           primaryForeground,
 		},
 	},
 	{
 		Selector: ".badge-secondary",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: secondary,
 			Color:           secondaryForeground,
 		},
 	},
 	{
 		Selector: ".badge-destructive",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: destructive,
 			Color:           destructiveForeground,
 		},
 	},
 	{
 		Selector: ".badge-outline",
-		Props: style.Props{
+		Props: gcss.Props{
 			BackgroundColor: colors.Transparent(),
 			Border: border.Border{
 				Color: borderColor,

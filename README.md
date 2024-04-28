@@ -34,3 +34,12 @@ When I know what it all looks like I will write tests for it. But it's pretty ba
 ## Usage
 
 just clone the repo for now and bugger about for yourself. If you have any good ideas I'm listening
+
+## Docs
+
+```bash
+go install github.com/cosmtrek/air@latest
+```
+```bash
+air -build.cmd 'go build -o ./tmp/main docs/docs/main.go'
+```
