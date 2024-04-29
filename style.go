@@ -13,6 +13,7 @@ import (
 	"github.com/AccentDesign/gcss/props/font"
 	"github.com/AccentDesign/gcss/props/justify"
 	"github.com/AccentDesign/gcss/props/overflow"
+	"github.com/AccentDesign/gcss/props/position"
 	"github.com/AccentDesign/gcss/props/print"
 	"github.com/AccentDesign/gcss/props/table"
 	"github.com/AccentDesign/gcss/props/text"
@@ -71,6 +72,7 @@ type (
 		PaddingLeft        unit.Unit             `css:"padding-left"`
 		PaddingRight       unit.Unit             `css:"padding-right"`
 		PaddingTop         unit.Unit             `css:"padding-top"`
+		Position           position.Position     `css:"position"`
 		PrintColorAdjust   print.ColorAdjust     `css:"print-color-adjust"`
 		TextAlign          text.Align            `css:"text-align"`
 		Width              unit.Unit             `css:"width"`
