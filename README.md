@@ -33,7 +33,55 @@ When I know what it all looks like I will write tests for it. But it's pretty ba
 
 ## Usage
 
-just clone the repo for now and bugger about for yourself. If you have any good ideas I'm listening
+There are multiple ways you can use `gcss` in your project.
+
+Write to a css file:
+
+```go
+var styles = []gcss.Style{
+    {
+        Selector: ".button",
+        Props: gcss.Props{
+            BackgroundColor: colors.RGBA(17, 24, 39, 255),
+        },
+    },
+}
+
+f, err := os.Create("styles.css")
+if err != nil {
+    panic(err)
+}
+
+for _, style := range styles {
+    if err := style.CSS(f); err != nil {
+        panic(err)
+    }
+}
+```
+
+Or as an example using a gin route:
+
+```go
+var styles = []gcss.Style{
+    {
+        Selector: ".button",
+        Props: gcss.Props{
+            BackgroundColor: colors.RGBA(17, 24, 39, 255),
+        },
+    },
+}
+
+router.Handle("GET", "/styles.css", func(c *gin.Context) {
+    c.Writer.Header().Set("Content-Type", "text/css")
+    for _, style := range styles {
+        if err := style.CSS(c.Writer); err != nil {
+            panic(err)
+        }
+    }
+})
+
+
+```
 
 ## Docs
 
