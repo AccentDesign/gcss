@@ -2,18 +2,16 @@ package examples
 
 import (
 	"github.com/AccentDesign/gcss"
-	"github.com/AccentDesign/gcss/props/border"
-	"github.com/AccentDesign/gcss/props/colors"
-	"github.com/AccentDesign/gcss/props/unit"
+	"github.com/AccentDesign/gcss/props"
 )
 
 var Alerts = []gcss.Style{
 	{
 		Selector: ".alert",
 		Props: gcss.Props{
-			BackgroundColor: colors.Transparent(),
-			BorderStyle:     border.StyleSolid,
-			BorderWidth:     unit.Px(1),
+			BackgroundColor: props.ColorTransparent(),
+			BorderStyle:     props.BorderStyleSolid,
+			BorderWidth:     props.UnitPx(1),
 			BorderRadius:    radius,
 			Padding:         size4,
 		},

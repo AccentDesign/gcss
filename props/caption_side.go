@@ -1,4 +1,4 @@
-package table
+package props
 
 type CaptionSide string
 
@@ -7,6 +7,6 @@ const (
 	CaptionSideBottom CaptionSide = "bottom"
 )
 
-func (a CaptionSide) String() string {
-	return string(a)
+func (c CaptionSide) String() string {
+	return string(c)
 }

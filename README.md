@@ -42,7 +42,7 @@ var styles = []gcss.Style{
     {
         Selector: ".button",
         Props: gcss.Props{
-            BackgroundColor: colors.RGBA(17, 24, 39, 255),
+            BackgroundColor: props.ColorRGBA(17, 24, 39, 255),
         },
     },
 }
@@ -66,7 +66,7 @@ var styles = []gcss.Style{
     {
         Selector: ".button",
         Props: gcss.Props{
-            BackgroundColor: colors.RGBA(17, 24, 39, 255),
+            BackgroundColor: props.ColorRGBA(17, 24, 39, 255),
         },
     },
 }

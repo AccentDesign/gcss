@@ -1,4 +1,4 @@
-package float
+package props
 
 type Float string
 

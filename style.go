@@ -2,80 +2,65 @@ package gcss
 
 import (
 	"fmt"
-	"github.com/AccentDesign/gcss/props/align"
-	"github.com/AccentDesign/gcss/props/appearance"
-	"github.com/AccentDesign/gcss/props/background"
-	"github.com/AccentDesign/gcss/props/border"
-	"github.com/AccentDesign/gcss/props/colors"
-	"github.com/AccentDesign/gcss/props/display"
-	"github.com/AccentDesign/gcss/props/flex"
-	"github.com/AccentDesign/gcss/props/float"
-	"github.com/AccentDesign/gcss/props/font"
-	"github.com/AccentDesign/gcss/props/justify"
-	"github.com/AccentDesign/gcss/props/overflow"
-	"github.com/AccentDesign/gcss/props/position"
-	"github.com/AccentDesign/gcss/props/print"
-	"github.com/AccentDesign/gcss/props/table"
-	"github.com/AccentDesign/gcss/props/text"
-	"github.com/AccentDesign/gcss/props/unit"
+	"github.com/AccentDesign/gcss/props"
 	"io"
 	"reflect"
 )
 
 type (
 	Props struct {
-		AlignItems         align.Items           `css:"align-items"`
-		Appearance         appearance.Appearance `css:"appearance"`
-		BackgroundColor    colors.Color          `css:"background-color"`
-		BackgroundImage    background.Image      `css:"background-image"`
-		BackgroundPosition background.Position   `css:"background-position"`
-		BackgroundRepeat   background.Repeat     `css:"background-repeat"`
-		BackgroundSize     background.Size       `css:"background-size"`
-		BorderColor        colors.Color          `css:"border-color"`
-		Border             border.Border         `css:"border"`
-		BorderBottom       border.Border         `css:"border-bottom"`
-		BorderLeft         border.Border         `css:"border-left"`
-		BorderRadius       unit.Unit             `css:"border-radius"`
-		BorderRight        border.Border         `css:"border-right"`
-		BorderStyle        border.Style          `css:"border-style"`
-		BorderTop          border.Border         `css:"border-top"`
-		BorderWidth        unit.Unit             `css:"border-width"`
-		CaptionSide        table.CaptionSide     `css:"caption-side"`
-		Color              colors.Color          `css:"color"`
-		Display            display.Display       `css:"display"`
-		FlexBasis          unit.Unit             `css:"flex-basis"`
-		FlexDirection      flex.Direction        `css:"flex-direction"`
-		FlexGrow           unit.Unit             `css:"flex-grow"`
-		FlexShrink         unit.Unit             `css:"flex-shrink"`
-		FlexWrap           flex.Wrap             `css:"flex-wrap"`
-		Float              float.Float           `css:"float"`
-		FontSize           unit.Unit             `css:"font-size"`
-		FontStyle          font.Style            `css:"font-style"`
-		FontWeight         font.Weight           `css:"font-weight"`
-		Height             unit.Unit             `css:"height"`
-		JustifyContent     justify.Content       `css:"justify-content"`
-		justifyItems       justify.Items         `css:"justify-items"`
-		justifySelf        justify.Self          `css:"justify-self"`
-		LineHeight         unit.Unit             `css:"line-height"`
-		Margin             unit.Unit             `css:"margin"`
-		MarginBottom       unit.Unit             `css:"margin-bottom"`
-		MarginLeft         unit.Unit             `css:"margin-left"`
-		MarginRight        unit.Unit             `css:"margin-right"`
-		MarginTop          unit.Unit             `css:"margin-top"`
-		MaxWidth           unit.Unit             `css:"max-width"`
-		MinWidth           unit.Unit             `css:"min-width"`
-		Overflow           overflow.Overflow     `css:"overflow"`
-		OverflowX          overflow.Overflow     `css:"overflow-x"`
-		OverflowY          overflow.Overflow     `css:"overflow-y"`
-		Padding            unit.Unit             `css:"padding"`
-		PaddingBottom      unit.Unit             `css:"padding-bottom"`
-		PaddingLeft        unit.Unit             `css:"padding-left"`
-		PaddingRight       unit.Unit             `css:"padding-right"`
-		PaddingTop         unit.Unit             `css:"padding-top"`
-		Position           position.Position     `css:"position"`
-		PrintColorAdjust   print.ColorAdjust     `css:"print-color-adjust"`
-		TextAlign          text.Align            `css:"text-align"`
-		Width              unit.Unit             `css:"width"`
+		AlignItems         props.AlignItems         `css:"align-items"`
+		Appearance         props.Appearance         `css:"appearance"`
+		BackgroundColor    props.Color              `css:"background-color"`
+		BackgroundImage    props.BackgroundImage    `css:"background-image"`
+		BackgroundPosition props.BackgroundPosition `css:"background-position"`
+		BackgroundRepeat   props.BackgroundRepeat   `css:"background-repeat"`
+		BackgroundSize     props.BackgroundSize     `css:"background-size"`
+		BorderColor        props.Color              `css:"border-color"`
+		Border             props.Border             `css:"border"`
+		BorderBottom       props.Border             `css:"border-bottom"`
+		BorderLeft         props.Border             `css:"border-left"`
+		BorderRadius       props.Unit               `css:"border-radius"`
+		BorderRight        props.Border             `css:"border-right"`
+		BorderStyle        props.BorderStyle        `css:"border-style"`
+		BorderTop          props.Border             `css:"border-top"`
+		BorderWidth        props.Unit               `css:"border-width"`
+		CaptionSide        props.CaptionSide        `css:"caption-side"`
+		Color              props.Color              `css:"color"`
+		Display            props.Display            `css:"display"`
+		FlexBasis          props.Unit               `css:"flex-basis"`
+		FlexDirection      props.FlexDirection      `css:"flex-direction"`
+		FlexGrow           props.Unit               `css:"flex-grow"`
+		FlexShrink         props.Unit               `css:"flex-shrink"`
+		FlexWrap           props.FlexWrap           `css:"flex-wrap"`
+		Float              props.Float              `css:"float"`
+		FontSize           props.Unit               `css:"font-size"`
+		FontStyle          props.FontStyle          `css:"font-style"`
+		FontWeight         props.FontWeight         `css:"font-weight"`
+		Height             props.Unit               `css:"height"`
+		JustifyContent     props.JustifyContent     `css:"justify-content"`
+		justifyItems       props.JustifyItems       `css:"justify-items"`
+		justifySelf        props.JustifySelf        `css:"justify-self"`
+		LineHeight         props.Unit               `css:"line-height"`
+		Margin             props.Unit               `css:"margin"`
+		MarginBottom       props.Unit               `css:"margin-bottom"`
+		MarginLeft         props.Unit               `css:"margin-left"`
+		MarginRight        props.Unit               `css:"margin-right"`
+		MarginTop          props.Unit               `css:"margin-top"`
+		MaxWidth           props.Unit               `css:"max-width"`
+		MinWidth           props.Unit               `css:"min-width"`
+		Overflow           props.Overflow           `css:"overflow"`
+		OverflowX          props.Overflow           `css:"overflow-x"`
+		OverflowY          props.Overflow           `css:"overflow-y"`
+		Padding            props.Unit               `css:"padding"`
+		PaddingBottom      props.Unit               `css:"padding-bottom"`
+		PaddingLeft        props.Unit               `css:"padding-left"`
+		PaddingRight       props.Unit               `css:"padding-right"`
+		PaddingTop         props.Unit               `css:"padding-top"`
+		Position           props.Position           `css:"position"`
+		PrintColorAdjust   props.ColorAdjust        `css:"print-color-adjust"`
+		TextAlign          props.TextAlign          `css:"text-align"`
+		Width              props.Unit               `css:"width"`
 	}
 	Style struct {
 		Selector string

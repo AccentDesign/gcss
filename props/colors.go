@@ -1,4 +1,4 @@
-package colors
+package props
 
 import (
 	"fmt"
@@ -22,18 +22,18 @@ func (c Color) Alpha(a uint8) Color {
 	return c
 }
 
-func RGBA(r, g, b, a uint8) Color {
+func ColorRGBA(r, g, b, a uint8) Color {
 	return Color{RGBA: color.RGBA{r, g, b, a}}
 }
 
-func CurrentColor() Color {
+func ColorCurrentColor() Color {
 	return Color{Keyword: "currentColor"}
 }
 
-func Inherit() Color {
+func ColorInherit() Color {
 	return Color{Keyword: "inherit"}
 }
 
-func Transparent() Color {
+func ColorTransparent() Color {
 	return Color{Keyword: "transparent"}
 }

@@ -12,7 +12,7 @@ import (
 
 func main() {
 	defer func(start time.Time) {
-		fmt.Println("CSS and JSON files created successfully!")
+		fmt.Println("CSS files created successfully!")
 		fmt.Println("Execution time:", time.Since(start))
 	}(time.Now())
 

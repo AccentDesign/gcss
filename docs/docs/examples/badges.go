@@ -2,23 +2,18 @@ package examples
 
 import (
 	"github.com/AccentDesign/gcss"
-	"github.com/AccentDesign/gcss/props/align"
-	"github.com/AccentDesign/gcss/props/border"
-	"github.com/AccentDesign/gcss/props/colors"
-	"github.com/AccentDesign/gcss/props/display"
-	"github.com/AccentDesign/gcss/props/font"
-	"github.com/AccentDesign/gcss/props/unit"
+	"github.com/AccentDesign/gcss/props"
 )
 
 var Badges = []gcss.Style{
 	{
 		Selector: ".badge",
 		Props: gcss.Props{
-			AlignItems:    align.ItemsCenter,
-			Display:       display.InlineFlex,
+			AlignItems:    props.AlignItemsCenter,
+			Display:       props.DisplayInlineFlex,
 			BorderRadius:  radiusFull,
 			FontSize:      fontXs,
-			FontWeight:    font.WeightSemiBold,
+			FontWeight:    props.FontWeightSemiBold,
 			LineHeight:    leadingNone,
 			PaddingTop:    size1,
 			PaddingRight:  size3,
@@ -50,11 +45,11 @@ var Badges = []gcss.Style{
 	{
 		Selector: ".badge-outline",
 		Props: gcss.Props{
-			BackgroundColor: colors.Transparent(),
-			Border: border.Border{
+			BackgroundColor: props.ColorTransparent(),
+			Border: props.Border{
 				Color: borderColor,
-				Style: border.StyleSolid,
-				Width: unit.Px(1),
+				Style: props.BorderStyleSolid,
+				Width: props.UnitPx(1),
 			},
 		},
 	},

@@ -2,26 +2,20 @@ package examples
 
 import (
 	"github.com/AccentDesign/gcss"
-	"github.com/AccentDesign/gcss/props/align"
-	"github.com/AccentDesign/gcss/props/border"
-	"github.com/AccentDesign/gcss/props/colors"
-	"github.com/AccentDesign/gcss/props/display"
-	"github.com/AccentDesign/gcss/props/font"
-	"github.com/AccentDesign/gcss/props/justify"
-	"github.com/AccentDesign/gcss/props/unit"
+	"github.com/AccentDesign/gcss/props"
 )
 
 var Buttons = []gcss.Style{
 	{
 		Selector: ".button",
 		Props: gcss.Props{
-			AlignItems:     align.ItemsCenter,
+			AlignItems:     props.AlignItemsCenter,
 			BorderRadius:   radius,
-			Display:        display.InlineFlex,
+			Display:        props.DisplayInlineFlex,
 			FontSize:       fontSm,
-			FontWeight:     font.WeightMedium,
+			FontWeight:     props.FontWeightMedium,
 			Height:         size10,
-			JustifyContent: justify.ContentCenter,
+			JustifyContent: props.JustifyContentCenter,
 			LineHeight:     leadingTight,
 			PaddingTop:     size2,
 			PaddingRight:   size4,
@@ -71,10 +65,10 @@ var Buttons = []gcss.Style{
 	{
 		Selector: ".button-outline",
 		Props: gcss.Props{
-			BackgroundColor: colors.Transparent(),
-			Border: border.Border{
-				Width: unit.Px(1),
-				Style: border.StyleSolid,
+			BackgroundColor: props.ColorTransparent(),
+			Border: props.Border{
+				Width: props.UnitPx(1),
+				Style: props.BorderStyleSolid,
 				Color: borderColor,
 			},
 		},
@@ -88,7 +82,7 @@ var Buttons = []gcss.Style{
 	{
 		Selector: ".button-ghost",
 		Props: gcss.Props{
-			BackgroundColor: colors.Transparent(),
+			BackgroundColor: props.ColorTransparent(),
 		},
 	},
 	{
@@ -100,13 +94,13 @@ var Buttons = []gcss.Style{
 	{
 		Selector: ".button-icon",
 		Props: gcss.Props{
-			BackgroundColor: colors.Transparent(),
-			Border: border.Border{
-				Width: unit.Px(1),
-				Style: border.StyleSolid,
+			BackgroundColor: props.ColorTransparent(),
+			Border: props.Border{
+				Width: props.UnitPx(1),
+				Style: props.BorderStyleSolid,
 				Color: borderColor,
 			},
-			Padding: unit.Initial(), // if sizes are added this can be removed as the base padding will be set by the sizes
+			Padding: props.UnitInitial(), // if sizes are added this can be removed as the base padding will be set by the sizes
 			Width:   size10,
 		},
 	},

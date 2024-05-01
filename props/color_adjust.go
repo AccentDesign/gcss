@@ -1,4 +1,4 @@
-package print
+package props
 
 type ColorAdjust string
 
@@ -12,6 +12,6 @@ const (
 	ColorAdjustUnset       ColorAdjust = "unset"
 )
 
-func (p ColorAdjust) String() string {
-	return string(p)
+func (c ColorAdjust) String() string {
+	return string(c)
 }

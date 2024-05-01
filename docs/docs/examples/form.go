@@ -2,14 +2,7 @@ package examples
 
 import (
 	"github.com/AccentDesign/gcss"
-	"github.com/AccentDesign/gcss/props/appearance"
-	"github.com/AccentDesign/gcss/props/background"
-	"github.com/AccentDesign/gcss/props/border"
-	"github.com/AccentDesign/gcss/props/colors"
-	"github.com/AccentDesign/gcss/props/display"
-	"github.com/AccentDesign/gcss/props/font"
-	"github.com/AccentDesign/gcss/props/print"
-	"github.com/AccentDesign/gcss/props/unit"
+	"github.com/AccentDesign/gcss/props"
 )
 
 var Form = []gcss.Style{
@@ -17,13 +10,13 @@ var Form = []gcss.Style{
 		Selector: ".input",
 		Props: gcss.Props{
 			BackgroundColor: backGround,
-			Border: border.Border{
-				Width: unit.Px(1),
-				Style: border.StyleSolid,
+			Border: props.Border{
+				Width: props.UnitPx(1),
+				Style: props.BorderStyleSolid,
 				Color: borderColor,
 			},
 			BorderRadius:  radius,
-			Display:       display.Flex,
+			Display:       props.DisplayFlex,
 			FontSize:      fontSm,
 			Height:        size10,
 			LineHeight:    leadingTight,
@@ -31,23 +24,23 @@ var Form = []gcss.Style{
 			PaddingRight:  size3,
 			PaddingBottom: size2,
 			PaddingLeft:   size3,
-			Width:         unit.Percent(100),
+			Width:         props.UnitPercent(100),
 		},
 	},
 	{
 		Selector: ".input::file-selector-button",
 		Props: gcss.Props{
-			BackgroundColor: colors.Transparent(),
-			BorderWidth:     unit.Raw(0),
+			BackgroundColor: props.ColorTransparent(),
+			BorderWidth:     props.UnitRaw(0),
 			FontSize:        fontSm,
-			FontWeight:      font.WeightMedium,
+			FontWeight:      props.FontWeightMedium,
 		},
 	},
 	{
 		Selector: ".input-label",
 		Props: gcss.Props{
 			FontSize:   fontSm,
-			FontWeight: font.WeightMedium,
+			FontWeight: props.FontWeightMedium,
 			LineHeight: leadingTight,
 		},
 	},
@@ -69,13 +62,13 @@ var Form = []gcss.Style{
 		Selector: ".select",
 		Props: gcss.Props{
 			BackgroundColor: backGround,
-			Border: border.Border{
-				Width: unit.Px(1),
-				Style: border.StyleSolid,
+			Border: props.Border{
+				Width: props.UnitPx(1),
+				Style: props.BorderStyleSolid,
 				Color: borderColor,
 			},
 			BorderRadius:  radius,
-			Display:       display.Flex,
+			Display:       props.DisplayFlex,
 			FontSize:      fontSm,
 			Height:        size10,
 			LineHeight:    leadingTight,
@@ -83,22 +76,22 @@ var Form = []gcss.Style{
 			PaddingRight:  size3,
 			PaddingBottom: size2,
 			PaddingLeft:   size3,
-			Width:         unit.Percent(100),
+			Width:         props.UnitPercent(100),
 		},
 	},
 	{
 		Selector: ".select:not([size])",
 		Props: gcss.Props{
-			Appearance:       appearance.None,
+			Appearance:       props.AppearanceNone,
 			PaddingRight:     size10,
-			PrintColorAdjust: print.ColorAdjustExact,
-			BackgroundImage:  background.ImageLayers(iconChevronDown),
-			BackgroundPosition: background.PositionEdgeOffset(
-				background.PositionEdgeItem{Edge: background.PositionEdgeRight, Unit: size3},
-				background.PositionEdgeItem{Edge: background.PositionEdgeCenter},
+			PrintColorAdjust: props.ColorAdjustExact,
+			BackgroundImage:  props.BackgroundImageLayers(iconChevronDown),
+			BackgroundPosition: props.BackgroundPositionEdgeOffset(
+				props.BackgroundPositionEdgeItem{Edge: props.BackgroundPositionEdgeRight, Unit: size3},
+				props.BackgroundPositionEdgeItem{Edge: props.BackgroundPositionEdgeCenter},
 			),
-			BackgroundRepeat: background.RepeatNoRepeat,
-			BackgroundSize:   background.SizeDimension(unit.Em(1), unit.Em(1)),
+			BackgroundRepeat: props.BackgroundRepeatNoRepeat,
+			BackgroundSize:   props.BackgroundSizeDimension(props.UnitEm(1), props.UnitEm(1)),
 		},
 	},
 }

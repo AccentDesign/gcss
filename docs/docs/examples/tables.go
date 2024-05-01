@@ -2,21 +2,17 @@ package examples
 
 import (
 	"github.com/AccentDesign/gcss"
-	"github.com/AccentDesign/gcss/props/border"
-	"github.com/AccentDesign/gcss/props/overflow"
-	"github.com/AccentDesign/gcss/props/table"
-	"github.com/AccentDesign/gcss/props/text"
-	"github.com/AccentDesign/gcss/props/unit"
+	"github.com/AccentDesign/gcss/props"
 )
 
 var Tables = []gcss.Style{
 	{
 		Selector: ".table",
 		Props: gcss.Props{
-			CaptionSide: table.CaptionSideBottom,
+			CaptionSide: props.CaptionSideBottom,
 			FontSize:    fontSm,
 			LineHeight:  leadingTight,
-			Width:       unit.Percent(100),
+			Width:       props.UnitPercent(100),
 		},
 	},
 	{
@@ -28,9 +24,9 @@ var Tables = []gcss.Style{
 	{
 		Selector: ".table-tr",
 		Props: gcss.Props{
-			BorderBottom: border.Border{
-				Width: unit.Px(1),
-				Style: border.StyleSolid,
+			BorderBottom: props.Border{
+				Width: props.UnitPx(1),
+				Style: props.BorderStyleSolid,
 				Color: borderColor,
 			},
 		},
@@ -49,13 +45,13 @@ var Tables = []gcss.Style{
 			PaddingRight:  size3,
 			PaddingBottom: size2,
 			PaddingLeft:   size3,
-			TextAlign:     text.AlignLeft,
+			TextAlign:     props.TextAlignLeft,
 		},
 	},
 	{
 		Selector: ".table-scroller",
 		Props: gcss.Props{
-			OverflowX: overflow.Auto,
+			OverflowX: props.OverflowAuto,
 		},
 	},
 }
