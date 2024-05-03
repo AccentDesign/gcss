@@ -1,36 +1,33 @@
 package props
 
-type BackgroundSize struct {
-	Value string
-}
+import "strings"
+
+type BackgroundSize string
 
 func (b BackgroundSize) String() string {
-	return b.Value
+	return string(b)
 }
 
 func BackgroundSizeWidth(unit Unit) BackgroundSize {
-	return BackgroundSize{unit.String()}
+	return BackgroundSize(unit.String())
 }
 
-func BackgroundSizeDimension(width Unit, height Unit) BackgroundSize {
-	return BackgroundSize{width.String() + " " + height.String()}
+func BackgroundSizeDimension(width, height Unit) BackgroundSize {
+	return BackgroundSize(width.String() + " " + height.String())
 }
 
-func BackgroundSizeMultiple(sizes ...BackgroundSize) BackgroundSize {
-	value := ""
-	for i, size := range sizes {
-		if i > 0 {
-			value += ", "
-		}
-		value += size.String()
+func BackgroundSizes(sizes ...BackgroundSize) BackgroundSize {
+	var s []string
+	for _, size := range sizes {
+		s = append(s, string(size))
 	}
-	return BackgroundSize{value}
+	return BackgroundSize(strings.Join(s, ","))
 }
 
 func BackgroundSizeCover() BackgroundSize {
-	return BackgroundSize{"cover"}
+	return BackgroundSize("cover")
 }
 
 func BackgroundSizeContain() BackgroundSize {
-	return BackgroundSize{"contain"}
+	return BackgroundSize("contain")
 }

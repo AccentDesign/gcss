@@ -1,5 +1,7 @@
 package props
 
+import "strings"
+
 type BackgroundRepeat string
 
 const (
@@ -13,4 +15,12 @@ const (
 
 func (b BackgroundRepeat) String() string {
 	return string(b)
+}
+
+func BackgroundRepeats(repeats ...BackgroundRepeat) BackgroundRepeat {
+	var r []string
+	for _, repeat := range repeats {
+		r = append(r, string(repeat))
+	}
+	return BackgroundRepeat(strings.Join(r, ","))
 }

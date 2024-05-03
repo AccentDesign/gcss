@@ -85,7 +85,7 @@ var Form = []gcss.Style{
 			Appearance:       props.AppearanceNone,
 			PaddingRight:     size10,
 			PrintColorAdjust: props.ColorAdjustExact,
-			BackgroundImage:  props.BackgroundImageLayers(iconChevronDown),
+			BackgroundImage:  iconChevronDown,
 			BackgroundPosition: props.BackgroundPositionEdgeOffset(
 				props.BackgroundPositionEdgeItem{Edge: props.BackgroundPositionEdgeRight, Unit: size3},
 				props.BackgroundPositionEdgeItem{Edge: props.BackgroundPositionEdgeCenter},

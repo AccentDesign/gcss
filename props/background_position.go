@@ -1,13 +1,12 @@
 package props
 
 import (
+	"fmt"
 	"strings"
 )
 
 type (
-	BackgroundPosition struct {
-		Value string
-	}
+	BackgroundPosition         string
 	BackgroundPositionEdge     string
 	BackgroundPositionEdgeItem struct {
 		Edge BackgroundPositionEdge
@@ -28,51 +27,49 @@ const (
 )
 
 func (b BackgroundPosition) String() string {
-	return b.Value
+	return string(b)
+}
+
+func (b BackgroundPositionEdgeItem) String() string {
+	return strings.TrimSpace(fmt.Sprintf("%s %s", b.Edge, b.Unit))
 }
 
 func BackgroundPositionXY(x, y Unit) BackgroundPosition {
-	return BackgroundPosition{x.String() + " " + y.String()}
+	return BackgroundPosition(fmt.Sprintf("%s %s", x.String(), y.String()))
 }
 
 func BackgroundPositionEdgeOffset(edges ...BackgroundPositionEdgeItem) BackgroundPosition {
-	value := ""
-	for _, edge := range edges {
-		value += " " + string(edge.Edge)
-		if edge.Unit.String() != "" {
-			value += " " + edge.Unit.String()
-		}
+	ed := make([]string, len(edges))
+	for i, edge := range edges {
+		ed[i] = edge.String()
 	}
-	return BackgroundPosition{strings.TrimSpace(value)}
+	return BackgroundPosition(strings.Join(ed, " "))
 }
 
-func BackgroundPositionMultiple(positions ...BackgroundPosition) BackgroundPosition {
-	value := ""
+func BackgroundPositions(positions ...BackgroundPosition) BackgroundPosition {
+	po := make([]string, len(positions))
 	for i, position := range positions {
-		if i > 0 {
-			value += ", "
-		}
-		value += position.String()
+		po[i] = string(position)
 	}
-	return BackgroundPosition{value}
+	return BackgroundPosition(strings.Join(po, ","))
 }
 
 func BackgroundPositionTop() BackgroundPosition {
-	return BackgroundPosition{"top"}
+	return BackgroundPosition("top")
 }
 
 func BackgroundPositionBottom() BackgroundPosition {
-	return BackgroundPosition{"bottom"}
+	return BackgroundPosition("bottom")
 }
 
 func BackgroundPositionLeft() BackgroundPosition {
-	return BackgroundPosition{"left"}
+	return BackgroundPosition("left")
 }
 
 func BackgroundPositionRight() BackgroundPosition {
-	return BackgroundPosition{"right"}
+	return BackgroundPosition("right")
 }
 
 func BackgroundPositionCenter() BackgroundPosition {
-	return BackgroundPosition{"center"}
+	return BackgroundPosition("center")
 }

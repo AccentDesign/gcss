@@ -5,49 +5,44 @@ import (
 	"strings"
 )
 
-type (
-	BackgroundImage struct {
-		Value string
-	}
-	BackgroundImageLayer string
-)
+type BackgroundImage string
 
 func (b BackgroundImage) String() string {
-	return b.Value
+	return string(b)
 }
 
-func BackgroundImageLayers(layers ...BackgroundImageLayer) BackgroundImage {
-	ls := make([]string, len(layers))
-	for i, layer := range layers {
-		ls[i] = string(layer)
+func BackgroundImages(images ...BackgroundImage) BackgroundImage {
+	im := make([]string, len(images))
+	for i, image := range images {
+		im[i] = string(image)
 	}
-	return BackgroundImage{Value: strings.Join(ls, ",")}
+	return BackgroundImage(strings.Join(im, ","))
 }
 
-func BackgroundImageLinearGradient(segments ...string) BackgroundImageLayer {
-	return BackgroundImageLayer(fmt.Sprintf("linear-gradient(%s)", strings.Join(segments, ",")))
+func BackgroundImageLinearGradient(segments ...string) BackgroundImage {
+	return BackgroundImage(fmt.Sprintf("linear-gradient(%s)", strings.Join(segments, ",")))
 }
 
-func BackgroundImageURL(url string) BackgroundImageLayer {
-	return BackgroundImageLayer(fmt.Sprintf(`url("%s")`, url))
+func BackgroundImageURL(url string) BackgroundImage {
+	return BackgroundImage(fmt.Sprintf(`url("%s")`, url))
 }
 
 func BackgroundImageInherit() BackgroundImage {
-	return BackgroundImage{Value: "inherit"}
+	return BackgroundImage("inherit")
 }
 
 func BackgroundImageInitial() BackgroundImage {
-	return BackgroundImage{Value: "initial"}
+	return BackgroundImage("initial")
 }
 
 func BackgroundImageRevert() BackgroundImage {
-	return BackgroundImage{Value: "revert"}
+	return BackgroundImage("revert")
 }
 
 func BackgroundImageRevertLayer() BackgroundImage {
-	return BackgroundImage{Value: "revert-layer"}
+	return BackgroundImage("revert-layer")
 }
 
 func BackgroundImageUnset() BackgroundImage {
-	return BackgroundImage{Value: "unset"}
+	return BackgroundImage("unset")
 }
