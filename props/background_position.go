@@ -55,21 +55,37 @@ func BackgroundPositions(positions ...BackgroundPosition) BackgroundPosition {
 }
 
 func BackgroundPositionTop() BackgroundPosition {
-	return BackgroundPosition("top")
+	return BackgroundPosition(BackgroundPositionEdgeTop)
 }
 
 func BackgroundPositionBottom() BackgroundPosition {
-	return BackgroundPosition("bottom")
+	return BackgroundPosition(BackgroundPositionEdgeBottom)
 }
 
 func BackgroundPositionLeft() BackgroundPosition {
-	return BackgroundPosition("left")
+	return BackgroundPosition(BackgroundPositionEdgeLeft)
 }
 
 func BackgroundPositionRight() BackgroundPosition {
-	return BackgroundPosition("right")
+	return BackgroundPosition(BackgroundPositionEdgeRight)
 }
 
 func BackgroundPositionCenter() BackgroundPosition {
-	return BackgroundPosition("center")
+	return BackgroundPosition(BackgroundPositionEdgeCenter)
+}
+
+func BackgroundPositionTopLeft() BackgroundPosition {
+	return BackgroundPosition(BackgroundPositionEdgeTopLeft)
+}
+
+func BackgroundPositionTopRight() BackgroundPosition {
+	return BackgroundPosition(BackgroundPositionEdgeTopRight)
+}
+
+func BackgroundPositionBottomLeft() BackgroundPosition {
+	return BackgroundPosition(BackgroundPositionEdgeBottomLeft)
+}
+
+func BackgroundPositionBottomRight() BackgroundPosition {
+	return BackgroundPosition(BackgroundPositionEdgeBottomRight)
 }

@@ -1,3 +1,5 @@
+[![Test](https://github.com/AccentDesign/gcss/actions/workflows/go-test.yml/badge.svg)](https://github.com/AccentDesign/gcss/actions/workflows/go-test.yml)
+
 # gcss
 
 CSS written in Go.

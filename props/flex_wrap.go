@@ -3,9 +3,9 @@ package props
 type FlexWrap string
 
 const (
-	FlexWrapNowrap  FlexWrap = "nowrap"
-	FlexWrapWrap    FlexWrap = "wrap"
-	FlexWrapWrapRev FlexWrap = "wrap-reverse"
+	FlexWrapNoWrap      FlexWrap = "nowrap"
+	FlexWrapWrap        FlexWrap = "wrap"
+	FlexWrapWrapReverse FlexWrap = "wrap-reverse"
 )
 
 func (f FlexWrap) String() string {

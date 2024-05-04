@@ -39,8 +39,8 @@ type (
 		FontWeight         props.FontWeight         `css:"font-weight"`
 		Height             props.Unit               `css:"height"`
 		JustifyContent     props.JustifyContent     `css:"justify-content"`
-		justifyItems       props.JustifyItems       `css:"justify-items"`
-		justifySelf        props.JustifySelf        `css:"justify-self"`
+		JustifyItems       props.JustifyItems       `css:"justify-items"`
+		JustifySelf        props.JustifySelf        `css:"justify-self"`
 		LineHeight         props.Unit               `css:"line-height"`
 		Margin             props.Unit               `css:"margin"`
 		MarginBottom       props.Unit               `css:"margin-bottom"`
@@ -58,7 +58,7 @@ type (
 		PaddingRight       props.Unit               `css:"padding-right"`
 		PaddingTop         props.Unit               `css:"padding-top"`
 		Position           props.Position           `css:"position"`
-		PrintColorAdjust   props.ColorAdjust        `css:"print-color-adjust"`
+		PrintColorAdjust   props.PrintColorAdjust   `css:"print-color-adjust"`
 		TextAlign          props.TextAlign          `css:"text-align"`
 		Width              props.Unit               `css:"width"`
 	}
