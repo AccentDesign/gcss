@@ -34,7 +34,7 @@ a few UI components that are configurable using Go.
 
 ## Usage
 
-There are multiple ways you can use `gcss` in your project.
+There are multiple ways you can use `gcss` in your project. For examples of property values, see the `style_test.go` file.
 
 Write to a css file:
 
