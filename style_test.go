@@ -287,6 +287,12 @@ func TestStyle_Border(t *testing.T) {
 			props.BorderStyleDouble,
 			props.ColorRGBA(0, 0, 0, 255),
 		}: "10px double rgba(0,0,0,1.00)",
+		props.Border{
+			Style: props.BorderStyleNone,
+		}: "none",
+		props.Border{
+			Style: props.BorderStyle("initial"),
+		}: "initial",
 	}
 
 	for prop, expected := range testCases {
@@ -317,6 +323,12 @@ func TestStyle_BorderBottom(t *testing.T) {
 			props.BorderStyleDouble,
 			props.ColorRGBA(0, 0, 0, 255),
 		}: "10px double rgba(0,0,0,1.00)",
+		props.Border{
+			Style: props.BorderStyleNone,
+		}: "none",
+		props.Border{
+			Style: props.BorderStyle("initial"),
+		}: "initial",
 	}
 
 	for prop, expected := range testCases {
@@ -347,6 +359,12 @@ func TestStyle_BorderLeft(t *testing.T) {
 			props.BorderStyleDouble,
 			props.ColorRGBA(0, 0, 0, 255),
 		}: "10px double rgba(0,0,0,1.00)",
+		props.Border{
+			Style: props.BorderStyleNone,
+		}: "none",
+		props.Border{
+			Style: props.BorderStyle("initial"),
+		}: "initial",
 	}
 
 	for prop, expected := range testCases {
@@ -400,6 +418,12 @@ func TestStyle_BorderRight(t *testing.T) {
 			props.BorderStyleDouble,
 			props.ColorRGBA(0, 0, 0, 255),
 		}: "5px double rgba(0,0,0,1.00)",
+		props.Border{
+			Style: props.BorderStyleNone,
+		}: "none",
+		props.Border{
+			Style: props.BorderStyle("initial"),
+		}: "initial",
 	}
 
 	for prop, expected := range testCases {
@@ -457,6 +481,12 @@ func TestStyle_BorderTop(t *testing.T) {
 			props.BorderStyleDouble,
 			props.ColorRGBA(0, 0, 0, 255),
 		}: "5px double rgba(0,0,0,1.00)",
+		props.Border{
+			Style: props.BorderStyleNone,
+		}: "none",
+		props.Border{
+			Style: props.BorderStyle("initial"),
+		}: "initial",
 	}
 
 	for prop, expected := range testCases {
