@@ -26,23 +26,3 @@ func BackgroundImageLinearGradient(segments ...string) BackgroundImage {
 func BackgroundImageURL(url string) BackgroundImage {
 	return BackgroundImage(fmt.Sprintf(`url("%s")`, url))
 }
-
-func BackgroundImageInherit() BackgroundImage {
-	return BackgroundImage("inherit")
-}
-
-func BackgroundImageInitial() BackgroundImage {
-	return BackgroundImage("initial")
-}
-
-func BackgroundImageRevert() BackgroundImage {
-	return BackgroundImage("revert")
-}
-
-func BackgroundImageRevertLayer() BackgroundImage {
-	return BackgroundImage("revert-layer")
-}
-
-func BackgroundImageUnset() BackgroundImage {
-	return BackgroundImage("unset")
-}

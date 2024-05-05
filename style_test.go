@@ -128,11 +128,7 @@ func TestStyle_BackgroundImage(t *testing.T) {
 	testCases := map[props.BackgroundImage]string{
 		props.BackgroundImageURL("image.jpg"):              `url("image.jpg")`,
 		props.BackgroundImageLinearGradient("red", "blue"): "linear-gradient(red,blue)",
-		props.BackgroundImageInherit():                     "inherit",
-		props.BackgroundImageInitial():                     "initial",
-		props.BackgroundImageRevert():                      "revert",
-		props.BackgroundImageRevertLayer():                 "revert-layer",
-		props.BackgroundImageUnset():                       "unset",
+		props.BackgroundImage("inherit"):                   "inherit",
 		props.BackgroundImages(
 			props.BackgroundImageLinearGradient("red", "blue"),
 			props.BackgroundImageURL("image.jpg"),
@@ -158,22 +154,22 @@ func TestStyle_BackgroundImage(t *testing.T) {
 func TestStyle_BackgroundPosition(t *testing.T) {
 	testCases := map[props.BackgroundPosition]string{
 		props.BackgroundPositionXY(props.UnitPx(10), props.UnitPx(20)): "10px 20px",
-		props.BackgroundPositionEdgeOffset(
-			props.BackgroundPositionEdgeItem{Edge: props.BackgroundPositionEdgeTop, Unit: props.UnitPx(10)},
-			props.BackgroundPositionEdgeItem{Edge: props.BackgroundPositionEdgeRight, Unit: props.UnitPx(20)},
+		props.BackgroundPositionEdges(
+			props.BackgroundPositionEdge{Position: props.BackgroundPositionTop, Unit: props.UnitPx(10)},
+			props.BackgroundPositionEdge{Position: props.BackgroundPositionRight, Unit: props.UnitPx(20)},
 		): "top 10px right 20px",
-		props.BackgroundPositionTop():         "top",
-		props.BackgroundPositionBottom():      "bottom",
-		props.BackgroundPositionLeft():        "left",
-		props.BackgroundPositionRight():       "right",
-		props.BackgroundPositionCenter():      "center",
-		props.BackgroundPositionTopLeft():     "top left",
-		props.BackgroundPositionTopRight():    "top right",
-		props.BackgroundPositionBottomLeft():  "bottom left",
-		props.BackgroundPositionBottomRight(): "bottom right",
+		props.BackgroundPositionTop:         "top",
+		props.BackgroundPositionBottom:      "bottom",
+		props.BackgroundPositionLeft:        "left",
+		props.BackgroundPositionRight:       "right",
+		props.BackgroundPositionCenter:      "center",
+		props.BackgroundPositionTopLeft:     "top left",
+		props.BackgroundPositionTopRight:    "top right",
+		props.BackgroundPositionBottomLeft:  "bottom left",
+		props.BackgroundPositionBottomRight: "bottom right",
 		props.BackgroundPositions(
-			props.BackgroundPositionTop(),
-			props.BackgroundPositionLeft(),
+			props.BackgroundPositionTop,
+			props.BackgroundPositionLeft,
 		): "top,left",
 		props.BackgroundPosition("inherit"): "inherit",
 	}
