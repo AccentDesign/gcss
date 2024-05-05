@@ -20,7 +20,6 @@ This includes adding support for more CSS properties and maybe mixins.
 What I don't want to do is to add support for all CSS functionality as some things are better in CSS, but I do want to be able to create 
 a few UI components that are configurable using Go.
 
-When I know what it all looks like I will write tests for it. But it's pretty basic stuff and I'm a pretty basic person so things should be ok.
 ## What I don't need
 
 * I don't need UI libs that are written for the purpose of JS frameworks. 
