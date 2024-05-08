@@ -18,7 +18,7 @@ var Tables = []gcss.Style{
 	{
 		Selector: ".table-caption",
 		Props: gcss.Props{
-			MarginTop: size4,
+			MarginTop: spacing4,
 		},
 	},
 	{
@@ -41,10 +41,10 @@ var Tables = []gcss.Style{
 	{
 		Selector: ".table-td,.table-th",
 		Props: gcss.Props{
-			PaddingTop:    size2,
-			PaddingRight:  size3,
-			PaddingBottom: size2,
-			PaddingLeft:   size3,
+			PaddingTop:    spacing2,
+			PaddingRight:  spacing3,
+			PaddingBottom: spacing2,
+			PaddingLeft:   spacing3,
 			TextAlign:     props.TextAlignLeft,
 		},
 	},

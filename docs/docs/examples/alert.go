@@ -13,7 +13,7 @@ var Alerts = []gcss.Style{
 			BorderStyle:     props.BorderStyleSolid,
 			BorderWidth:     props.UnitPx(1),
 			BorderRadius:    radius,
-			Padding:         size4,
+			Padding:         spacing4,
 		},
 	},
 	{

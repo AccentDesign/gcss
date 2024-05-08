@@ -14,13 +14,13 @@ var Buttons = []gcss.Style{
 			Display:        props.DisplayInlineFlex,
 			FontSize:       fontSm,
 			FontWeight:     props.FontWeightMedium,
-			Height:         size10,
+			Height:         spacing10,
 			JustifyContent: props.JustifyContentCenter,
 			LineHeight:     leadingTight,
-			PaddingTop:     size2,
-			PaddingRight:   size4,
-			PaddingBottom:  size2,
-			PaddingLeft:    size4,
+			PaddingTop:     spacing2,
+			PaddingRight:   spacing4,
+			PaddingBottom:  spacing2,
+			PaddingLeft:    spacing4,
 		},
 	},
 	{
@@ -101,7 +101,7 @@ var Buttons = []gcss.Style{
 				Color: borderColor,
 			},
 			Padding: props.UnitInitial(), // if sizes are added this can be removed as the base padding will be set by the sizes
-			Width:   size10,
+			Width:   spacing10,
 		},
 	},
 	{

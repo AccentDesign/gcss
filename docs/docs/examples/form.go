@@ -9,7 +9,7 @@ var Form = []gcss.Style{
 	{
 		Selector: ".input",
 		Props: gcss.Props{
-			BackgroundColor: backGround,
+			BackgroundColor: input,
 			Border: props.Border{
 				Width: props.UnitPx(1),
 				Style: props.BorderStyleSolid,
@@ -18,12 +18,12 @@ var Form = []gcss.Style{
 			BorderRadius:  radius,
 			Display:       props.DisplayFlex,
 			FontSize:      fontSm,
-			Height:        size10,
+			Height:        spacing10,
 			LineHeight:    leadingTight,
-			PaddingTop:    size2,
-			PaddingRight:  size3,
-			PaddingBottom: size2,
-			PaddingLeft:   size3,
+			PaddingTop:    spacing2,
+			PaddingRight:  spacing3,
+			PaddingBottom: spacing2,
+			PaddingLeft:   spacing3,
 			Width:         props.UnitPercent(100),
 		},
 	},
@@ -61,7 +61,7 @@ var Form = []gcss.Style{
 	{
 		Selector: ".select",
 		Props: gcss.Props{
-			BackgroundColor: backGround,
+			BackgroundColor: input,
 			Border: props.Border{
 				Width: props.UnitPx(1),
 				Style: props.BorderStyleSolid,
@@ -70,12 +70,12 @@ var Form = []gcss.Style{
 			BorderRadius:  radius,
 			Display:       props.DisplayFlex,
 			FontSize:      fontSm,
-			Height:        size10,
+			Height:        spacing10,
 			LineHeight:    leadingTight,
-			PaddingTop:    size2,
-			PaddingRight:  size3,
-			PaddingBottom: size2,
-			PaddingLeft:   size3,
+			PaddingTop:    spacing2,
+			PaddingRight:  spacing3,
+			PaddingBottom: spacing2,
+			PaddingLeft:   spacing3,
 			Width:         props.UnitPercent(100),
 		},
 	},
@@ -83,11 +83,11 @@ var Form = []gcss.Style{
 		Selector: ".select:not([size])",
 		Props: gcss.Props{
 			Appearance:       props.AppearanceNone,
-			PaddingRight:     size10,
+			PaddingRight:     spacing10,
 			PrintColorAdjust: props.PrintColorAdjustExact,
 			BackgroundImage:  iconChevronDown,
 			BackgroundPosition: props.BackgroundPositionEdges(
-				props.BackgroundPositionEdge{Position: props.BackgroundPositionRight, Unit: size3},
+				props.BackgroundPositionEdge{Position: props.BackgroundPositionRight, Unit: spacing3},
 				props.BackgroundPositionEdge{Position: props.BackgroundPositionCenter},
 			),
 			BackgroundRepeat: props.BackgroundRepeatNoRepeat,
