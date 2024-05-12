@@ -84,11 +84,19 @@ router.Handle("GET", "/styles.css", func(c *gin.Context) {
 
 ```
 
-## Docs
+## Examples
 
+CSS:
 ```bash
 go install github.com/cosmtrek/air@latest
 ```
 ```bash
-air -build.cmd 'go build -o ./tmp/main docs/docs/main.go'
+cd examples
+air -build.include_dir "styles"
+```
+
+Hugo:
+```bash
+cd examples
+hugo server -D
 ```

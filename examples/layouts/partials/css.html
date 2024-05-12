@@ -1,0 +1,18 @@
+{{- $base := resources.Get "css/base.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
+{{- $utils := resources.Get "css/utils.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
+
+{{- if hugo.IsServer }}
+{{ $base = $base | resources.ExecuteAsTemplate (printf "css/base.dev.%v.css" now.UnixMilli) .}}
+{{ $utils = $utils | resources.ExecuteAsTemplate (printf "css/utils.dev.%v.css" now.UnixMilli) .}}
+{{ else }}
+{{ $base = $base | minify | fingerprint | resources.PostProcess }}
+{{ $utils = $utils | minify | fingerprint | resources.PostProcess }}
+{{ end -}}
+
+<link rel="stylesheet" href="{{ $base.RelPermalink }}">
+
+{{ range .Site.Params.custom_css -}}
+<link rel="stylesheet" href="{{ . | absURL }}">
+{{- end }}
+
+<link rel="stylesheet" href="{{ $utils.RelPermalink }}">

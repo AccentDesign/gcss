@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="grid md:grid-cols-12 gap-4">
+    <div class="hidden md:col-span-3 md:block">
+        {{ template "sideNav" . }}
+    </div>
+    <div class="md:col-span-9">
+        <article
+            class="mb-16 prose prose-slate lg:prose-lg hover:prose-a:text-sky-500">
+            <h1>{{ .Title }}</h1>
+            {{ .Content }}
+        </article>
+    </div>
+</div>
+{{ end }}

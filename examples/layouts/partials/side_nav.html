@@ -1,0 +1,10 @@
+{{ define "sideNav" }}
+<nav>
+  <h4 class="font-medium mb-4">examples</h4>
+  <ul>
+    {{ range .Site.RegularPages.ByTitle }}
+    <li class="mb-1"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+</nav>
+{{ end }}

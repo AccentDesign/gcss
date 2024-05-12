@@ -1,2 +1,7 @@
 .idea
+node_modules
+public
+resources
 tmp
+
+.hugo_build.lock
