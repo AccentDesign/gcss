@@ -1,9 +1,15 @@
 {{ define "main" }}
-{{ range .Pages.ByTitle }}
-<article
-    class="justify-self-center mx-auto mb-16 px-6 sm:px-4 md:px-0 prose prose-slate lg:prose-lg hover:prose-a:text-sky-500">
-    <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-    {{ .Content }}
-</article>
-{{ end }}
+<div class="grid md:grid-cols-12 gap-4">
+    <div class="hidden md:col-span-3 md:block">
+        {{ template "sideNav" . }}
+    </div>
+    <div class="md:col-span-9">
+        {{ range .Pages.ByTitle }}
+        <article class="mb-16 grid gap-8">
+            <h1><a href="{{ .Permalink }}" class="text-4xl hover:underline">{{ .Title }}</a></h1>
+            {{ .Content }}
+        </article>
+        {{ end }}
+    </div>
+</div>
 {{ end }}

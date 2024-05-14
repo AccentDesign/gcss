@@ -1,47 +1,41 @@
-<header class="mx-auto w-screen max-w-screen-2xl px-6 sm:px-7 xl:px-8 2xl:px-10 py-6">
-    {{/* CSS functionality for menu toggle */}}
+<header class="mx-auto w-screen max-w-screen-2xl px-6 py-6">
     <style type="text/css">
         input#nav-toggle:checked~label#show-button {
             display: none;
         }
-
         input#nav-toggle:checked~label#hide-button {
             display: flex;
         }
-
         input#nav-toggle:checked~#nav-menu {
             display: block;
         }
     </style>
-
     <nav class="flex items-center justify-between flex-wrap">
-        <a href="{{ .Site.Home.Permalink }}" class="flex items-center text-slate-800 font-bold">
+        <a href="{{ .Site.Home.Permalink }}" class="flex items-center text-slate-800 font-bold mr-auto">
             {{ .Site.Title }}
         </a>
-
-        <div class="flex items-center gap-4">
-            <a href="https://github.com/AccentDesign/gcss">
-                <svg class="fill-current h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-                    <path fill="currentColor" d="M216 104v8a56.06 56.06 0 0 1-48.44 55.47A39.8 39.8 0 0 1 176 192v40a8 8 0 0 1-8 8h-64a8 8 0 0 1-8-8v-16H72a40 40 0 0 1-40-40a24 24 0 0 0-24-24a8 8 0 0 1 0-16a40 40 0 0 1 40 40a24 24 0 0 0 24 24h24v-8a39.8 39.8 0 0 1 8.44-24.53A56.06 56.06 0 0 1 56 112v-8a58.14 58.14 0 0 1 7.69-28.32A59.78 59.78 0 0 1 69.07 28A8 8 0 0 1 76 24a59.75 59.75 0 0 1 48 24h24a59.75 59.75 0 0 1 48-24a8 8 0 0 1 6.93 4a59.74 59.74 0 0 1 5.37 47.68A58 58 0 0 1 216 104"/>
-                </svg>
-            </a>
-            <input id="nav-toggle" type=checkbox class="hidden">
-            <label id="show-button" for="nav-toggle"
-                class="flex items-center sm:hidden text-slate-600 hover:text-sky-500">
-                <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Menu Open</title>
-                    <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z" />
-                </svg>
-            </label>
-            <label id="hide-button" for="nav-toggle" class="items-center hidden text-gray-700 hover:text-blue-500">
-                <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Menu Close</title>
-                    <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
-                        transform="rotate(45 10 10)" />
-                </svg>
-            </label>
-        </div>
-        <ul id="nav-menu" class="w-full hidden mt-2">
+        <a href="https://github.com/AccentDesign/gcss">
+            <svg class="fill-current h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <path fill="currentColor" d="M216 104v8a56.06 56.06 0 0 1-48.44 55.47A39.8 39.8 0 0 1 176 192v40a8 8 0 0 1-8 8h-64a8 8 0 0 1-8-8v-16H72a40 40 0 0 1-40-40a24 24 0 0 0-24-24a8 8 0 0 1 0-16a40 40 0 0 1 40 40a24 24 0 0 0 24 24h24v-8a39.8 39.8 0 0 1 8.44-24.53A56.06 56.06 0 0 1 56 112v-8a58.14 58.14 0 0 1 7.69-28.32A59.78 59.78 0 0 1 69.07 28A8 8 0 0 1 76 24a59.75 59.75 0 0 1 48 24h24a59.75 59.75 0 0 1 48-24a8 8 0 0 1 6.93 4a59.74 59.74 0 0 1 5.37 47.68A58 58 0 0 1 216 104"/>
+            </svg>
+        </a>
+        <input id="nav-toggle" type=checkbox class="hidden">
+        <label id="show-button" for="nav-toggle"
+               class="flex items-center md:hidden ml-4 text-slate-600 hover:text-sky-500">
+            <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Menu Open</title>
+                <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z" />
+            </svg>
+        </label>
+        <label id="hide-button" for="nav-toggle"
+               class="items-center hidden ml-4 text-gray-700 hover:text-blue-500">
+            <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Menu Close</title>
+                <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+                         transform="rotate(45 10 10)" />
+            </svg>
+        </label>
+        <ul id="nav-menu" class="w-full hidden mt-4 basis-full">
             {{ range .Site.RegularPages.ByTitle }}
             <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
             {{ end }}

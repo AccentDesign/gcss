@@ -4,9 +4,8 @@
         {{ template "sideNav" . }}
     </div>
     <div class="md:col-span-9">
-        <article
-            class="mb-16 prose prose-slate lg:prose-lg hover:prose-a:text-sky-500">
-            <h1>{{ .Title }}</h1>
+        <article class="mb-16 grid gap-8">
+            <h1 class="text-4xl">{{ .Title }}</h1>
             {{ .Content }}
         </article>
     </div>

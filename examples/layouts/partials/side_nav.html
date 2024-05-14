@@ -3,7 +3,7 @@
   <h4 class="font-medium mb-4">examples</h4>
   <ul>
     {{ range .Site.RegularPages.ByTitle }}
-    <li class="mb-1"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+    <li class="mb-1"><a href="{{ .Permalink }}" class="hover:underline">{{ .Title }}</a></li>
     {{ end }}
   </ul>
 </nav>
