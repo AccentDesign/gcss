@@ -528,6 +528,29 @@ func TestStyle_BorderWidth(t *testing.T) {
 	}
 }
 
+func TestStyle_Bottom(t *testing.T) {
+	testCases := map[props.Unit]string{
+		props.UnitPx(10):      "10px",
+		props.UnitPercent(50): "50.00%",
+		props.UnitRem(10):     "10.000rem",
+	}
+
+	for prop, expected := range testCases {
+		t.Run(expected, func(t *testing.T) {
+			st := &Style{Selector: ".test", Props: Props{Bottom: prop}}
+			var buf bytes.Buffer
+			err := st.CSS(&buf)
+			if err != nil {
+				t.Errorf("unexpected error: %v", err)
+			}
+			css := fmt.Sprintf(".test{bottom:%s;}", expected)
+			if buf.String() != css {
+				t.Errorf("expected %q, got %q", css, buf.String())
+			}
+		})
+	}
+}
+
 func TestStyle_CaptionSide(t *testing.T) {
 	testCases := map[props.CaptionSide]string{
 		props.CaptionSideTop:         "top",
@@ -837,6 +860,29 @@ func TestStyle_FontWeight(t *testing.T) {
 	}
 }
 
+func TestStyle_Gap(t *testing.T) {
+	testCases := map[props.Unit]string{
+		props.UnitPx(10):      "10px",
+		props.UnitPercent(50): "50.00%",
+		props.UnitRem(10):     "10.000rem",
+	}
+
+	for prop, expected := range testCases {
+		t.Run(expected, func(t *testing.T) {
+			st := &Style{Selector: ".test", Props: Props{Gap: prop}}
+			var buf bytes.Buffer
+			err := st.CSS(&buf)
+			if err != nil {
+				t.Errorf("unexpected error: %v", err)
+			}
+			css := fmt.Sprintf(".test{gap:%s;}", expected)
+			if buf.String() != css {
+				t.Errorf("expected %q, got %q", css, buf.String())
+			}
+		})
+	}
+}
+
 func TestStyle_Height(t *testing.T) {
 	testCases := map[props.Unit]string{
 		props.UnitPx(20):      "20px",
@@ -936,6 +982,29 @@ func TestStyle_JustifySelf(t *testing.T) {
 
 			if buf.String() != fmt.Sprintf(".test{justify-self:%s;}", expected) {
 				t.Errorf("expected %q, got %q", expected, buf.String())
+			}
+		})
+	}
+}
+
+func TestStyle_Left(t *testing.T) {
+	testCases := map[props.Unit]string{
+		props.UnitPx(10):      "10px",
+		props.UnitPercent(50): "50.00%",
+		props.UnitRem(10):     "10.000rem",
+	}
+
+	for prop, expected := range testCases {
+		t.Run(expected, func(t *testing.T) {
+			st := &Style{Selector: ".test", Props: Props{Left: prop}}
+			var buf bytes.Buffer
+			err := st.CSS(&buf)
+			if err != nil {
+				t.Errorf("unexpected error: %v", err)
+			}
+			css := fmt.Sprintf(".test{left:%s;}", expected)
+			if buf.String() != css {
+				t.Errorf("expected %q, got %q", css, buf.String())
 			}
 		})
 	}
@@ -1371,6 +1440,29 @@ func TestStyle_PrintColorAdjust(t *testing.T) {
 	}
 }
 
+func TestStyle_Right(t *testing.T) {
+	testCases := map[props.Unit]string{
+		props.UnitPx(10):      "10px",
+		props.UnitPercent(50): "50.00%",
+		props.UnitRem(10):     "10.000rem",
+	}
+
+	for prop, expected := range testCases {
+		t.Run(expected, func(t *testing.T) {
+			st := &Style{Selector: ".test", Props: Props{Right: prop}}
+			var buf bytes.Buffer
+			err := st.CSS(&buf)
+			if err != nil {
+				t.Errorf("unexpected error: %v", err)
+			}
+			css := fmt.Sprintf(".test{right:%s;}", expected)
+			if buf.String() != css {
+				t.Errorf("expected %q, got %q", css, buf.String())
+			}
+		})
+	}
+}
+
 func TestStyle_TextAlign(t *testing.T) {
 	testCases := map[props.TextAlign]string{
 		props.TextAlignLeft:        "left",
@@ -1391,6 +1483,76 @@ func TestStyle_TextAlign(t *testing.T) {
 				t.Errorf("unexpected error: %v", err)
 			}
 			if buf.String() != fmt.Sprintf(".test{text-align:%s;}", expected) {
+				t.Errorf("expected %q, got %q", expected, buf.String())
+			}
+		})
+	}
+}
+
+func TestStyle_TextOverflow(t *testing.T) {
+	testCases := map[props.TextOverflow]string{
+		props.TextOverflowClip:        "clip",
+		props.TextOverflowEllipsis:    "ellipsis",
+		props.TextOverflow("initial"): "initial",
+	}
+
+	for prop, expected := range testCases {
+		t.Run(expected, func(t *testing.T) {
+			st := &Style{Selector: ".test", Props: Props{TextOverflow: prop}}
+			var buf bytes.Buffer
+			err := st.CSS(&buf)
+			if err != nil {
+				t.Errorf("unexpected error: %v", err)
+			}
+			if buf.String() != fmt.Sprintf(".test{text-overflow:%s;}", expected) {
+				t.Errorf("expected %q, got %q", expected, buf.String())
+			}
+		})
+	}
+}
+
+func TestStyle_Top(t *testing.T) {
+	testCases := map[props.Unit]string{
+		props.UnitPx(10):      "10px",
+		props.UnitPercent(50): "50.00%",
+		props.UnitRem(10):     "10.000rem",
+	}
+
+	for prop, expected := range testCases {
+		t.Run(expected, func(t *testing.T) {
+			st := &Style{Selector: ".test", Props: Props{Top: prop}}
+			var buf bytes.Buffer
+			err := st.CSS(&buf)
+			if err != nil {
+				t.Errorf("unexpected error: %v", err)
+			}
+			css := fmt.Sprintf(".test{top:%s;}", expected)
+			if buf.String() != css {
+				t.Errorf("expected %q, got %q", css, buf.String())
+			}
+		})
+	}
+}
+
+func TestStyle_WhiteSpace(t *testing.T) {
+	testCases := map[props.WhiteSpace]string{
+		props.WhiteSpaceNormal:      "normal",
+		props.WhiteSpaceNowrap:      "nowrap",
+		props.WhiteSpacePre:         "pre",
+		props.WhiteSpacePreLine:     "pre-line",
+		props.WhiteSpacePreWrap:     "pre-wrap",
+		props.WhiteSpace("initial"): "initial",
+	}
+
+	for prop, expected := range testCases {
+		t.Run(expected, func(t *testing.T) {
+			st := &Style{Selector: ".test", Props: Props{WhiteSpace: prop}}
+			var buf bytes.Buffer
+			err := st.CSS(&buf)
+			if err != nil {
+				t.Errorf("unexpected error: %v", err)
+			}
+			if buf.String() != fmt.Sprintf(".test{white-space:%s;}", expected) {
 				t.Errorf("expected %q, got %q", expected, buf.String())
 			}
 		})

@@ -25,6 +25,7 @@ type (
 		BorderStyle        props.BorderStyle        `css:"border-style"`
 		BorderTop          props.Border             `css:"border-top"`
 		BorderWidth        props.Unit               `css:"border-width"`
+		Bottom             props.Unit               `css:"bottom"`
 		CaptionSide        props.CaptionSide        `css:"caption-side"`
 		Color              props.Color              `css:"color"`
 		Display            props.Display            `css:"display"`
@@ -37,10 +38,12 @@ type (
 		FontSize           props.Unit               `css:"font-size"`
 		FontStyle          props.FontStyle          `css:"font-style"`
 		FontWeight         props.FontWeight         `css:"font-weight"`
+		Gap                props.Unit               `css:"gap"`
 		Height             props.Unit               `css:"height"`
 		JustifyContent     props.JustifyContent     `css:"justify-content"`
 		JustifyItems       props.JustifyItems       `css:"justify-items"`
 		JustifySelf        props.JustifySelf        `css:"justify-self"`
+		Left               props.Unit               `css:"left"`
 		LineHeight         props.Unit               `css:"line-height"`
 		Margin             props.Unit               `css:"margin"`
 		MarginBottom       props.Unit               `css:"margin-bottom"`
@@ -59,7 +62,11 @@ type (
 		PaddingTop         props.Unit               `css:"padding-top"`
 		Position           props.Position           `css:"position"`
 		PrintColorAdjust   props.PrintColorAdjust   `css:"print-color-adjust"`
+		Right              props.Unit               `css:"right"`
 		TextAlign          props.TextAlign          `css:"text-align"`
+		TextOverflow       props.TextOverflow       `css:"text-overflow"`
+		Top                props.Unit               `css:"top"`
+		WhiteSpace         props.WhiteSpace         `css:"white-space"`
 		Width              props.Unit               `css:"width"`
 	}
 	Style struct {
