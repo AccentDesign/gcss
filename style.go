@@ -76,7 +76,7 @@ type (
 	}
 )
 
-// CSS returns the CSS string representation of the style.
+// CSS writes the CSS representation of the style to the writer.
 func (s *Style) CSS(w io.Writer) error {
 	propsValue := reflect.ValueOf(s.Props)
 	propsType := reflect.TypeOf(s.Props)
