@@ -602,6 +602,35 @@ func TestStyle_Color(t *testing.T) {
 	}
 }
 
+func TestStyle_Cursor(t *testing.T) {
+	testCases := map[props.Cursor]string{
+		props.CursorAuto:        "auto",
+		props.CursorDefault:     "default",
+		props.CursorNone:        "none",
+		props.CursorHelp:        "help",
+		props.CursorPointer:     "pointer",
+		props.CursorWait:        "wait",
+		props.CursorText:        "text",
+		props.CursorMove:        "move",
+		props.CursorNotAllowed:  "not-allowed",
+		props.Cursor("inherit"): "inherit",
+	}
+
+	for prop, expected := range testCases {
+		t.Run(expected, func(t *testing.T) {
+			st := &Style{Selector: ".test", Props: Props{Cursor: prop}}
+			var buf bytes.Buffer
+			err := st.CSS(&buf)
+			if err != nil {
+				t.Errorf("unexpected error: %v", err)
+			}
+			if buf.String() != fmt.Sprintf(".test{cursor:%s;}", expected) {
+				t.Errorf("expected %q, got %q", expected, buf.String())
+			}
+		})
+	}
+}
+
 func TestStyle_Display(t *testing.T) {
 	testCases := map[props.Display]string{
 		props.DisplayBlock:            "block",

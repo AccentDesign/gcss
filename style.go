@@ -28,6 +28,7 @@ type (
 		Bottom             props.Unit               `css:"bottom"`
 		CaptionSide        props.CaptionSide        `css:"caption-side"`
 		Color              props.Color              `css:"color"`
+		Cursor             props.Cursor             `css:"cursor"`
 		Display            props.Display            `css:"display"`
 		FlexBasis          props.Unit               `css:"flex-basis"`
 		FlexDirection      props.FlexDirection      `css:"flex-direction"`
