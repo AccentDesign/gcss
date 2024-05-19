@@ -36,7 +36,9 @@ a few UI components that are configurable using Go.
 
 There are multiple ways you can use `gcss` in your project. For examples of property values, see the `style_test.go` file.
 
-Write to a css file:
+### File
+
+write to a file:
 
 ```go
 var styles = []gcss.Style{
@@ -60,7 +62,9 @@ for _, style := range styles {
 }
 ```
 
-Or as an example using a gin route:
+### Gin Handler
+
+write to a gin handler:
 
 ```go
 var styles = []gcss.Style{
@@ -80,9 +84,84 @@ router.Handle("GET", "/styles.css", func(c *gin.Context) {
         }
     }
 })
-
-
 ```
+
+### Theming
+
+Example of theming using `gcss`, the below could write to 2 separate css files or route handlers for dark and light themes.
+
+```go
+// Theme is a struct that holds the theme properties.
+type Theme struct {
+    Background            props.Color
+}
+
+// WriteCSS writes the css for the theme to the writer.
+func (t *Theme) WriteCSS(w io.Writer) {
+    for _, e := range t.styles() {
+        if err := e.CSS(w); err != nil {
+            panic(err)
+        }
+    }
+}
+
+// styles returns the styles for the theme.
+func (t *Theme) styles() []gcss.Style {
+    return []gcss.Style{
+        {
+            Selector: "body",
+                Props: gcss.Props{
+                BackgroundColor: t.Background,
+            },
+        },
+    }
+}
+
+// DarkTheme is a struct that holds the dark theme properties.
+type DarkTheme struct {
+    Theme
+}
+
+// LightTheme is a struct that holds the light theme properties.
+type LightTheme struct {
+    Theme
+}
+
+// NewDarkTheme creates a new dark theme.
+func NewDarkTheme() *DarkTheme {
+    return &DarkTheme{
+        Theme: Theme{
+            Background: props.ColorRGBA(38, 40, 46, 255),
+        },
+    }
+}
+
+// NewLightTheme creates a new light theme.
+func NewLightTheme() *LightTheme {
+    return &LightTheme{
+        Theme: Theme{
+            Background: props.ColorRGBA(255, 255, 255, 255),
+        },
+    }
+}
+```
+
+Then switch between them using media queries in your HTML.
+
+```html
+<!-- Light theme -->
+<link rel="stylesheet" href="light.css" media="(prefers-color-scheme: light)">
+
+<!-- Dark theme -->
+<link rel="stylesheet" href="dark.css" media="(prefers-color-scheme: dark)">
+```
+
+The benefit of this:
+
+* Keeps the css free of variables
+* Keeps html free of classes like `bg-gray-50 text-black dark:bg-slate-800 dark:text-white` and eliminates the need to remember to add the dark variant
+* Keeps the css clean and easy to debug with no overrides like the above
+* Allows for easy theming based on server side logic
 
 ## Examples
 
