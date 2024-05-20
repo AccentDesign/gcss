@@ -8,6 +8,7 @@ import (
 )
 
 type (
+	// Props represents the standard CSS properties that can be applied to a CSS rule.
 	Props struct {
 		AlignItems              props.AlignItems         `css:"align-items"`
 		Appearance              props.Appearance         `css:"appearance"`
@@ -74,9 +75,20 @@ type (
 		WhiteSpace              props.WhiteSpace         `css:"white-space"`
 		Width                   props.Unit               `css:"width"`
 	}
+	// Style represents a CSS style rule.
 	Style struct {
+		// Selector is the CSS selector to which the properties will be applied.
+		// It can be any valid CSS selector like class, id, element type, etc.
 		Selector string
-		Props    Props
+
+		// Props contains the standard CSS properties that will be applied to the selector.
+		// These properties are represented by the Props struct and are validated.
+		Props Props
+
+		// CustomProps contains any additional CSS properties that are not covered by the Props struct.
+		// These properties are not validated and are directly added to the CSS rule.
+		// The keys of the map are the CSS property names and the values are the CSS property values.
+		CustomProps map[string]string
 	}
 )
 
@@ -89,6 +101,7 @@ func (s *Style) CSS(w io.Writer) error {
 		return err
 	}
 
+	// Iterate over the fields of the Props struct and write the CSS properties to the writer.
 	for i := 0; i < propsValue.NumField(); i++ {
 		fieldValue := propsValue.Field(i)
 		fieldType := propsType.Field(i)
@@ -103,6 +116,13 @@ func (s *Style) CSS(w io.Writer) error {
 			if _, err := fmt.Fprintf(w, "%s:%s;", fieldName, v.String()); err != nil {
 				return err
 			}
+		}
+	}
+
+	// Write the custom properties to the writer.
+	for prop, value := range s.CustomProps {
+		if _, err := fmt.Fprintf(w, "%s:%s;", prop, value); err != nil {
+			return err
 		}
 	}
 

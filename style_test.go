@@ -38,6 +38,25 @@ func TestStyle_MultipleProps(t *testing.T) {
 	}
 }
 
+func TestStyle_CustomProps(t *testing.T) {
+	st := &Style{
+		Selector: ".test",
+		CustomProps: map[string]string{
+			"--color":          "red",
+			"background-color": "var(--color)",
+		},
+	}
+	var buf bytes.Buffer
+	err := st.CSS(&buf)
+	if err != nil {
+		t.Errorf("unexpected error: %v", err)
+	}
+	css := ".test{--color:red;background-color:var(--color);}"
+	if buf.String() != css {
+		t.Errorf("expected %q, got %q", css, buf.String())
+	}
+}
+
 func TestStyle_AlignItems(t *testing.T) {
 	testCases := map[props.AlignItems]string{
 		props.AlignItemsStart:       "flex-start",
