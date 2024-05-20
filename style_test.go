@@ -347,6 +347,54 @@ func TestStyle_BorderBottom(t *testing.T) {
 	}
 }
 
+func TestStyle_BorderBottomLeftRadius(t *testing.T) {
+	testCases := map[props.Unit]string{
+		props.UnitPx(10):         "10px",
+		props.UnitPercent(50):    "50.00%",
+		props.UnitRem(10):        "10.000rem",
+		props.UnitRaw("20% 10%"): "20% 10%",
+	}
+
+	for prop, expected := range testCases {
+		t.Run(expected, func(t *testing.T) {
+			st := &Style{Selector: ".test", Props: Props{BorderBottomLeftRadius: prop}}
+			var buf bytes.Buffer
+			err := st.CSS(&buf)
+			if err != nil {
+				t.Errorf("unexpected error: %v", err)
+			}
+			css := fmt.Sprintf(".test{border-bottom-left-radius:%s;}", expected)
+			if buf.String() != css {
+				t.Errorf("expected %q, got %q", css, buf.String())
+			}
+		})
+	}
+}
+
+func TestStyle_BorderBottomRightRadius(t *testing.T) {
+	testCases := map[props.Unit]string{
+		props.UnitPx(10):         "10px",
+		props.UnitPercent(50):    "50.00%",
+		props.UnitRem(10):        "10.000rem",
+		props.UnitRaw("20% 10%"): "20% 10%",
+	}
+
+	for prop, expected := range testCases {
+		t.Run(expected, func(t *testing.T) {
+			st := &Style{Selector: ".test", Props: Props{BorderBottomRightRadius: prop}}
+			var buf bytes.Buffer
+			err := st.CSS(&buf)
+			if err != nil {
+				t.Errorf("unexpected error: %v", err)
+			}
+			css := fmt.Sprintf(".test{border-bottom-right-radius:%s;}", expected)
+			if buf.String() != css {
+				t.Errorf("expected %q, got %q", css, buf.String())
+			}
+		})
+	}
+}
+
 func TestStyle_BorderLeft(t *testing.T) {
 	testCases := map[props.Border]string{
 		props.Border{
@@ -498,6 +546,54 @@ func TestStyle_BorderTop(t *testing.T) {
 				t.Errorf("unexpected error: %v", err)
 			}
 			css := fmt.Sprintf(".test{border-top:%s;}", expected)
+			if buf.String() != css {
+				t.Errorf("expected %q, got %q", css, buf.String())
+			}
+		})
+	}
+}
+
+func TestStyle_BorderTopLeftRadius(t *testing.T) {
+	testCases := map[props.Unit]string{
+		props.UnitPx(10):         "10px",
+		props.UnitPercent(50):    "50.00%",
+		props.UnitRem(10):        "10.000rem",
+		props.UnitRaw("20% 10%"): "20% 10%",
+	}
+
+	for prop, expected := range testCases {
+		t.Run(expected, func(t *testing.T) {
+			st := &Style{Selector: ".test", Props: Props{BorderTopLeftRadius: prop}}
+			var buf bytes.Buffer
+			err := st.CSS(&buf)
+			if err != nil {
+				t.Errorf("unexpected error: %v", err)
+			}
+			css := fmt.Sprintf(".test{border-top-left-radius:%s;}", expected)
+			if buf.String() != css {
+				t.Errorf("expected %q, got %q", css, buf.String())
+			}
+		})
+	}
+}
+
+func TestStyle_BorderTopRightRadius(t *testing.T) {
+	testCases := map[props.Unit]string{
+		props.UnitPx(10):         "10px",
+		props.UnitPercent(50):    "50.00%",
+		props.UnitRem(10):        "10.000rem",
+		props.UnitRaw("20% 10%"): "20% 10%",
+	}
+
+	for prop, expected := range testCases {
+		t.Run(expected, func(t *testing.T) {
+			st := &Style{Selector: ".test", Props: Props{BorderTopRightRadius: prop}}
+			var buf bytes.Buffer
+			err := st.CSS(&buf)
+			if err != nil {
+				t.Errorf("unexpected error: %v", err)
+			}
+			css := fmt.Sprintf(".test{border-top-right-radius:%s;}", expected)
 			if buf.String() != css {
 				t.Errorf("expected %q, got %q", css, buf.String())
 			}
