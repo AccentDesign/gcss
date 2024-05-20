@@ -82,11 +82,11 @@ type (
 		Selector string
 
 		// Props contains the standard CSS properties that will be applied to the selector.
-		// These properties are represented by the Props struct and are validated.
+		// These properties are represented by the Props struct and are strongly typed.
 		Props Props
 
 		// CustomProps contains any additional CSS properties that are not covered by the Props struct.
-		// These properties are not validated and are directly added to the CSS rule.
+		// These properties are directly added to the CSS rule as is.
 		// The keys of the map are the CSS property names and the values are the CSS property values.
 		CustomProps map[string]string
 	}
