@@ -297,14 +297,14 @@ func TestStyle_BorderColor(t *testing.T) {
 func TestStyle_Border(t *testing.T) {
 	testCases := map[props.Border]string{
 		props.Border{
-			props.UnitPx(10),
-			props.BorderStyleSolid,
-			props.ColorRGBA(0, 0, 0, 255),
+			Width: props.UnitPx(10),
+			Style: props.BorderStyleSolid,
+			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "10px solid rgba(0,0,0,1.00)",
 		props.Border{
-			props.UnitPx(10),
-			props.BorderStyleDouble,
-			props.ColorRGBA(0, 0, 0, 255),
+			Width: props.UnitPx(10),
+			Style: props.BorderStyleDouble,
+			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "10px double rgba(0,0,0,1.00)",
 		props.Border{
 			Style: props.BorderStyleNone,
@@ -333,14 +333,14 @@ func TestStyle_Border(t *testing.T) {
 func TestStyle_BorderBottom(t *testing.T) {
 	testCases := map[props.Border]string{
 		props.Border{
-			props.UnitPx(10),
-			props.BorderStyleSolid,
-			props.ColorRGBA(0, 0, 0, 255),
+			Width: props.UnitPx(10),
+			Style: props.BorderStyleSolid,
+			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "10px solid rgba(0,0,0,1.00)",
 		props.Border{
-			props.UnitPx(10),
-			props.BorderStyleDouble,
-			props.ColorRGBA(0, 0, 0, 255),
+			Width: props.UnitPx(10),
+			Style: props.BorderStyleDouble,
+			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "10px double rgba(0,0,0,1.00)",
 		props.Border{
 			Style: props.BorderStyleNone,
@@ -417,14 +417,14 @@ func TestStyle_BorderBottomRightRadius(t *testing.T) {
 func TestStyle_BorderLeft(t *testing.T) {
 	testCases := map[props.Border]string{
 		props.Border{
-			props.UnitPx(10),
-			props.BorderStyleSolid,
-			props.ColorRGBA(0, 0, 0, 255),
+			Width: props.UnitPx(10),
+			Style: props.BorderStyleSolid,
+			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "10px solid rgba(0,0,0,1.00)",
 		props.Border{
-			props.UnitPx(10),
-			props.BorderStyleDouble,
-			props.ColorRGBA(0, 0, 0, 255),
+			Width: props.UnitPx(10),
+			Style: props.BorderStyleDouble,
+			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "10px double rgba(0,0,0,1.00)",
 		props.Border{
 			Style: props.BorderStyleNone,
@@ -476,14 +476,14 @@ func TestStyle_BorderRadius(t *testing.T) {
 func TestStyle_BorderRight(t *testing.T) {
 	testCases := map[props.Border]string{
 		props.Border{
-			props.UnitPx(10),
-			props.BorderStyleSolid,
-			props.ColorRGBA(0, 0, 0, 255),
+			Width: props.UnitPx(10),
+			Style: props.BorderStyleSolid,
+			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "10px solid rgba(0,0,0,1.00)",
 		props.Border{
-			props.UnitPx(5),
-			props.BorderStyleDouble,
-			props.ColorRGBA(0, 0, 0, 255),
+			Width: props.UnitPx(5),
+			Style: props.BorderStyleDouble,
+			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "5px double rgba(0,0,0,1.00)",
 		props.Border{
 			Style: props.BorderStyleNone,
@@ -539,14 +539,14 @@ func TestStyle_BorderStyle(t *testing.T) {
 func TestStyle_BorderTop(t *testing.T) {
 	testCases := map[props.Border]string{
 		props.Border{
-			props.UnitPx(10),
-			props.BorderStyleSolid,
-			props.ColorRGBA(0, 0, 0, 255),
+			Width: props.UnitPx(10),
+			Style: props.BorderStyleSolid,
+			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "10px solid rgba(0,0,0,1.00)",
 		props.Border{
-			props.UnitPx(5),
-			props.BorderStyleDouble,
-			props.ColorRGBA(0, 0, 0, 255),
+			Width: props.UnitPx(5),
+			Style: props.BorderStyleDouble,
+			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "5px double rgba(0,0,0,1.00)",
 		props.Border{
 			Style: props.BorderStyleNone,

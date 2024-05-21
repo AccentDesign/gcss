@@ -1,5 +1,5 @@
 [![Test](https://github.com/AccentDesign/gcss/actions/workflows/go-test.yml/badge.svg)](https://github.com/AccentDesign/gcss/actions/workflows/go-test.yml)
-
+[![Go Report Card](https://goreportcard.com/badge/github.com/AccentDesign/gcss)](https://goreportcard.com/report/github.com/AccentDesign/gcss)
 # gcss
 
 CSS written in Pure Go.

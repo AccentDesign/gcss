@@ -26,34 +26,8 @@ func (u Unit) String() string {
 	switch u.Type {
 	case UnitTypeRaw:
 		return fmt.Sprintf("%v", u.Size)
-	case UnitTypePx:
-		switch v := u.Size.(type) {
-		case int:
-			return fmt.Sprintf("%dpx", v)
-		case float64:
-			return fmt.Sprintf("%.0fpx", v)
-		}
-	case UnitTypePercent:
-		switch v := u.Size.(type) {
-		case int:
-			return fmt.Sprintf("%d%%", v)
-		case float64:
-			return fmt.Sprintf("%.2f%%", v)
-		}
-	case UnitTypeRem:
-		switch v := u.Size.(type) {
-		case int:
-			return fmt.Sprintf("%drem", v)
-		case float64:
-			return fmt.Sprintf("%.3frem", v)
-		}
-	case UnitTypeEm:
-		switch v := u.Size.(type) {
-		case int:
-			return fmt.Sprintf("%dem", v)
-		case float64:
-			return fmt.Sprintf("%.3fem", v)
-		}
+	case UnitTypePx, UnitTypePercent, UnitTypeRem, UnitTypeEm:
+		return formatSize(u)
 	case UnitTypeAuto:
 		return "auto"
 	case UnitTypeInherit:
@@ -62,6 +36,33 @@ func (u Unit) String() string {
 		return "initial"
 	}
 	return ""
+}
+
+func formatSize(u Unit) string {
+	format := getFormat(u.Type)
+	switch v := u.Size.(type) {
+	case int:
+		return fmt.Sprintf(format, v)
+	case float64:
+		return fmt.Sprintf(format, v)
+	default:
+		return ""
+	}
+}
+
+func getFormat(unitType UnitType) string {
+	switch unitType {
+	case UnitTypePx:
+		return "%dpx"
+	case UnitTypePercent:
+		return "%.2f%%"
+	case UnitTypeRem:
+		return "%.3frem"
+	case UnitTypeEm:
+		return "%.3fem"
+	default:
+		return ""
+	}
 }
 
 func UnitRaw(size interface{}) Unit {
