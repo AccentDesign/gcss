@@ -2,7 +2,11 @@
 
 # gcss
 
-CSS written in Go.
+CSS written in Pure Go.
+
+No JS builders, no preprocessors, no linters, no frameworks, no classes, no variables, no overrides, no plugins, no dependencies, no javascript, no templates, no bs, no nothing.
+
+Just Go.
 
 ## Motivation
 
@@ -31,6 +35,12 @@ a few UI components that are configurable using Go.
 ## What I do need
 
 * Go, HTMX and maybe a few manual css styles.
+
+## Installation
+
+```bash
+go get github.com/AccentDesign/gcss
+```
 
 ## Usage
 
@@ -62,9 +72,9 @@ for _, style := range styles {
 }
 ```
 
-### Gin Handler
+### Http handler
 
-write to a gin handler:
+write using an http handler:
 
 ```go
 var styles = []gcss.Style{
@@ -76,10 +86,10 @@ var styles = []gcss.Style{
     },
 }
 
-router.Handle("GET", "/styles.css", func(c *gin.Context) {
-    c.Writer.Header().Set("Content-Type", "text/css")
+http.HandleFunc("/styles.css", func(w http.ResponseWriter, r *http.Request) {
+    w.Header().Set("Content-Type", "text/css")
     for _, style := range styles {
-        if err := style.CSS(c.Writer); err != nil {
+        if err := style.CSS(w); err != nil {
             panic(err)
         }
     }
@@ -150,10 +160,10 @@ Then switch between them using media queries in your HTML.
 
 ```html
 <!-- Light theme -->
-<link rel="stylesheet" href="light.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="light.css" media="(prefers-color-scheme: light)" />
 
 <!-- Dark theme -->
-<link rel="stylesheet" href="dark.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="dark.css" media="(prefers-color-scheme: dark)" />
 ```
 
 The benefit of this:
@@ -163,9 +173,37 @@ The benefit of this:
 * Keeps the css clean and easy to debug with no overrides like the above
 * Allows for easy theming based on server side logic
 
+## Mix it up with other CSS frameworks
+
+You can mix `gcss` with other CSS frameworks like `tailwindcss` for example:
+
+separate the css files into base and utils:
+
+```css
+/* base.css */
+@tailwind base;
+```
+
+```css
+/* utils.css */
+@tailwind utilities;
+```
+
+Then add the `gcss` styles in between in your html:
+
+```html
+<link rel="stylesheet" href="base.css" />
+<link rel="stylesheet" href="gcss-styles.css" />
+<link rel="stylesheet" href="utils.css" />
+```
+
+Try to keep the specificity of the `gcss` styles to 1 by using single classes this will ensure any `tailwindcss` utilities
+will be able to overwrite your styles where required.
+
 ## Examples
 
 CSS:
+
 ```bash
 go run examples/styles/cli/main.go export -directory "examples/static/css"
 ```
