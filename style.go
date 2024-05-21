@@ -75,6 +75,10 @@ type (
 		WhiteSpace              props.WhiteSpace         `css:"white-space"`
 		Width                   props.Unit               `css:"width"`
 	}
+	// CustomProp represents an additional CSS property that is not covered by the Props struct.
+	CustomProp struct {
+		Attr, Value string
+	}
 	// Style represents a CSS style rule.
 	Style struct {
 		// Selector is the CSS selector to which the properties will be applied.
@@ -87,8 +91,7 @@ type (
 
 		// CustomProps contains any additional CSS properties that are not covered by the Props struct.
 		// These properties are directly added to the CSS rule as is.
-		// The keys of the map are the CSS property names and the values are the CSS property values.
-		CustomProps map[string]string
+		CustomProps []CustomProp
 	}
 )
 
@@ -120,8 +123,8 @@ func (s *Style) CSS(w io.Writer) error {
 	}
 
 	// Write the custom properties to the writer.
-	for prop, value := range s.CustomProps {
-		if _, err := fmt.Fprintf(w, "%s:%s;", prop, value); err != nil {
+	for _, prop := range s.CustomProps {
+		if _, err := fmt.Fprintf(w, "%s:%s;", prop.Attr, prop.Value); err != nil {
 			return err
 		}
 	}

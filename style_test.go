@@ -41,9 +41,9 @@ func TestStyle_MultipleProps(t *testing.T) {
 func TestStyle_CustomProps(t *testing.T) {
 	st := &Style{
 		Selector: ".test",
-		CustomProps: map[string]string{
-			"--color":          "red",
-			"background-color": "var(--color)",
+		CustomProps: []CustomProp{
+			{Attr: "--color", Value: "red"},
+			{Attr: "background-color", Value: "var(--color)"},
 		},
 	}
 	var buf bytes.Buffer
