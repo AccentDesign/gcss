@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### v0.0.6
+
+Added new props:
+
+- column-gap
+- row-gap
+
 ### v0.0.5
 
 Added explicit CustomProp type and make CustomProps a slice to preserve ordering.

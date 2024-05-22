@@ -717,6 +717,29 @@ func TestStyle_Color(t *testing.T) {
 	}
 }
 
+func TestStyle_ColumnGap(t *testing.T) {
+	testCases := map[props.Unit]string{
+		props.UnitPx(10):      "10px",
+		props.UnitPercent(50): "50.00%",
+		props.UnitRem(10):     "10.000rem",
+	}
+
+	for prop, expected := range testCases {
+		t.Run(expected, func(t *testing.T) {
+			st := &Style{Selector: ".test", Props: Props{ColumnGap: prop}}
+			var buf bytes.Buffer
+			err := st.CSS(&buf)
+			if err != nil {
+				t.Errorf("unexpected error: %v", err)
+			}
+			css := fmt.Sprintf(".test{column-gap:%s;}", expected)
+			if buf.String() != css {
+				t.Errorf("expected %q, got %q", css, buf.String())
+			}
+		})
+	}
+}
+
 func TestStyle_Cursor(t *testing.T) {
 	testCases := map[props.Cursor]string{
 		props.CursorAuto:        "auto",
@@ -1600,6 +1623,29 @@ func TestStyle_Right(t *testing.T) {
 				t.Errorf("unexpected error: %v", err)
 			}
 			css := fmt.Sprintf(".test{right:%s;}", expected)
+			if buf.String() != css {
+				t.Errorf("expected %q, got %q", css, buf.String())
+			}
+		})
+	}
+}
+
+func TestStyle_RowGap(t *testing.T) {
+	testCases := map[props.Unit]string{
+		props.UnitPx(10):      "10px",
+		props.UnitPercent(50): "50.00%",
+		props.UnitRem(10):     "10.000rem",
+	}
+
+	for prop, expected := range testCases {
+		t.Run(expected, func(t *testing.T) {
+			st := &Style{Selector: ".test", Props: Props{RowGap: prop}}
+			var buf bytes.Buffer
+			err := st.CSS(&buf)
+			if err != nil {
+				t.Errorf("unexpected error: %v", err)
+			}
+			css := fmt.Sprintf(".test{row-gap:%s;}", expected)
 			if buf.String() != css {
 				t.Errorf("expected %q, got %q", css, buf.String())
 			}

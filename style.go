@@ -33,6 +33,7 @@ type (
 		Bottom                  props.Unit               `css:"bottom"`
 		CaptionSide             props.CaptionSide        `css:"caption-side"`
 		Color                   props.Color              `css:"color"`
+		ColumnGap               props.Unit               `css:"column-gap"`
 		Cursor                  props.Cursor             `css:"cursor"`
 		Display                 props.Display            `css:"display"`
 		FlexBasis               props.Unit               `css:"flex-basis"`
@@ -69,6 +70,7 @@ type (
 		Position                props.Position           `css:"position"`
 		PrintColorAdjust        props.PrintColorAdjust   `css:"print-color-adjust"`
 		Right                   props.Unit               `css:"right"`
+		RowGap                  props.Unit               `css:"row-gap"`
 		TextAlign               props.TextAlign          `css:"text-align"`
 		TextOverflow            props.TextOverflow       `css:"text-overflow"`
 		Top                     props.Unit               `css:"top"`
