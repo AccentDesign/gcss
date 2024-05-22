@@ -8,6 +8,7 @@ Added new props:
 
 - column-gap
 - row-gap
+- box-sizing
 
 ### v0.0.5
 

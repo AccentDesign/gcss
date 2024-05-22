@@ -666,6 +666,28 @@ func TestStyle_Bottom(t *testing.T) {
 	}
 }
 
+func TestStyle_BoxSizing(t *testing.T) {
+	testCases := map[props.BoxSizing]string{
+		props.BoxSizingBorderBox:   "border-box",
+		props.BoxSizingContentBox:  "content-box",
+		props.BoxSizing("initial"): "initial",
+	}
+
+	for prop, expected := range testCases {
+		t.Run(expected, func(t *testing.T) {
+			st := &Style{Selector: ".test", Props: Props{BoxSizing: prop}}
+			var buf bytes.Buffer
+			err := st.CSS(&buf)
+			if err != nil {
+				t.Errorf("unexpected error: %v", err)
+			}
+			if buf.String() != fmt.Sprintf(".test{box-sizing:%s;}", expected) {
+				t.Errorf("expected %q, got %q", expected, buf.String())
+			}
+		})
+	}
+}
+
 func TestStyle_CaptionSide(t *testing.T) {
 	testCases := map[props.CaptionSide]string{
 		props.CaptionSideTop:         "top",

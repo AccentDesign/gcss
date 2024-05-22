@@ -31,6 +31,7 @@ type (
 		BorderTopRightRadius    props.Unit               `css:"border-top-right-radius"`
 		BorderWidth             props.Unit               `css:"border-width"`
 		Bottom                  props.Unit               `css:"bottom"`
+		BoxSizing               props.BoxSizing          `css:"box-sizing"`
 		CaptionSide             props.CaptionSide        `css:"caption-side"`
 		Color                   props.Color              `css:"color"`
 		ColumnGap               props.Unit               `css:"column-gap"`
