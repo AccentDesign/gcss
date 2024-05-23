@@ -8,17 +8,22 @@ import (
 	"testing"
 )
 
-func TestStyle_Empty(t *testing.T) {
-	st := &Style{Selector: ".test"}
+func runTest(t *testing.T, st *Style, expected string) {
 	var buf bytes.Buffer
 	err := st.CSS(&buf)
 	if err != nil {
 		t.Errorf("unexpected error: %v", err)
 	}
-	css := ".test{}"
-	if buf.String() != css {
-		t.Errorf("expected %q, got %q", css, buf.String())
+
+	if buf.String() != expected {
+		t.Errorf("expected %q, got %q", expected, buf.String())
 	}
+}
+
+func TestStyle_Empty(t *testing.T) {
+	st := &Style{Selector: ".test", Props: Props{}}
+	css := ".test{}"
+	runTest(t, st, css)
 }
 
 func TestStyle_MultipleProps(t *testing.T) {
@@ -27,15 +32,8 @@ func TestStyle_MultipleProps(t *testing.T) {
 		Height:          props.UnitPx(100),
 		Width:           props.UnitPx(100),
 	}}
-	var buf bytes.Buffer
-	err := st.CSS(&buf)
-	if err != nil {
-		t.Errorf("unexpected error: %v", err)
-	}
 	css := ".test{background-color:rgba(0,0,0,1.00);height:100px;width:100px;}"
-	if buf.String() != css {
-		t.Errorf("expected %q, got %q", css, buf.String())
-	}
+	runTest(t, st, css)
 }
 
 func TestStyle_CustomProps(t *testing.T) {
@@ -46,15 +44,8 @@ func TestStyle_CustomProps(t *testing.T) {
 			{Attr: "background-color", Value: "var(--color)"},
 		},
 	}
-	var buf bytes.Buffer
-	err := st.CSS(&buf)
-	if err != nil {
-		t.Errorf("unexpected error: %v", err)
-	}
 	css := ".test{--color:red;background-color:var(--color);}"
-	if buf.String() != css {
-		t.Errorf("expected %q, got %q", css, buf.String())
-	}
+	runTest(t, st, css)
 }
 
 func TestStyle_AlignItems(t *testing.T) {
@@ -68,18 +59,9 @@ func TestStyle_AlignItems(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{AlignItems: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{align-items:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{AlignItems: prop}}
+		css := fmt.Sprintf(".test{align-items:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -99,18 +81,9 @@ func TestStyle_Appearance(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{Appearance: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{appearance:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{Appearance: prop}}
+		css := fmt.Sprintf(".test{appearance:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -122,24 +95,15 @@ func TestStyle_BackgroundColor(t *testing.T) {
 		props.ColorCurrentColor():                      "currentColor",
 		props.ColorInherit():                           "inherit",
 		props.ColorTransparent():                       "transparent",
-		props.Color{Keyword: "#efefef"}:                "#efefef",
-		props.Color{Keyword: "red"}:                    "red",
-		props.Color{RGBA: color.RGBA{0, 0, 0, 255}}:    "rgba(0,0,0,1.00)",
+		{Keyword: "#efefef"}:                           "#efefef",
+		{Keyword: "red"}:                               "red",
+		{RGBA: color.RGBA{0, 0, 0, 255}}:               "rgba(0,0,0,1.00)",
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{BackgroundColor: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{background-color:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{BackgroundColor: prop}}
+		css := fmt.Sprintf(".test{background-color:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -155,18 +119,9 @@ func TestStyle_BackgroundImage(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{BackgroundImage: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{background-image:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{BackgroundImage: prop}}
+		css := fmt.Sprintf(".test{background-image:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -194,18 +149,9 @@ func TestStyle_BackgroundPosition(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{BackgroundPosition: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{background-position:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{BackgroundPosition: prop}}
+		css := fmt.Sprintf(".test{background-position:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -225,18 +171,9 @@ func TestStyle_BackgroundRepeat(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{BackgroundRepeat: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{background-repeat:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{BackgroundRepeat: prop}}
+		css := fmt.Sprintf(".test{background-repeat:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -257,18 +194,9 @@ func TestStyle_BackgroundSize(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{BackgroundSize: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{background-size:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{BackgroundSize: prop}}
+		css := fmt.Sprintf(".test{background-size:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -279,90 +207,63 @@ func TestStyle_BorderColor(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{BorderColor: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{border-color:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{BorderColor: prop}}
+		css := fmt.Sprintf(".test{border-color:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
 func TestStyle_Border(t *testing.T) {
 	testCases := map[props.Border]string{
-		props.Border{
+		{
 			Width: props.UnitPx(10),
 			Style: props.BorderStyleSolid,
 			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "10px solid rgba(0,0,0,1.00)",
-		props.Border{
+		{
 			Width: props.UnitPx(10),
 			Style: props.BorderStyleDouble,
 			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "10px double rgba(0,0,0,1.00)",
-		props.Border{
+		{
 			Style: props.BorderStyleNone,
 		}: "none",
-		props.Border{
+		{
 			Style: props.BorderStyle("initial"),
 		}: "initial",
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{Border: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{border:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{Border: prop}}
+		css := fmt.Sprintf(".test{border:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
 func TestStyle_BorderBottom(t *testing.T) {
 	testCases := map[props.Border]string{
-		props.Border{
+		{
 			Width: props.UnitPx(10),
 			Style: props.BorderStyleSolid,
 			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "10px solid rgba(0,0,0,1.00)",
-		props.Border{
+		{
 			Width: props.UnitPx(10),
 			Style: props.BorderStyleDouble,
 			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "10px double rgba(0,0,0,1.00)",
-		props.Border{
+		{
 			Style: props.BorderStyleNone,
 		}: "none",
-		props.Border{
+		{
 			Style: props.BorderStyle("initial"),
 		}: "initial",
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{BorderBottom: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{border-bottom:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{BorderBottom: prop}}
+		css := fmt.Sprintf(".test{border-bottom:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -375,18 +276,9 @@ func TestStyle_BorderBottomLeftRadius(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{BorderBottomLeftRadius: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{border-bottom-left-radius:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{BorderBottomLeftRadius: prop}}
+		css := fmt.Sprintf(".test{border-bottom-left-radius:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -399,54 +291,36 @@ func TestStyle_BorderBottomRightRadius(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{BorderBottomRightRadius: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{border-bottom-right-radius:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{BorderBottomRightRadius: prop}}
+		css := fmt.Sprintf(".test{border-bottom-right-radius:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
 func TestStyle_BorderLeft(t *testing.T) {
 	testCases := map[props.Border]string{
-		props.Border{
+		{
 			Width: props.UnitPx(10),
 			Style: props.BorderStyleSolid,
 			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "10px solid rgba(0,0,0,1.00)",
-		props.Border{
+		{
 			Width: props.UnitPx(10),
 			Style: props.BorderStyleDouble,
 			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "10px double rgba(0,0,0,1.00)",
-		props.Border{
+		{
 			Style: props.BorderStyleNone,
 		}: "none",
-		props.Border{
+		{
 			Style: props.BorderStyle("initial"),
 		}: "initial",
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{BorderLeft: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{border-left:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{BorderLeft: prop}}
+		css := fmt.Sprintf(".test{border-left:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -458,54 +332,36 @@ func TestStyle_BorderRadius(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{BorderRadius: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{border-radius:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{BorderRadius: prop}}
+		css := fmt.Sprintf(".test{border-radius:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
 func TestStyle_BorderRight(t *testing.T) {
 	testCases := map[props.Border]string{
-		props.Border{
+		{
 			Width: props.UnitPx(10),
 			Style: props.BorderStyleSolid,
 			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "10px solid rgba(0,0,0,1.00)",
-		props.Border{
+		{
 			Width: props.UnitPx(5),
 			Style: props.BorderStyleDouble,
 			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "5px double rgba(0,0,0,1.00)",
-		props.Border{
+		{
 			Style: props.BorderStyleNone,
 		}: "none",
-		props.Border{
+		{
 			Style: props.BorderStyle("initial"),
 		}: "initial",
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{BorderRight: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{border-right:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{BorderRight: prop}}
+		css := fmt.Sprintf(".test{border-right:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -521,54 +377,36 @@ func TestStyle_BorderStyle(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{BorderStyle: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{border-style:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{BorderStyle: prop}}
+		css := fmt.Sprintf(".test{border-style:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
 func TestStyle_BorderTop(t *testing.T) {
 	testCases := map[props.Border]string{
-		props.Border{
+		{
 			Width: props.UnitPx(10),
 			Style: props.BorderStyleSolid,
 			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "10px solid rgba(0,0,0,1.00)",
-		props.Border{
+		{
 			Width: props.UnitPx(5),
 			Style: props.BorderStyleDouble,
 			Color: props.ColorRGBA(0, 0, 0, 255),
 		}: "5px double rgba(0,0,0,1.00)",
-		props.Border{
+		{
 			Style: props.BorderStyleNone,
 		}: "none",
-		props.Border{
+		{
 			Style: props.BorderStyle("initial"),
 		}: "initial",
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{BorderTop: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{border-top:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{BorderTop: prop}}
+		css := fmt.Sprintf(".test{border-top:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -581,18 +419,9 @@ func TestStyle_BorderTopLeftRadius(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{BorderTopLeftRadius: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{border-top-left-radius:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{BorderTopLeftRadius: prop}}
+		css := fmt.Sprintf(".test{border-top-left-radius:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -605,18 +434,9 @@ func TestStyle_BorderTopRightRadius(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{BorderTopRightRadius: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{border-top-right-radius:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{BorderTopRightRadius: prop}}
+		css := fmt.Sprintf(".test{border-top-right-radius:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -628,18 +448,9 @@ func TestStyle_BorderWidth(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{BorderWidth: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{border-width:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{BorderWidth: prop}}
+		css := fmt.Sprintf(".test{border-width:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -651,18 +462,9 @@ func TestStyle_Bottom(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{Bottom: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{bottom:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{Bottom: prop}}
+		css := fmt.Sprintf(".test{bottom:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -674,17 +476,9 @@ func TestStyle_BoxSizing(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{BoxSizing: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			if buf.String() != fmt.Sprintf(".test{box-sizing:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{BoxSizing: prop}}
+		css := fmt.Sprintf(".test{box-sizing:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -696,18 +490,9 @@ func TestStyle_CaptionSide(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{CaptionSide: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{caption-side:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{CaptionSide: prop}}
+		css := fmt.Sprintf(".test{caption-side:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -719,23 +504,15 @@ func TestStyle_Color(t *testing.T) {
 		props.ColorCurrentColor():                      "currentColor",
 		props.ColorInherit():                           "inherit",
 		props.ColorTransparent():                       "transparent",
-		props.Color{Keyword: "#efefef"}:                "#efefef",
-		props.Color{Keyword: "red"}:                    "red",
-		props.Color{RGBA: color.RGBA{0, 0, 0, 255}}:    "rgba(0,0,0,1.00)",
+		{Keyword: "#efefef"}:                           "#efefef",
+		{Keyword: "red"}:                               "red",
+		{RGBA: color.RGBA{0, 0, 0, 255}}:               "rgba(0,0,0,1.00)",
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{Color: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			if buf.String() != fmt.Sprintf(".test{color:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{Color: prop}}
+		css := fmt.Sprintf(".test{color:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -747,18 +524,9 @@ func TestStyle_ColumnGap(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{ColumnGap: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{column-gap:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{ColumnGap: prop}}
+		css := fmt.Sprintf(".test{column-gap:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -777,17 +545,9 @@ func TestStyle_Cursor(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{Cursor: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			if buf.String() != fmt.Sprintf(".test{cursor:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{Cursor: prop}}
+		css := fmt.Sprintf(".test{cursor:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -818,17 +578,9 @@ func TestStyle_Display(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{Display: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			if buf.String() != fmt.Sprintf(".test{display:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{Display: prop}}
+		css := fmt.Sprintf(".test{display:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -840,18 +592,9 @@ func TestStyle_FlexBasis(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{FlexBasis: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{flex-basis:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{FlexBasis: prop}}
+		css := fmt.Sprintf(".test{flex-basis:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -865,18 +608,9 @@ func TestStyle_FlexDirection(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{FlexDirection: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{flex-direction:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{FlexDirection: prop}}
+		css := fmt.Sprintf(".test{flex-direction:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -888,18 +622,9 @@ func TestStyle_FlexGrow(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{FlexGrow: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{flex-grow:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{FlexGrow: prop}}
+		css := fmt.Sprintf(".test{flex-grow:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -911,18 +636,9 @@ func TestStyle_FlexShrink(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{FlexShrink: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{flex-shrink:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{FlexShrink: prop}}
+		css := fmt.Sprintf(".test{flex-shrink:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -935,18 +651,9 @@ func TestStyle_FlexWrap(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{FlexWrap: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{flex-wrap:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{FlexWrap: prop}}
+		css := fmt.Sprintf(".test{flex-wrap:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -959,18 +666,9 @@ func TestStyle_Float(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{Float: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{float:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{Float: prop}}
+		css := fmt.Sprintf(".test{float:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -981,18 +679,9 @@ func TestStyle_FontSize(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{FontSize: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{font-size:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{FontSize: prop}}
+		css := fmt.Sprintf(".test{font-size:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1004,18 +693,9 @@ func TestStyle_FontStyle(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{FontStyle: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{font-style:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{FontStyle: prop}}
+		css := fmt.Sprintf(".test{font-style:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1034,18 +714,9 @@ func TestStyle_FontWeight(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{FontWeight: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{font-weight:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{FontWeight: prop}}
+		css := fmt.Sprintf(".test{font-weight:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1057,18 +728,9 @@ func TestStyle_Gap(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{Gap: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{gap:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{Gap: prop}}
+		css := fmt.Sprintf(".test{gap:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1082,18 +744,9 @@ func TestStyle_Height(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{Height: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{height:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{Height: prop}}
+		css := fmt.Sprintf(".test{height:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1111,18 +764,9 @@ func TestStyle_JustifyContent(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{JustifyContent: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{justify-content:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{JustifyContent: prop}}
+		css := fmt.Sprintf(".test{justify-content:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1136,18 +780,9 @@ func TestStyle_JustifyItems(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{JustifyItems: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{justify-items:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{JustifyItems: prop}}
+		css := fmt.Sprintf(".test{justify-items:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1161,18 +796,9 @@ func TestStyle_JustifySelf(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{JustifySelf: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{justify-self:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{JustifySelf: prop}}
+		css := fmt.Sprintf(".test{justify-self:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1184,18 +810,9 @@ func TestStyle_Left(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{Left: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{left:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{Left: prop}}
+		css := fmt.Sprintf(".test{left:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1207,18 +824,9 @@ func TestStyle_LineHeight(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{LineHeight: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{line-height:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{LineHeight: prop}}
+		css := fmt.Sprintf(".test{line-height:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1230,18 +838,9 @@ func TestStyle_Margin(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{Margin: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{margin:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{Margin: prop}}
+		css := fmt.Sprintf(".test{margin:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1253,18 +852,9 @@ func TestStyle_MarginBottom(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{MarginBottom: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{margin-bottom:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{MarginBottom: prop}}
+		css := fmt.Sprintf(".test{margin-bottom:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1276,18 +866,9 @@ func TestStyle_MarginLeft(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{MarginLeft: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{margin-left:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{MarginLeft: prop}}
+		css := fmt.Sprintf(".test{margin-left:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1299,18 +880,9 @@ func TestStyle_MarginRight(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{MarginRight: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{margin-right:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{MarginRight: prop}}
+		css := fmt.Sprintf(".test{margin-right:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1322,18 +894,9 @@ func TestStyle_MarginTop(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{MarginTop: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{margin-top:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{MarginTop: prop}}
+		css := fmt.Sprintf(".test{margin-top:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1345,18 +908,9 @@ func TestStyle_MaxWidth(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{MaxWidth: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{max-width:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{MaxWidth: prop}}
+		css := fmt.Sprintf(".test{max-width:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1368,18 +922,9 @@ func TestStyle_MinWidth(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{MinWidth: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{min-width:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{MinWidth: prop}}
+		css := fmt.Sprintf(".test{min-width:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1394,18 +939,9 @@ func TestStyle_Overflow(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{Overflow: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{overflow:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{Overflow: prop}}
+		css := fmt.Sprintf(".test{overflow:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1420,18 +956,9 @@ func TestStyle_OverflowX(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{OverflowX: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{overflow-x:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{OverflowX: prop}}
+		css := fmt.Sprintf(".test{overflow-x:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1446,18 +973,9 @@ func TestStyle_OverflowY(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{OverflowY: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{overflow-y:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{OverflowY: prop}}
+		css := fmt.Sprintf(".test{overflow-y:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1470,18 +988,9 @@ func TestStyle_Padding(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{Padding: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{padding:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{Padding: prop}}
+		css := fmt.Sprintf(".test{padding:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1494,18 +1003,9 @@ func TestStyle_PaddingBottom(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{PaddingBottom: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{padding-bottom:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{PaddingBottom: prop}}
+		css := fmt.Sprintf(".test{padding-bottom:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1518,18 +1018,9 @@ func TestStyle_PaddingLeft(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{PaddingLeft: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{padding-left:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{PaddingLeft: prop}}
+		css := fmt.Sprintf(".test{padding-left:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1542,18 +1033,9 @@ func TestStyle_PaddingRight(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{PaddingRight: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{padding-right:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{PaddingRight: prop}}
+		css := fmt.Sprintf(".test{padding-right:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1566,18 +1048,9 @@ func TestStyle_PaddingTop(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{PaddingTop: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{padding-top:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{PaddingTop: prop}}
+		css := fmt.Sprintf(".test{padding-top:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1592,18 +1065,9 @@ func TestStyle_Position(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{Position: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{position:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{Position: prop}}
+		css := fmt.Sprintf(".test{position:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1615,17 +1079,9 @@ func TestStyle_PrintColorAdjust(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{PrintColorAdjust: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			if buf.String() != fmt.Sprintf(".test{print-color-adjust:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{PrintColorAdjust: prop}}
+		css := fmt.Sprintf(".test{print-color-adjust:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1637,18 +1093,9 @@ func TestStyle_Right(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{Right: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{right:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{Right: prop}}
+		css := fmt.Sprintf(".test{right:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1660,18 +1107,9 @@ func TestStyle_RowGap(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{RowGap: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{row-gap:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{RowGap: prop}}
+		css := fmt.Sprintf(".test{row-gap:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1687,17 +1125,9 @@ func TestStyle_TextAlign(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{TextAlign: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			if buf.String() != fmt.Sprintf(".test{text-align:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{TextAlign: prop}}
+		css := fmt.Sprintf(".test{text-align:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1709,17 +1139,9 @@ func TestStyle_TextOverflow(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{TextOverflow: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			if buf.String() != fmt.Sprintf(".test{text-overflow:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{TextOverflow: prop}}
+		css := fmt.Sprintf(".test{text-overflow:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1731,18 +1153,9 @@ func TestStyle_Top(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{Top: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			css := fmt.Sprintf(".test{top:%s;}", expected)
-			if buf.String() != css {
-				t.Errorf("expected %q, got %q", css, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{Top: prop}}
+		css := fmt.Sprintf(".test{top:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1757,17 +1170,9 @@ func TestStyle_WhiteSpace(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{WhiteSpace: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-			if buf.String() != fmt.Sprintf(".test{white-space:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{WhiteSpace: prop}}
+		css := fmt.Sprintf(".test{white-space:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
 
@@ -1781,17 +1186,8 @@ func TestStyle_Width(t *testing.T) {
 	}
 
 	for prop, expected := range testCases {
-		t.Run(expected, func(t *testing.T) {
-			st := &Style{Selector: ".test", Props: Props{Width: prop}}
-			var buf bytes.Buffer
-			err := st.CSS(&buf)
-			if err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
-
-			if buf.String() != fmt.Sprintf(".test{width:%s;}", expected) {
-				t.Errorf("expected %q, got %q", expected, buf.String())
-			}
-		})
+		st := &Style{Selector: ".test", Props: Props{Width: prop}}
+		css := fmt.Sprintf(".test{width:%s;}", expected)
+		runTest(t, st, css)
 	}
 }
