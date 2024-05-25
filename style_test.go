@@ -1186,6 +1186,26 @@ func TestStyle_Top(t *testing.T) {
 	}
 }
 
+func TestStyle_VerticalAlign(t *testing.T) {
+	testCases := map[props.VerticalAlign]string{
+		props.VerticalAlignBaseline:    "baseline",
+		props.VerticalAlignSub:         "sub",
+		props.VerticalAlignSuper:       "super",
+		props.VerticalAlignTextTop:     "text-top",
+		props.VerticalAlignTextBottom:  "text-bottom",
+		props.VerticalAlignMiddle:      "middle",
+		props.VerticalAlignTop:         "top",
+		props.VerticalAlignBottom:      "bottom",
+		props.VerticalAlign("initial"): "initial",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{VerticalAlign: prop}}
+		css := fmt.Sprintf(".test{vertical-align:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
 func TestStyle_WhiteSpace(t *testing.T) {
 	testCases := map[props.WhiteSpace]string{
 		props.WhiteSpaceNormal:      "normal",

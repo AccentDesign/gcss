@@ -11,6 +11,7 @@ Added new props:
 - box-sizing
 - list-style-position
 - list-style-type
+- vertical-align
 
 ### v0.0.5
 

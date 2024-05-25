@@ -77,6 +77,7 @@ type (
 		TextAlign               props.TextAlign          `css:"text-align"`
 		TextOverflow            props.TextOverflow       `css:"text-overflow"`
 		Top                     props.Unit               `css:"top"`
+		VerticalAlign           props.VerticalAlign      `css:"vertical-align"`
 		WhiteSpace              props.WhiteSpace         `css:"white-space"`
 		Width                   props.Unit               `css:"width"`
 	}
