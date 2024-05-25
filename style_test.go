@@ -816,6 +816,33 @@ func TestStyle_Left(t *testing.T) {
 	}
 }
 
+func TestStyle_ListStylePosition(t *testing.T) {
+	testCases := map[props.ListStylePosition]string{
+		props.ListStylePositionInside:  "inside",
+		props.ListStylePositionOutside: "outside",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{ListStylePosition: prop}}
+		css := fmt.Sprintf(".test{list-style-position:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
+func TestStyle_ListStyleType(t *testing.T) {
+	testCases := map[props.ListStyleType]string{
+		props.ListStyleTypeNone:    "none",
+		props.ListStyleTypeDisc:    "disc",
+		props.ListStyleTypeDecimal: "decimal",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{ListStyleType: prop}}
+		css := fmt.Sprintf(".test{list-style-type:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
 func TestStyle_LineHeight(t *testing.T) {
 	testCases := map[props.Unit]string{
 		props.UnitRaw(1.5): "1.5",

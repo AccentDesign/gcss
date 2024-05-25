@@ -53,6 +53,8 @@ type (
 		JustifySelf             props.JustifySelf        `css:"justify-self"`
 		Left                    props.Unit               `css:"left"`
 		LineHeight              props.Unit               `css:"line-height"`
+		ListStylePosition       props.ListStylePosition  `css:"list-style-position"`
+		ListStyleType           props.ListStyleType      `css:"list-style-type"`
 		Margin                  props.Unit               `css:"margin"`
 		MarginBottom            props.Unit               `css:"margin-bottom"`
 		MarginLeft              props.Unit               `css:"margin-left"`

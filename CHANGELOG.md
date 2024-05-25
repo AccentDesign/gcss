@@ -9,6 +9,8 @@ Added new props:
 - column-gap
 - row-gap
 - box-sizing
+- list-style-position
+- list-style-type
 
 ### v0.0.5
 
