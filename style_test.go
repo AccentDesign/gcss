@@ -955,6 +955,21 @@ func TestStyle_MinWidth(t *testing.T) {
 	}
 }
 
+func TestStyle_Opacity(t *testing.T) {
+	testCases := map[props.Unit]string{
+		props.UnitRaw(0):         "0",
+		props.UnitRaw(0.33):      "0.33",
+		props.UnitPercent(90):    "90.00%",
+		props.UnitRaw("initial"): "initial",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{Opacity: prop}}
+		css := fmt.Sprintf(".test{opacity:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
 func TestStyle_Overflow(t *testing.T) {
 	testCases := map[props.Overflow]string{
 		props.OverflowVisible:     "visible",
@@ -1235,6 +1250,35 @@ func TestStyle_Width(t *testing.T) {
 	for prop, expected := range testCases {
 		st := &Style{Selector: ".test", Props: Props{Width: prop}}
 		css := fmt.Sprintf(".test{width:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
+func TestStyle_Visibility(t *testing.T) {
+	testCases := map[props.Visibility]string{
+		props.VisibilityVisible:     "visible",
+		props.VisibilityHidden:      "hidden",
+		props.VisibilityCollapse:    "collapse",
+		props.Visibility("initial"): "initial",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{Visibility: prop}}
+		css := fmt.Sprintf(".test{visibility:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
+func TestStyle_ZIndex(t *testing.T) {
+	testCases := map[props.Unit]string{
+		props.UnitRaw(1):  "1",
+		props.UnitRaw(10): "10",
+		props.UnitAuto():  "auto",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{ZIndex: prop}}
+		css := fmt.Sprintf(".test{z-index:%s;}", expected)
 		runTest(t, st, css)
 	}
 }

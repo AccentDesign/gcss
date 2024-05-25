@@ -62,6 +62,7 @@ type (
 		MarginTop               props.Unit               `css:"margin-top"`
 		MaxWidth                props.Unit               `css:"max-width"`
 		MinWidth                props.Unit               `css:"min-width"`
+		Opacity                 props.Unit               `css:"opacity"`
 		Overflow                props.Overflow           `css:"overflow"`
 		OverflowX               props.Overflow           `css:"overflow-x"`
 		OverflowY               props.Overflow           `css:"overflow-y"`
@@ -80,6 +81,8 @@ type (
 		VerticalAlign           props.VerticalAlign      `css:"vertical-align"`
 		WhiteSpace              props.WhiteSpace         `css:"white-space"`
 		Width                   props.Unit               `css:"width"`
+		Visibility              props.Visibility         `css:"visibility"`
+		ZIndex                  props.Unit               `css:"z-index"`
 	}
 	// CustomProp represents an additional CSS property that is not covered by the Props struct.
 	CustomProp struct {

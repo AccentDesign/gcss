@@ -12,6 +12,9 @@ Added new props:
 - list-style-position
 - list-style-type
 - vertical-align
+- z-index
+- visibility
+- opacity
 
 ### v0.0.5
 
