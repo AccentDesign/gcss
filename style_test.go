@@ -1263,6 +1263,22 @@ func TestStyle_TextOverflow(t *testing.T) {
 	}
 }
 
+func TestStyle_TextTransform(t *testing.T) {
+	testCases := map[props.TextTransform]string{
+		props.TextTransformNone:        "none",
+		props.TextTransformCapitalize:  "capitalize",
+		props.TextTransformUppercase:   "uppercase",
+		props.TextTransformLowercase:   "lowercase",
+		props.TextTransform("initial"): "initial",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{TextTransform: prop}}
+		css := fmt.Sprintf(".test{text-transform:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
 func TestStyle_TextWrap(t *testing.T) {
 	testCases := map[props.TextWrap]string{
 		props.TextWrapWrap:       "wrap",

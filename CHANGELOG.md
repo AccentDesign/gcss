@@ -10,6 +10,7 @@ Added new props:
 - text-decoration-line
 - text-decoration-style
 - text-decoration-thickness
+- text-transform
 - text-underline-offset
 - text-wrap
 
