@@ -11,6 +11,7 @@ Added new props:
 - text-decoration-style
 - text-decoration-thickness
 - text-underline-offset
+- text-wrap
 
 ### v0.0.6
 

@@ -82,6 +82,7 @@ type (
 		TextDecorationThickness props.Unit                `css:"text-decoration-thickness"`
 		TextOverflow            props.TextOverflow        `css:"text-overflow"`
 		TextUnderlineOffset     props.Unit                `css:"text-underline-offset"`
+		TextWrap                props.TextWrap            `css:"text-wrap"`
 		Top                     props.Unit                `css:"top"`
 		VerticalAlign           props.VerticalAlign       `css:"vertical-align"`
 		WhiteSpace              props.WhiteSpace          `css:"white-space"`

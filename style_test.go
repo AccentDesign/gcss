@@ -1263,6 +1263,22 @@ func TestStyle_TextOverflow(t *testing.T) {
 	}
 }
 
+func TestStyle_TextWrap(t *testing.T) {
+	testCases := map[props.TextWrap]string{
+		props.TextWrapWrap:       "wrap",
+		props.TextWrapNoWrap:     "nowrap",
+		props.TextWrapBalance:    "balance",
+		props.TextWrapPretty:     "pretty",
+		props.TextWrap("stable"): "stable",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{TextWrap: prop}}
+		css := fmt.Sprintf(".test{text-wrap:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
 func TestStyle_Top(t *testing.T) {
 	testCases := map[props.Unit]string{
 		props.UnitPx(10):      "10px",
