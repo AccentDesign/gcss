@@ -1236,6 +1236,20 @@ func TestStyle_TextDecorationThickness(t *testing.T) {
 	}
 }
 
+func TestStyle_TextIndent(t *testing.T) {
+	testCases := map[props.Unit]string{
+		props.UnitPx(0):      "0px",
+		props.UnitRem(0.875): "0.875rem",
+		props.UnitInherit():  "inherit",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{TextIndent: prop}}
+		css := fmt.Sprintf(".test{text-indent:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
 func TestStyle_TextUnderlineOffset(t *testing.T) {
 	testCases := map[props.Unit]string{
 		props.UnitPx(1):  "1px",

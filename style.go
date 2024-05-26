@@ -80,6 +80,7 @@ type (
 		TextDecorationLine      props.TextDecorationLine  `css:"text-decoration-line"`
 		TextDecorationStyle     props.TextDecorationStyle `css:"text-decoration-style"`
 		TextDecorationThickness props.Unit                `css:"text-decoration-thickness"`
+		TextIndent              props.Unit                `css:"text-indent"`
 		TextOverflow            props.TextOverflow        `css:"text-overflow"`
 		TextTransform           props.TextTransform       `css:"text-transform"`
 		TextUnderlineOffset     props.Unit                `css:"text-underline-offset"`
