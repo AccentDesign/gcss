@@ -1173,6 +1173,82 @@ func TestStyle_TextAlign(t *testing.T) {
 	}
 }
 
+func TestStyle_TextDecorationColor(t *testing.T) {
+	testCases := map[props.Color]string{
+		props.ColorRGBA(0, 0, 0, 255):                  "rgba(0,0,0,1.00)",
+		props.ColorRGBA(255, 255, 255, 230):            "rgba(255,255,255,0.90)",
+		props.ColorRGBA(255, 255, 255, 255).Alpha(230): "rgba(255,255,255,0.90)",
+		props.ColorCurrentColor():                      "currentColor",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{TextDecorationColor: prop}}
+		css := fmt.Sprintf(".test{text-decoration-color:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
+func TestStyle_TextDecorationLine(t *testing.T) {
+	testCases := map[props.TextDecorationLine]string{
+		props.TextDecorationLineNone:        "none",
+		props.TextDecorationLineUnderline:   "underline",
+		props.TextDecorationLineOverline:    "overline",
+		props.TextDecorationLineLineThrough: "line-through",
+		props.TextDecorationLine("initial"): "initial",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{TextDecorationLine: prop}}
+		css := fmt.Sprintf(".test{text-decoration-line:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
+func TestStyle_TextDecorationStyle(t *testing.T) {
+	testCases := map[props.TextDecorationStyle]string{
+		props.TextDecorationStyleSolid:       "solid",
+		props.TextDecorationStyleDouble:      "double",
+		props.TextDecorationStyleDotted:      "dotted",
+		props.TextDecorationStyleDashed:      "dashed",
+		props.TextDecorationStyleWavy:        "wavy",
+		props.TextDecorationStyle("initial"): "initial",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{TextDecorationStyle: prop}}
+		css := fmt.Sprintf(".test{text-decoration-style:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
+func TestStyle_TextDecorationThickness(t *testing.T) {
+	testCases := map[props.Unit]string{
+		props.UnitPx(1):            "1px",
+		props.UnitAuto():           "auto",
+		props.UnitRaw("from-font"): "from-font",
+		props.UnitInherit():        "inherit",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{TextDecorationThickness: prop}}
+		css := fmt.Sprintf(".test{text-decoration-thickness:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
+func TestStyle_TextUnderlineOffset(t *testing.T) {
+	testCases := map[props.Unit]string{
+		props.UnitPx(1):  "1px",
+		props.UnitAuto(): "auto",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{TextUnderlineOffset: prop}}
+		css := fmt.Sprintf(".test{text-underline-offset:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
 func TestStyle_TextOverflow(t *testing.T) {
 	testCases := map[props.TextOverflow]string{
 		props.TextOverflowClip:        "clip",

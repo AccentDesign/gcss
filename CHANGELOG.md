@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+### v0.0.7
+
+Added new props:
+
+- text-decoration-color
+- text-decoration-line
+- text-decoration-style
+- text-decoration-thickness
+- text-underline-offset
+
 ### v0.0.6
 
 Added new props:
