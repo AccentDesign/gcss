@@ -672,6 +672,22 @@ func TestStyle_Float(t *testing.T) {
 	}
 }
 
+func TestStyle_FontFamily(t *testing.T) {
+	testCases := map[props.FontFamily]string{
+		props.FontFamilySans:  "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+		props.FontFamilySerif: "ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+		props.FontFamilyMono:  "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+		props.FontFamily("\"Gill Sans Extrabold\", sans-serif"): "\"Gill Sans Extrabold\", sans-serif",
+		props.FontFamily("sans-serif"):                          "sans-serif",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{FontFamily: prop}}
+		css := fmt.Sprintf(".test{font-family:%s;}", expected)
+		runTest(t, st, css)
+	}
+
+}
 func TestStyle_FontSize(t *testing.T) {
 	testCases := map[props.Unit]string{
 		props.UnitPx(20): "20px",

@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 Added new props:
 
+- font-family (basic defaults from tailwindcss)
 - text-decoration-color
 - text-decoration-line
 - text-decoration-style

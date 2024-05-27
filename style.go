@@ -43,6 +43,7 @@ type (
 		FlexShrink              props.Unit                `css:"flex-shrink"`
 		FlexWrap                props.FlexWrap            `css:"flex-wrap"`
 		Float                   props.Float               `css:"float"`
+		FontFamily              props.FontFamily          `css:"font-family"`
 		FontSize                props.Unit                `css:"font-size"`
 		FontStyle               props.FontStyle           `css:"font-style"`
 		FontWeight              props.FontWeight          `css:"font-weight"`
