@@ -1295,11 +1295,10 @@ func TestStyle_TextTransform(t *testing.T) {
 
 func TestStyle_TextWrap(t *testing.T) {
 	testCases := map[props.TextWrap]string{
-		props.TextWrapWrap:       "wrap",
-		props.TextWrapNoWrap:     "nowrap",
-		props.TextWrapBalance:    "balance",
-		props.TextWrapPretty:     "pretty",
-		props.TextWrap("stable"): "stable",
+		props.TextWrapWrap:        "wrap",
+		props.TextWrapNoWrap:      "nowrap",
+		props.TextWrapBalance:     "balance",
+		props.TextWrap("inherit"): "inherit",
 	}
 
 	for prop, expected := range testCases {
