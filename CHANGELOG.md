@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+### v0.0.8
+
+Added new props:
+
+- max-height
+- max-width
+
+Added new units:
+
+- vh
+- vw
+
 ### v0.0.7
 
 Added new props:

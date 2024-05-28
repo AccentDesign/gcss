@@ -943,11 +943,27 @@ func TestStyle_MarginTop(t *testing.T) {
 	}
 }
 
+func TestStyle_MaxHeight(t *testing.T) {
+	testCases := map[props.Unit]string{
+		props.UnitPx(10):  "10px",
+		props.UnitRem(2):  "2.000rem",
+		props.UnitVh(100): "100vh",
+		props.UnitAuto():  "auto",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{MaxHeight: prop}}
+		css := fmt.Sprintf(".test{max-height:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
 func TestStyle_MaxWidth(t *testing.T) {
 	testCases := map[props.Unit]string{
-		props.UnitPx(10): "10px",
-		props.UnitRem(2): "2.000rem",
-		props.UnitAuto(): "auto",
+		props.UnitPx(10):  "10px",
+		props.UnitRem(2):  "2.000rem",
+		props.UnitVw(100): "100vw",
+		props.UnitAuto():  "auto",
 	}
 
 	for prop, expected := range testCases {
@@ -957,11 +973,27 @@ func TestStyle_MaxWidth(t *testing.T) {
 	}
 }
 
+func TestStyle_MinHeight(t *testing.T) {
+	testCases := map[props.Unit]string{
+		props.UnitPx(10):  "10px",
+		props.UnitRem(2):  "2.000rem",
+		props.UnitVh(100): "100vh",
+		props.UnitAuto():  "auto",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{MinHeight: prop}}
+		css := fmt.Sprintf(".test{min-height:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
 func TestStyle_MinWidth(t *testing.T) {
 	testCases := map[props.Unit]string{
-		props.UnitPx(10): "10px",
-		props.UnitRem(2): "2.000rem",
-		props.UnitAuto(): "auto",
+		props.UnitPx(10):  "10px",
+		props.UnitRem(2):  "2.000rem",
+		props.UnitVw(100): "100vw",
+		props.UnitAuto():  "auto",
 	}
 
 	for prop, expected := range testCases {

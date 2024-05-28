@@ -17,6 +17,8 @@ const (
 	UnitTypePercent
 	UnitTypeRem
 	UnitTypeEm
+	UnitTypeVh
+	UnitTypeVw
 	UnitTypeAuto
 	UnitTypeInherit
 	UnitTypeInitial
@@ -26,7 +28,7 @@ func (u Unit) String() string {
 	switch u.Type {
 	case UnitTypeRaw:
 		return fmt.Sprintf("%v", u.Size)
-	case UnitTypePx, UnitTypePercent, UnitTypeRem, UnitTypeEm:
+	case UnitTypePx, UnitTypePercent, UnitTypeRem, UnitTypeEm, UnitTypeVh, UnitTypeVw:
 		return formatSize(u)
 	case UnitTypeAuto:
 		return "auto"
@@ -60,6 +62,10 @@ func getFormat(unitType UnitType) string {
 		return "%.3frem"
 	case UnitTypeEm:
 		return "%.3fem"
+	case UnitTypeVh:
+		return "%dvh"
+	case UnitTypeVw:
+		return "%dvw"
 	default:
 		return ""
 	}
@@ -83,6 +89,14 @@ func UnitRem(size float64) Unit {
 
 func UnitEm(size float64) Unit {
 	return Unit{Size: size, Type: UnitTypeEm}
+}
+
+func UnitVh(size int) Unit {
+	return Unit{Size: size, Type: UnitTypeVh}
+}
+
+func UnitVw(size int) Unit {
+	return Unit{Size: size, Type: UnitTypeVw}
 }
 
 func UnitAuto() Unit {

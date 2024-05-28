@@ -61,7 +61,9 @@ type (
 		MarginLeft              props.Unit                `css:"margin-left"`
 		MarginRight             props.Unit                `css:"margin-right"`
 		MarginTop               props.Unit                `css:"margin-top"`
+		MaxHeight               props.Unit                `css:"max-height"`
 		MaxWidth                props.Unit                `css:"max-width"`
+		MinHeight               props.Unit                `css:"min-height"`
 		MinWidth                props.Unit                `css:"min-width"`
 		Opacity                 props.Unit                `css:"opacity"`
 		Overflow                props.Overflow            `css:"overflow"`
