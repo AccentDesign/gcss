@@ -3,6 +3,7 @@ package styles
 import (
 	"github.com/AccentDesign/gcss"
 	"github.com/AccentDesign/gcss/props"
+	"github.com/AccentDesign/gcss/variables"
 )
 
 var Tables = []gcss.Style{
@@ -10,15 +11,15 @@ var Tables = []gcss.Style{
 		Selector: ".table",
 		Props: gcss.Props{
 			CaptionSide: props.CaptionSideBottom,
-			FontSize:    fontSm,
-			LineHeight:  leadingTight,
+			FontSize:    variables.Size3H,
+			LineHeight:  variables.Size5,
 			Width:       props.UnitPercent(100),
 		},
 	},
 	{
 		Selector: ".table-caption",
 		Props: gcss.Props{
-			MarginTop: spacing4,
+			MarginTop: variables.Size4,
 		},
 	},
 	{
@@ -41,10 +42,10 @@ var Tables = []gcss.Style{
 	{
 		Selector: ".table-td,.table-th",
 		Props: gcss.Props{
-			PaddingTop:    spacing2,
-			PaddingRight:  spacing3,
-			PaddingBottom: spacing2,
-			PaddingLeft:   spacing3,
+			PaddingTop:    variables.Size2,
+			PaddingRight:  variables.Size3,
+			PaddingBottom: variables.Size2,
+			PaddingLeft:   variables.Size3,
 			TextAlign:     props.TextAlignLeft,
 		},
 	},

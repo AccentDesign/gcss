@@ -3,6 +3,7 @@ package styles
 import (
 	"github.com/AccentDesign/gcss"
 	"github.com/AccentDesign/gcss/props"
+	"github.com/AccentDesign/gcss/variables"
 )
 
 var Buttons = []gcss.Style{
@@ -10,17 +11,17 @@ var Buttons = []gcss.Style{
 		Selector: ".button",
 		Props: gcss.Props{
 			AlignItems:     props.AlignItemsCenter,
-			BorderRadius:   radius,
+			BorderRadius:   variables.Size1H,
 			Display:        props.DisplayInlineFlex,
-			FontSize:       fontMd,
+			FontSize:       variables.Size4,
 			FontWeight:     props.FontWeightMedium,
-			Height:         spacing10,
+			Height:         variables.Size10,
 			JustifyContent: props.JustifyContentCenter,
-			LineHeight:     leadingTight,
-			PaddingTop:     spacing2,
-			PaddingRight:   spacing4,
-			PaddingBottom:  spacing2,
-			PaddingLeft:    spacing4,
+			LineHeight:     variables.Size5,
+			PaddingTop:     variables.Size2,
+			PaddingRight:   variables.Size4,
+			PaddingBottom:  variables.Size2,
+			PaddingLeft:    variables.Size4,
 		},
 	},
 	{
@@ -101,7 +102,7 @@ var Buttons = []gcss.Style{
 				Color: borderColor,
 			},
 			Padding: props.UnitInitial(), // if sizes are added this can be removed as the base padding will be set by the sizes
-			Width:   spacing10,
+			Width:   variables.Size10,
 		},
 	},
 	{

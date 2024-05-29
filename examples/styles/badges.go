@@ -3,6 +3,7 @@ package styles
 import (
 	"github.com/AccentDesign/gcss"
 	"github.com/AccentDesign/gcss/props"
+	"github.com/AccentDesign/gcss/variables"
 )
 
 var Badges = []gcss.Style{
@@ -11,14 +12,14 @@ var Badges = []gcss.Style{
 		Props: gcss.Props{
 			AlignItems:    props.AlignItemsCenter,
 			Display:       props.DisplayInlineFlex,
-			BorderRadius:  radiusFull,
-			FontSize:      fontSm,
+			BorderRadius:  variables.SizeFull,
+			FontSize:      variables.Size3H,
 			FontWeight:    props.FontWeightMedium,
-			LineHeight:    leadingNone,
-			PaddingTop:    spacing1,
-			PaddingRight:  spacing3,
-			PaddingBottom: spacing1,
-			PaddingLeft:   spacing3,
+			LineHeight:    variables.Size4,
+			PaddingTop:    variables.Size1,
+			PaddingRight:  variables.Size3,
+			PaddingBottom: variables.Size1,
+			PaddingLeft:   variables.Size3,
 		},
 	},
 	{

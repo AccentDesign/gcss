@@ -3,6 +3,7 @@ package styles
 import (
 	"github.com/AccentDesign/gcss"
 	"github.com/AccentDesign/gcss/props"
+	"github.com/AccentDesign/gcss/variables"
 )
 
 var Alerts = []gcss.Style{
@@ -12,8 +13,8 @@ var Alerts = []gcss.Style{
 			BackgroundColor: props.ColorTransparent(),
 			BorderStyle:     props.BorderStyleSolid,
 			BorderWidth:     props.UnitPx(1),
-			BorderRadius:    radius,
-			Padding:         spacing4,
+			BorderRadius:    variables.Size1H,
+			Padding:         variables.Size4,
 		},
 	},
 	{

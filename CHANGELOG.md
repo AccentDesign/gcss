@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ### v0.0.8
 
+Added new variables:
+
+- colors
+- sizes
+
 Added new props:
 
 - max-height
