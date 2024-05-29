@@ -201,17 +201,3 @@ Then add the `gcss` styles in between in your html:
 
 Try to keep the specificity of the `gcss` styles to 1 by using single classes this will ensure any `tailwindcss` utilities
 will be able to overwrite your styles where required.
-
-## Examples
-
-CSS:
-
-```bash
-go run examples/styles/cli/main.go export -directory "examples/static/css"
-```
-
-Hugo:
-```bash
-cd examples
-hugo server -D
-```
