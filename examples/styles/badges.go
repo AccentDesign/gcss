@@ -12,7 +12,7 @@ var Badges = []gcss.Style{
 		Props: gcss.Props{
 			AlignItems:    props.AlignItemsCenter,
 			Display:       props.DisplayInlineFlex,
-			BorderRadius:  variables.SizeFull,
+			BorderRadius:  variables.FullRounded,
 			FontSize:      variables.Size3H,
 			FontWeight:    props.FontWeightMedium,
 			LineHeight:    variables.Size4,
