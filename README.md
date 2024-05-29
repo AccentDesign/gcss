@@ -1,5 +1,7 @@
 [![Test](https://github.com/AccentDesign/gcss/actions/workflows/go-test.yml/badge.svg)](https://github.com/AccentDesign/gcss/actions/workflows/go-test.yml)
 [![Go Report Card](https://goreportcard.com/badge/github.com/AccentDesign/gcss)](https://goreportcard.com/report/github.com/AccentDesign/gcss)
+<a href="https://github.com/AccentDesign/gcss-theme"><img src="https://img.shields.io/badge/Example%20on-Github-blue.svg"/></a>
+
 # gcss
 
 CSS written in Pure Go.
