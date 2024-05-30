@@ -103,9 +103,19 @@ http.HandleFunc("/styles.css", func(w http.ResponseWriter, r *http.Request) {
 Example of theming using `gcss`, the below could write to 2 separate css files or route handlers for dark and light themes.
 
 ```go
+package theme
+
+import (
+    "io"
+    "github.com/AccentDesign/gcss"
+    "github.com/AccentDesign/gcss/props"
+    "github.com/AccentDesign/gcss/variables"
+)
+
 // Theme is a struct that holds the theme properties.
 type Theme struct {
-    Background            props.Color
+    Background    props.Color
+    Color         props.Color
 }
 
 // WriteCSS writes the css for the theme to the writer.
@@ -122,38 +132,27 @@ func (t *Theme) styles() []gcss.Style {
     return []gcss.Style{
         {
             Selector: "body",
-                Props: gcss.Props{
+            Props: gcss.Props{
                 BackgroundColor: t.Background,
+                Color:           t.Color,
             },
         },
     }
 }
 
-// DarkTheme is a struct that holds the dark theme properties.
-type DarkTheme struct {
-    Theme
-}
-
-// LightTheme is a struct that holds the light theme properties.
-type LightTheme struct {
-    Theme
-}
-
 // NewDarkTheme creates a new dark theme.
-func NewDarkTheme() *DarkTheme {
-    return &DarkTheme{
-        Theme: Theme{
-            Background: props.ColorRGBA(38, 40, 46, 255),
-        },
+func NewDarkTheme() *Theme {
+    return &Theme{
+        Background: variables.Zinc900,
+        Color:      variables.Zinc50,
     }
 }
 
 // NewLightTheme creates a new light theme.
-func NewLightTheme() *LightTheme {
-    return &LightTheme{
-        Theme: Theme{
-            Background: props.ColorRGBA(255, 255, 255, 255),
-        },
+func NewLightTheme() *Theme {
+    return &Theme{
+        Background: variables.Zinc50,
+        Color:      variables.Zinc900,
     }
 }
 ```
