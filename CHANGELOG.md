@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+### v0.0.10
+
+Allow a color to be mixed with another color.
+
 ### v0.0.9
 
 Added new variables:
