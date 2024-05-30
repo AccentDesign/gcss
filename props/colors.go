@@ -7,19 +7,24 @@ import (
 
 type Color struct {
 	Keyword string
-	RGBA    color.RGBA
+	Color   color.Color
 }
 
+// String returns a string representation of the color.
+// If the color is a keyword, the keyword is returned.
+// Otherwise, the color is returned as an rgba string.
 func (c Color) String() string {
 	if c.Keyword != "" {
 		return c.Keyword
 	}
-	return fmt.Sprintf("rgba(%d,%d,%d,%.2f)", c.RGBA.R, c.RGBA.G, c.RGBA.B, float32(c.RGBA.A)/255.0)
+	r, g, b, a := c.Color.RGBA()
+	return fmt.Sprintf("rgba(%d,%d,%d,%.2f)", r>>8, g>>8, b>>8, float32(a>>8)/255.0)
 }
 
 // Alpha returns a new color with the alpha channel set to the given value.
 func (c Color) Alpha(a uint8) Color {
-	c.RGBA.A = a
+	r, g, b, _ := c.Color.RGBA()
+	c.Color = color.RGBA{R: uint8(r >> 8), G: uint8(g >> 8), B: uint8(b >> 8), A: a}
 	return c
 }
 
@@ -33,15 +38,18 @@ func (c Color) Mix(with Color, percentage float64) Color {
 	if percentage > 1 {
 		percentage = 1
 	}
-	r := uint8(float64(c.RGBA.R)*(1-percentage) + float64(with.RGBA.R)*percentage)
-	g := uint8(float64(c.RGBA.G)*(1-percentage) + float64(with.RGBA.G)*percentage)
-	b := uint8(float64(c.RGBA.B)*(1-percentage) + float64(with.RGBA.B)*percentage)
-	return Color{RGBA: color.RGBA{r, g, b, 255}}
+	r1, g1, b1, a1 := c.Color.RGBA()
+	r2, g2, b2, a2 := with.Color.RGBA()
+	r := uint8(float64(r1>>8)*(1-percentage) + float64(r2>>8)*percentage)
+	g := uint8(float64(g1>>8)*(1-percentage) + float64(g2>>8)*percentage)
+	b := uint8(float64(b1>>8)*(1-percentage) + float64(b2>>8)*percentage)
+	a := uint8(float64(a1>>8)*(1-percentage) + float64(a2>>8)*percentage)
+	return Color{Color: color.RGBA{R: r, G: g, B: b, A: a}}
 }
 
 // ColorRGBA returns a new color with the given red, green, blue, and alpha values.
 func ColorRGBA(r, g, b, a uint8) Color {
-	return Color{RGBA: color.RGBA{r, g, b, a}}
+	return Color{Color: color.RGBA{R: r, G: g, B: b, A: a}}
 }
 
 func ColorCurrentColor() Color {

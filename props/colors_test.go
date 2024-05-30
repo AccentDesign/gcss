@@ -1,10 +1,38 @@
 package props
 
 import (
+	"image/color"
 	"testing"
 )
 
-func TestColorMix_ToWhite(t *testing.T) {
+func TestColor_String(t *testing.T) {
+	testCases := map[Color]string{
+		Color{Keyword: "currentColor"}:     "currentColor",
+		Color{Keyword: "inherit"}:          "inherit",
+		Color{Color: color.Gray{0}}:        "rgba(0,0,0,1.00)",
+		Color{Color: color.Gray{255}}:      "rgba(255,255,255,1.00)",
+		Color{Color: color.Gray16{0}}:      "rgba(0,0,0,1.00)",
+		Color{Color: color.Gray16{0xffff}}: "rgba(255,255,255,1.00)",
+		ColorRGBA(62, 131, 248, 255):       "rgba(62,131,248,1.00)",
+		ColorRGBA(0, 0, 0, 0):              "rgba(0,0,0,0.00)",
+		ColorRGBA(255, 255, 255, 255):      "rgba(255,255,255,1.00)",
+	}
+	for c, expected := range testCases {
+		if c.String() != expected {
+			t.Errorf("expected %v, got %v", expected, c.String())
+		}
+	}
+}
+
+func TestColor_Alpha(t *testing.T) {
+	c := ColorRGBA(62, 131, 248, 255)
+	expected := ColorRGBA(62, 131, 248, 128)
+	if c.Alpha(128) != expected {
+		t.Errorf("expected %v, got %v", expected, c.Alpha(128))
+	}
+}
+
+func TestColor_MixToWhite(t *testing.T) {
 	base := ColorRGBA(62, 131, 248, 255)
 	with := ColorRGBA(255, 255, 255, 255)
 	testCases := map[float64]Color{
@@ -30,7 +58,7 @@ func TestColorMix_ToWhite(t *testing.T) {
 	}
 }
 
-func TestColorMix_ToBlack(t *testing.T) {
+func TestColor_MixToBlack(t *testing.T) {
 	base := ColorRGBA(62, 131, 248, 255)
 	with := ColorRGBA(0, 0, 0, 255)
 	testCases := map[float64]Color{

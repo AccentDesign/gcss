@@ -97,7 +97,7 @@ func TestStyle_BackgroundColor(t *testing.T) {
 		props.ColorTransparent():                       "transparent",
 		{Keyword: "#efefef"}:                           "#efefef",
 		{Keyword: "red"}:                               "red",
-		{RGBA: color.RGBA{0, 0, 0, 255}}:               "rgba(0,0,0,1.00)",
+		{Color: color.Gray16{0}}:                       "rgba(0,0,0,1.00)",
 	}
 
 	for prop, expected := range testCases {
@@ -506,7 +506,7 @@ func TestStyle_Color(t *testing.T) {
 		props.ColorTransparent():                       "transparent",
 		{Keyword: "#efefef"}:                           "#efefef",
 		{Keyword: "red"}:                               "red",
-		{RGBA: color.RGBA{0, 0, 0, 255}}:               "rgba(0,0,0,1.00)",
+		{Color: color.Gray16{0}}:                       "rgba(0,0,0,1.00)",
 	}
 
 	for prop, expected := range testCases {
