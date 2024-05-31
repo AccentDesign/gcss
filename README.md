@@ -1,6 +1,5 @@
 [![Test](https://github.com/AccentDesign/gcss/actions/workflows/go-test.yml/badge.svg)](https://github.com/AccentDesign/gcss/actions/workflows/go-test.yml)
 [![Go Report Card](https://goreportcard.com/badge/github.com/AccentDesign/gcss)](https://goreportcard.com/report/github.com/AccentDesign/gcss)
-<a href="https://github.com/AccentDesign/gcss-theme"><img src="https://img.shields.io/badge/Example%20on-Github-blue.svg"/></a>
 
 # gcss
 
@@ -36,7 +35,7 @@ a few UI components that are configurable using Go.
 
 ## What I do need
 
-* Go, HTMX and maybe a few manual css styles.
+* Go's static typing.
 
 ## Installation
 
@@ -48,131 +47,90 @@ go get github.com/AccentDesign/gcss
 
 There are multiple ways you can use `gcss` in your project. For examples of property values, see the `style_test.go` file.
 
-### File
-
-write to a file:
+Writing css to a file:
 
 ```go
-var styles = []gcss.Style{
-    {
-        Selector: ".button",
-        Props: gcss.Props{
-            BackgroundColor: props.ColorRGBA(17, 24, 39, 255),
-        },
-    },
-}
-
-f, err := os.Create("styles.css")
-if err != nil {
-    panic(err)
-}
-
-for _, style := range styles {
-    if err := style.CSS(f); err != nil {
-        panic(err)
-    }
-}
-```
-
-### Http handler
-
-write using an http handler:
-
-```go
-var styles = []gcss.Style{
-    {
-        Selector: ".button",
-        Props: gcss.Props{
-            BackgroundColor: props.ColorRGBA(17, 24, 39, 255),
-        },
-    },
-}
-
-http.HandleFunc("/styles.css", func(w http.ResponseWriter, r *http.Request) {
-    w.Header().Set("Content-Type", "text/css")
-    for _, style := range styles {
-        if err := style.CSS(w); err != nil {
-            panic(err)
-        }
-    }
-})
-```
-
-### Theming
-
-Example of theming using `gcss`, the below could write to 2 separate css files or route handlers for dark and light themes.
-
-```go
-package theme
+package main
 
 import (
-    "io"
-    "github.com/AccentDesign/gcss"
-    "github.com/AccentDesign/gcss/props"
-    "github.com/AccentDesign/gcss/variables"
+	"github.com/AccentDesign/gcss"
+	"github.com/AccentDesign/gcss/props"
+	"github.com/AccentDesign/gcss/variables"
+	"os"
 )
 
-// Theme is a struct that holds the theme properties.
-type Theme struct {
-    Background    props.Color
-    Color         props.Color
+type Stylesheet []gcss.Style
+
+var styles = Stylesheet{
+	{
+		Selector: "html",
+		Props: gcss.Props{
+			FontFamily: props.FontFamilySans,
+		},
+	},
+	{
+		Selector: ".button",
+		Props: gcss.Props{
+			BackgroundColor: variables.Zinc800,
+			Border: props.Border{
+				Width: props.UnitPx(1),
+				Style: props.BorderStyleSolid,
+				Color: variables.Zinc900.Alpha(128),
+			},
+			BorderRadius:  variables.Size1H,
+			Color:         variables.White,
+			FontSize:      variables.Size4,
+			PaddingBottom: variables.Size3,
+			PaddingLeft:   variables.Size5,
+			PaddingRight:  variables.Size5,
+			PaddingTop:    variables.Size3,
+		},
+	},
+	{
+		Selector: ".button:hover",
+		Props: gcss.Props{
+			BackgroundColor: variables.Zinc900,
+		},
+	},
 }
 
-// WriteCSS writes the css for the theme to the writer.
-func (t *Theme) WriteCSS(w io.Writer) {
-    for _, e := range t.styles() {
-        if err := e.CSS(w); err != nil {
-            panic(err)
-        }
-    }
-}
+func main() {
+	file, err := os.Create("stylesheet.css")
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
 
-// styles returns the styles for the theme.
-func (t *Theme) styles() []gcss.Style {
-    return []gcss.Style{
-        {
-            Selector: "body",
-            Props: gcss.Props{
-                BackgroundColor: t.Background,
-                Color:           t.Color,
-            },
-        },
-    }
-}
-
-// NewDarkTheme creates a new dark theme.
-func NewDarkTheme() *Theme {
-    return &Theme{
-        Background: variables.Zinc900,
-        Color:      variables.Zinc50,
-    }
-}
-
-// NewLightTheme creates a new light theme.
-func NewLightTheme() *Theme {
-    return &Theme{
-        Background: variables.Zinc50,
-        Color:      variables.Zinc900,
-    }
+	for _, style := range styles {
+		if err := style.CSS(file); err != nil {
+			panic(err)
+		}
+	}
 }
 ```
 
-Then switch between them using media queries in your HTML.
+## The benefit of all this are
 
-```html
-<!-- Light theme -->
-<link rel="stylesheet" href="light.css" media="(prefers-color-scheme: light)" />
+* Keeps the css free of variables.
+* Keeps html free of classes like `bg-gray-50 text-black dark:bg-slate-800 dark:text-white` and eliminates the need to remember to add the dark variant.
+* I recently saw a button component on an html page 10 times with over 1800 characters in the class attribute of each. This is not maintainable nor debuggable.
+* Keeps the css clean and easy to debug with no overrides like the above.
+* Allows for easy theming based on server side logic.
 
-<!-- Dark theme -->
-<link rel="stylesheet" href="dark.css" media="(prefers-color-scheme: dark)" />
-```
+## Examples
 
-The benefit of this:
+For example usage see the [examples](./examples) directory that include:
 
-* Keeps the css free of variables
-* Keeps html free of classes like `bg-gray-50 text-black dark:bg-slate-800 dark:text-white` and eliminates the need to remember to add the dark variant
-* Keeps the css clean and easy to debug with no overrides like the above
-* Allows for easy theming based on server side logic
+* [CSS resets](./examples/css-resets) - A simple example collection of css resets.
+* [Themed CSS using multiple HTTP handlers](./examples/themed-multiple-http-handlers) - An example of how to use multiple http handlers to serve different themes.
+* [Themed CSS using a single HTTP handler](./examples/themed-single-http-handler) - An example of how to use a single http handler to serve different themes using media queries.
+* [Write to a file](./examples/to-file) - An example of how to write to a file.
+* [Write to an HTTP handler](./examples/to-http-handler) - An example of how to write to an http handler.
+* [Write to stdout](./examples/to-stdout) - An example of how to write to stdout.
+
+## Contributing
+
+If you would like to contribute to this project, please open an issue or a pull request. We welcome all contributions and ideas.
 
 ## Mix it up with other CSS frameworks
 
