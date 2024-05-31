@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-### v0.0.10
+### v0.1.0
 
 - Allow a color to be mixed with another color.
 - Change `props.Color` to allow any type of golang's `color.Color` interface.
