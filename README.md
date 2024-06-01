@@ -20,6 +20,9 @@ I didnt want to use UI libraries that are written for JS frameworks and I didn't
 
 Could I just use CSS? Yes of course and I will, but I wanted to see if I could write CSS in Go as this is what is compiling the rest of the project.
 
+## Gopher
+
+No it looks nothing like the Go gopher, but it's a gopher and I like it. It's the best I could get from the LM without giving up, [ideogram.ai (1400097641)](https://ideogram.ai/g/E-5MQp7QTPO4uyF9PvERzw/3).
 ## Next steps
 
 The next steps for this project are to add more features to the CSS package.
