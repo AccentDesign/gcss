@@ -14,12 +14,11 @@ Just Go.
 
 ## Motivation
 
-The `gcss` project is a unique approach to writing CSS using Go.
-The motivation behind this project is not to replace CSS entirely,
-but to provide a way to write CSS in Go.
-This allows developers to leverage Go's features to generate CSS. For instance,
-Go's `text/template` or `templ` package can be used to generate CSS based on some data.
-This opens up new possibilities for dynamic and data-driven styling in web development.
+This is really just a bit of fun and a way to write CSS in Go. I wanted to see if it was possible and it is with ease.
+I wanted to find a way to easily control the CSS from the server side and not have to worry about pre-building the css to take variables and stuff.
+I didnt want to use UI libraries that are written for JS frameworks and I didn't want to use preprocessors or linters that add more steps to the build process.
+
+Could I just use CSS? Yes of course and I will, but I wanted to see if I could write CSS in Go as this is what is compiling the rest of the project.
 
 ## Next steps
 
