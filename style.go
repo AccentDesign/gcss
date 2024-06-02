@@ -17,11 +17,11 @@ type (
 		BackgroundPosition      props.BackgroundPosition  `css:"background-position"`
 		BackgroundRepeat        props.BackgroundRepeat    `css:"background-repeat"`
 		BackgroundSize          props.BackgroundSize      `css:"background-size"`
-		BorderColor             props.Color               `css:"border-color"`
 		Border                  props.Border              `css:"border"`
 		BorderBottom            props.Border              `css:"border-bottom"`
 		BorderBottomLeftRadius  props.Unit                `css:"border-bottom-left-radius"`
 		BorderBottomRightRadius props.Unit                `css:"border-bottom-right-radius"`
+		BorderColor             props.Color               `css:"border-color"`
 		BorderLeft              props.Border              `css:"border-left"`
 		BorderRadius            props.Unit                `css:"border-radius"`
 		BorderRight             props.Border              `css:"border-right"`
