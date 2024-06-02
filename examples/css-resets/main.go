@@ -112,11 +112,9 @@ var resets = []gcss.Style{
 	{
 		Selector: "table",
 		Props: gcss.Props{
-			BorderColor: props.ColorInherit(),
-			TextIndent:  variables.Size0,
-		},
-		CustomProps: []gcss.CustomProp{
-			{Attr: "border-collapse", Value: "collapse"},
+			BorderCollapse: props.BorderCollapseCollapse,
+			BorderColor:    props.ColorInherit(),
+			TextIndent:     variables.Size0,
 		},
 	},
 	{

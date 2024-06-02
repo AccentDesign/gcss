@@ -21,6 +21,7 @@ type (
 		BorderBottom            props.Border              `css:"border-bottom"`
 		BorderBottomLeftRadius  props.Unit                `css:"border-bottom-left-radius"`
 		BorderBottomRightRadius props.Unit                `css:"border-bottom-right-radius"`
+		BorderCollapse          props.BorderCollapse      `css:"border-collapse"`
 		BorderColor             props.Color               `css:"border-color"`
 		BorderLeft              props.Border              `css:"border-left"`
 		BorderRadius            props.Unit                `css:"border-radius"`

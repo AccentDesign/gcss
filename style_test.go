@@ -200,19 +200,6 @@ func TestStyle_BackgroundSize(t *testing.T) {
 	}
 }
 
-func TestStyle_BorderColor(t *testing.T) {
-	testCases := map[props.Color]string{
-		props.ColorRGBA(0, 0, 0, 255):       "rgba(0,0,0,1.00)",
-		props.ColorRGBA(255, 255, 255, 230): "rgba(255,255,255,0.90)",
-	}
-
-	for prop, expected := range testCases {
-		st := &Style{Selector: ".test", Props: Props{BorderColor: prop}}
-		css := fmt.Sprintf(".test{border-color:%s;}", expected)
-		runTest(t, st, css)
-	}
-}
-
 func TestStyle_Border(t *testing.T) {
 	testCases := map[props.Border]string{
 		{
@@ -293,6 +280,33 @@ func TestStyle_BorderBottomRightRadius(t *testing.T) {
 	for prop, expected := range testCases {
 		st := &Style{Selector: ".test", Props: Props{BorderBottomRightRadius: prop}}
 		css := fmt.Sprintf(".test{border-bottom-right-radius:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
+func TestStyle_BorderCollapse(t *testing.T) {
+	testCases := map[props.BorderCollapse]string{
+		props.BorderCollapseSeparate:    "separate",
+		props.BorderCollapseCollapse:    "collapse",
+		props.BorderCollapse("initial"): "initial",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{BorderCollapse: prop}}
+		css := fmt.Sprintf(".test{border-collapse:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
+func TestStyle_BorderColor(t *testing.T) {
+	testCases := map[props.Color]string{
+		props.ColorRGBA(0, 0, 0, 255):       "rgba(0,0,0,1.00)",
+		props.ColorRGBA(255, 255, 255, 230): "rgba(255,255,255,0.90)",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{BorderColor: prop}}
+		css := fmt.Sprintf(".test{border-color:%s;}", expected)
 		runTest(t, st, css)
 	}
 }
