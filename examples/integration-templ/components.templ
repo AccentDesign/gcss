@@ -1,0 +1,12 @@
+package main
+
+templ ButtonCSS() {
+  @buttonStylesHandle.Once() {
+    @buttonStyles
+  }
+}
+
+templ Button(name string) {
+  @ButtonCSS()
+  <button class="button">{name}</button>
+}
