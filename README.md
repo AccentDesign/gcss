@@ -127,6 +127,7 @@ func main() {
 For example usage see the [examples](./examples) directory that include:
 
 * [CSS resets](./examples/css-resets) - A simple example collection of css resets.
+* [Templ integration](./examples/integration-templ) - An example of how to load styles from gcss with the [templ](https://templ.guide) package.
 * [Themed CSS using multiple HTTP handlers](./examples/themed-multiple-http-handlers) - An example of how to use multiple http handlers to serve different themes.
 * [Themed CSS using a single HTTP handler](./examples/themed-single-http-handler) - An example of how to use a single http handler to serve different themes using media queries.
 * [Write to a file](./examples/to-file) - An example of how to write to a file.
