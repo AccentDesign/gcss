@@ -66,7 +66,7 @@ var (
 	}
 	screen736 = Media{
 		Query: "@media only screen and (max-device-width: 736px)",
-		Styles: []gcss.Style{
+		Styles: Styles{
 			{
 				Selector: "main",
 				Props: gcss.Props{
