@@ -158,9 +158,9 @@ separate the css files into base and utils:
 Then add the `gcss` styles in between in your html:
 
 ```html
-<link rel="stylesheet" href="base.css" />
-<link rel="stylesheet" href="gcss-styles.css" />
-<link rel="stylesheet" href="utils.css" />
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="gcss-styles.css">
+<link rel="stylesheet" href="utils.css">
 ```
 
 Try to keep the specificity of the `gcss` styles to 1 by using single classes this will ensure any `tailwindcss` utilities
