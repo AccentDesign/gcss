@@ -26,7 +26,7 @@ No it looks nothing like the Go gopher, but it's a gopher and I like it. It's th
 ## Next steps
 
 The next steps for this project are to add more features to the CSS package.
-This includes adding support for more CSS properties and maybe mixins.
+This includes adding support for more CSS properties when the need arises.
 What I don't want to do is to add support for all CSS functionality as some things are better in CSS, but I do want to be able to create 
 a few UI components that are configurable using Go.
 
@@ -50,77 +50,176 @@ go get github.com/AccentDesign/gcss
 
 ## Usage
 
-There are multiple ways you can use `gcss` in your project. For examples of property values, see the `style_test.go` file.
+### Basic usage
 
-Writing css to a file:
+`gcss` defines a `Style` type that can be used to hold the properties for a specific css selector, eg:
 
 ```go
-package main
-
-import (
-	"github.com/AccentDesign/gcss"
-	"github.com/AccentDesign/gcss/props"
-	"github.com/AccentDesign/gcss/variables"
-	"os"
-)
-
-type Stylesheet []gcss.Style
-
-var styles = Stylesheet{
-	{
-		Selector: "html",
-		Props: gcss.Props{
-			FontFamily: props.FontFamilySans,
-		},
-	},
-	{
-		Selector: ".button",
-		Props: gcss.Props{
-			BackgroundColor: variables.Zinc800,
-			Border: props.Border{
-				Width: props.UnitPx(1),
-				Style: props.BorderStyleSolid,
-				Color: variables.Zinc900.Alpha(128),
-			},
-			BorderRadius:  variables.Size1H,
-			Color:         variables.White,
-			FontSize:      variables.Size4,
-			PaddingBottom: variables.Size3,
-			PaddingLeft:   variables.Size5,
-			PaddingRight:  variables.Size5,
-			PaddingTop:    variables.Size3,
-		},
-	},
-	{
-		Selector: ".button:hover",
-		Props: gcss.Props{
-			BackgroundColor: variables.Zinc900,
-		},
-	},
-}
-
-func main() {
-	file, err := os.Create("stylesheet.css")
-	if err != nil {
-		panic(err)
-	}
-	defer file.Close()
-
-	for _, style := range styles {
-		if err := style.CSS(file); err != nil {
-			panic(err)
-		}
-	}
+style := gcss.Style{
+    Selector: "body",
+    Props: gcss.Props{
+        BackgroundColor: props.ColorRGBA(0, 0, 0, 128),
+    },
 }
 ```
 
-## The benefit of all this are
+The `CSS` function on the `Style` is used to write the style to a `io.Writer`:
 
+```go
+style.CSS(os.Stdout)
+```
+
+which gives you:
+
+```css
+body{background-color:rgba(0,0,0,0.50);}
+```
+
+That's all there is to it. But it's not very useful on it's own I hear you say.
+
+### Multiple styles
+
+Well you can then use that to define a `Styles` type that can be used to hold multiple `Style` types:
+
+```go
+type Styles []gcss.Style
+
+func (s Styles) CSS(w io.Writer) error {
+    // handle your errors
+    for _, style := range s {
+        style.CSS(w)
+    }
+    return nil
+}
+
+styles := Styles{
+    {
+        Selector: "body",
+        Props: gcss.Props{
+            BackgroundColor: props.ColorRGBA(0, 0, 0, 128),
+        },
+    },
+    {
+        Selector: "main",
+        Props: gcss.Props{
+            Padding: props.UnitRem(8.5),
+        },
+    },
+}
+
+styles.CSS(os.Stdout)
+```
+
+which gives you:
+
+```css
+/* formatted for visibility */
+body{
+    background-color:rgba(0,0,0,0.50);
+}
+main{
+    padding:8.500rem;
+}
+```
+
+### Need a bit more? what about a dark and light theme? keep the last example in mind and read on.
+
+Define a `Theme` type that can be used to hold attributes for a specific theme, eg:
+
+```go
+type Theme struct {
+    MediaQuery string
+    Background props.Color
+}
+
+func (t *Theme) CSS(w io.Writer) error {
+    // handle your errors
+    fmt.Fprintf(w, "%s{", t.MediaQuery)
+    for _, style := range t.Styles() {
+        style.CSS(w)
+    }
+    fmt.Fprint(w, "}")
+}
+
+// Styles returns the styles for the theme.
+// Can be any number of styles you want and any number of functions
+// you just need them in the CSS function to loop over.
+func (t *Theme) Styles() Styles {
+    return Styles{
+        {
+            Selector: "body",
+            Props: gcss.Props{
+                BackgroundColor: t.Background,
+            },
+        },
+    }
+}
+```
+
+Then you can define a `Stylesheet` type that can be used to hold multiple `Theme` types:
+
+```go
+type Stylesheet struct {
+    Dark  *Theme
+    Light *Theme
+}
+
+func (s *Stylesheet) CSS(w io.Writer) error {
+    // handle your errors
+    s.Dark.CSS(w)
+    s.Light.CSS(w)
+    return nil
+}
+```
+
+Finally, you can use the `Stylesheet` type to write the css to a `io.Writer`:
+
+```go
+styles := Stylesheet{
+    Dark: &Theme{
+        MediaQuery: "@media (prefers-color-scheme: dark)",
+        Background: props.ColorRGBA(0, 0, 0, 255),
+    },
+    Light: &Theme{
+        MediaQuery: "@media (prefers-color-scheme: light)",
+        Background: props.ColorRGBA(255, 255, 255, 255),
+    },
+}
+
+styles.CSS(os.Stdout)
+```
+
+gives you:
+
+```css
+/* formatted for visibility */
+@media (prefers-color-scheme: dark) {
+    body{
+        background-color:rgba(0,0,0,1.00);
+    }
+}
+@media (prefers-color-scheme: light) {
+    body{
+        background-color:rgba(255,255,255,1.00);
+    }
+}
+```
+
+Hopefully this will get you going. The rest is up to you.
+
+* Maybe create a button function that takes a `props.Color` and returns a Style.
+* Or add extra `Styles` to the `Stylesheet` to additionally include non themed styles.
+* It's all about how you construct the `Stylesheet` and use the `gcss.Style` type.
+* If I could have created a `Stylesheet` type that fits well any use case at all I would have, but there is a world of possibility, so I left it up to you.
+
+## The benefits
+
+* Total control of the CSS from the server side.
+* CSS doesn't have mixins, but you can create a function that returns a `Style` type and reuse it.
 * Keeps the css free of variables.
 * Keeps html free of classes like `bg-gray-50 text-black dark:bg-slate-800 dark:text-white` and eliminates the need to remember to add the dark variant.
 * I recently saw a button component on an html page 10 times with over 1800 characters in the class attribute of each. This is not maintainable nor debuggable.
 * Keeps the css clean and easy to debug with no overrides like the above.
-* Allows for easy theming based on server side logic.
 
 ## Examples
 
