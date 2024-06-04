@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 Added new props:
 
 - align-content
+- align-self
 - border-collapse
 
 Expanded props:

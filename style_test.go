@@ -95,6 +95,29 @@ func TestStyle_AlignItems(t *testing.T) {
 	}
 }
 
+func TestStyle_AlignSelf(t *testing.T) {
+	testCases := map[props.AlignSelf]string{
+		props.AlignSelfAuto:        "auto",
+		props.AlignSelfNormal:      "normal",
+		props.AlignSelfStretch:     "stretch",
+		props.AlignSelfCenter:      "center",
+		props.AlignSelfStart:       "start",
+		props.AlignSelfEnd:         "end",
+		props.AlignSelfFlexStart:   "flex-start",
+		props.AlignSelfFlexEnd:     "flex-end",
+		props.AlignSelfSelfStart:   "self-start",
+		props.AlignSelfSelfEnd:     "self-end",
+		props.AlignSelfBaseline:    "baseline",
+		props.AlignSelf("inherit"): "inherit",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{AlignSelf: prop}}
+		css := fmt.Sprintf(".test{align-self:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
 func TestStyle_Appearance(t *testing.T) {
 	testCases := map[props.Appearance]string{
 		props.AppearanceNone:           "none",

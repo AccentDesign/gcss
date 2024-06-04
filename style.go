@@ -12,6 +12,7 @@ type (
 	Props struct {
 		AlignContent            props.AlignContent        `css:"align-content"`
 		AlignItems              props.AlignItems          `css:"align-items"`
+		AlignSelf               props.AlignSelf           `css:"align-self"`
 		Appearance              props.Appearance          `css:"appearance"`
 		BackgroundColor         props.Color               `css:"background-color"`
 		BackgroundImage         props.BackgroundImage     `css:"background-image"`
