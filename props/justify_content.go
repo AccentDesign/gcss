@@ -4,9 +4,13 @@ type JustifyContent string
 
 const (
 	JustifyContentNormal       JustifyContent = "normal"
+	JustifyContentCenter       JustifyContent = "center"
+	JustifyContentStart        JustifyContent = "start"
+	JustifyContentEnd          JustifyContent = "end"
 	JustifyContentFlexStart    JustifyContent = "flex-start"
 	JustifyContentFlexEnd      JustifyContent = "flex-end"
-	JustifyContentCenter       JustifyContent = "center"
+	JustifyContentLeft         JustifyContent = "left"
+	JustifyContentRight        JustifyContent = "right"
 	JustifyContentSpaceBetween JustifyContent = "space-between"
 	JustifyContentSpaceAround  JustifyContent = "space-around"
 	JustifyContentSpaceEvenly  JustifyContent = "space-evenly"

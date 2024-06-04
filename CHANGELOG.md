@@ -9,6 +9,10 @@ Added new props:
 - align-content
 - border-collapse
 
+Expanded props:
+
+- justify-content
+
 ### v0.1.0
 
 - Allow a color to be mixed with another color.

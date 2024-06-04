@@ -813,9 +813,13 @@ func TestStyle_Height(t *testing.T) {
 func TestStyle_JustifyContent(t *testing.T) {
 	testCases := map[props.JustifyContent]string{
 		props.JustifyContentNormal:       "normal",
+		props.JustifyContentCenter:       "center",
+		props.JustifyContentStart:        "start",
+		props.JustifyContentEnd:          "end",
 		props.JustifyContentFlexStart:    "flex-start",
 		props.JustifyContentFlexEnd:      "flex-end",
-		props.JustifyContentCenter:       "center",
+		props.JustifyContentLeft:         "left",
+		props.JustifyContentRight:        "right",
 		props.JustifyContentSpaceBetween: "space-between",
 		props.JustifyContentSpaceAround:  "space-around",
 		props.JustifyContentSpaceEvenly:  "space-evenly",
