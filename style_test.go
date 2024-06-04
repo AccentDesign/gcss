@@ -50,9 +50,14 @@ func TestStyle_CustomProps(t *testing.T) {
 
 func TestStyle_AlignItems(t *testing.T) {
 	testCases := map[props.AlignItems]string{
-		props.AlignItemsStart:       "flex-start",
-		props.AlignItemsEnd:         "flex-end",
+		props.AlignItemsNormal:      "normal",
+		props.AlignItemsStart:       "start",
 		props.AlignItemsCenter:      "center",
+		props.AlignItemsEnd:         "end",
+		props.AlignItemsFlexStart:   "flex-start",
+		props.AlignItemsFlexEnd:     "flex-end",
+		props.AlignItemsSelfStart:   "self-start",
+		props.AlignItemsSelfEnd:     "self-end",
 		props.AlignItemsBaseline:    "baseline",
 		props.AlignItemsStretch:     "stretch",
 		props.AlignItems("inherit"): "inherit",
