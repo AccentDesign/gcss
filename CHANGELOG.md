@@ -12,6 +12,7 @@ Added new props:
 Expanded props:
 
 - justify-content
+- justify-items
 
 ### v0.1.0
 
