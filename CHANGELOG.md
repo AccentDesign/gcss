@@ -13,6 +13,7 @@ Expanded props:
 
 - justify-content
 - justify-items
+- justify-self
 
 ### v0.1.0
 

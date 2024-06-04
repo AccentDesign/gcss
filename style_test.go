@@ -860,10 +860,19 @@ func TestStyle_JustifyItems(t *testing.T) {
 
 func TestStyle_JustifySelf(t *testing.T) {
 	testCases := map[props.JustifySelf]string{
+		props.JustifySelfAuto:        "auto",
+		props.JustifySelfNormal:      "normal",
 		props.JustifySelfStretch:     "stretch",
 		props.JustifySelfCenter:      "center",
 		props.JustifySelfStart:       "start",
 		props.JustifySelfEnd:         "end",
+		props.JustifySelfFlexStart:   "flex-start",
+		props.JustifySelfFlexEnd:     "flex-end",
+		props.JustifySelfSelfStart:   "self-start",
+		props.JustifySelfSelfEnd:     "self-end",
+		props.JustifySelfLeft:        "left",
+		props.JustifySelfRight:       "right",
+		props.JustifySelfBaseline:    "baseline",
 		props.JustifySelf("initial"): "initial",
 	}
 
