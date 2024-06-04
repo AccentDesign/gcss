@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 Added new props:
 
+- align-content
 - border-collapse
 
 ### v0.1.0

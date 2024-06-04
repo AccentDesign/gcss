@@ -10,6 +10,7 @@ import (
 type (
 	// Props represents the standard CSS properties that can be applied to a CSS rule.
 	Props struct {
+		AlignContent            props.AlignContent        `css:"align-content"`
 		AlignItems              props.AlignItems          `css:"align-items"`
 		Appearance              props.Appearance          `css:"appearance"`
 		BackgroundColor         props.Color               `css:"background-color"`

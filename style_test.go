@@ -48,6 +48,31 @@ func TestStyle_CustomProps(t *testing.T) {
 	runTest(t, st, css)
 }
 
+func TestStyle_AlignContent(t *testing.T) {
+	testCases := map[props.AlignContent]string{
+		props.AlignContentNormal:        "normal",
+		props.AlignContentStart:         "start",
+		props.AlignContentCenter:        "center",
+		props.AlignContentEnd:           "end",
+		props.AlignContentFlexStart:     "flex-start",
+		props.AlignContentFlexEnd:       "flex-end",
+		props.AlignContentBaseline:      "baseline",
+		props.AlignContentFirstBaseline: "first baseline",
+		props.AlignContentLastBaseline:  "last baseline",
+		props.AlignContentSpaceBetween:  "space-between",
+		props.AlignContentSpaceAround:   "space-around",
+		props.AlignContentSpaceEvenly:   "space-evenly",
+		props.AlignContentStretch:       "stretch",
+		props.AlignContent("inherit"):   "inherit",
+	}
+
+	for prop, expected := range testCases {
+		st := &Style{Selector: ".test", Props: Props{AlignContent: prop}}
+		css := fmt.Sprintf(".test{align-content:%s;}", expected)
+		runTest(t, st, css)
+	}
+}
+
 func TestStyle_AlignItems(t *testing.T) {
 	testCases := map[props.AlignItems]string{
 		props.AlignItemsNormal:      "normal",
