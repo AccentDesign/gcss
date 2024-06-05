@@ -7,15 +7,15 @@ import (
 
 func TestColor_String(t *testing.T) {
 	testCases := map[Color]string{
-		Color{Keyword: "currentColor"}:     "currentColor",
-		Color{Keyword: "inherit"}:          "inherit",
-		Color{Color: color.Gray{0}}:        "rgba(0,0,0,1.00)",
-		Color{Color: color.Gray{255}}:      "rgba(255,255,255,1.00)",
-		Color{Color: color.Gray16{0}}:      "rgba(0,0,0,1.00)",
-		Color{Color: color.Gray16{0xffff}}: "rgba(255,255,255,1.00)",
-		ColorRGBA(62, 131, 248, 255):       "rgba(62,131,248,1.00)",
-		ColorRGBA(0, 0, 0, 0):              "rgba(0,0,0,0.00)",
-		ColorRGBA(255, 255, 255, 255):      "rgba(255,255,255,1.00)",
+		{Keyword: "currentColor"}:     "currentColor",
+		{Keyword: "inherit"}:          "inherit",
+		{Color: color.Gray{0}}:        "rgba(0,0,0,1.00)",
+		{Color: color.Gray{255}}:      "rgba(255,255,255,1.00)",
+		{Color: color.Gray16{0}}:      "rgba(0,0,0,1.00)",
+		{Color: color.Gray16{0xffff}}: "rgba(255,255,255,1.00)",
+		ColorRGBA(62, 131, 248, 255):  "rgba(62,131,248,1.00)",
+		ColorRGBA(0, 0, 0, 0):         "rgba(0,0,0,0.00)",
+		ColorRGBA(255, 255, 255, 255): "rgba(255,255,255,1.00)",
 	}
 	for c, expected := range testCases {
 		if c.String() != expected {
