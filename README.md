@@ -8,13 +8,9 @@
 
 CSS written in Pure Go.
 
-No JS builders, no preprocessors, no linters, no frameworks, no classes, no variables, no overrides, no plugins, no dependencies, no javascript, no templates, no bs, no nothing.
-
-Just Go.
-
 ## Motivation
 
-This is really just a bit of fun and a way to write CSS in Go. I wanted to see if it was possible and it is with ease.
+This is really just a bit of fun and a way to write CSS in Go. I wanted to see if it was possible and what would it look like.
 I wanted to find a way to easily control the CSS from the server side and not have to worry about pre-building the css to take variables and stuff.
 I didnt want to use UI libraries that are written for JS frameworks and I didn't want to use preprocessors or linters that add more steps to the build process.
 
@@ -29,18 +25,6 @@ The next steps for this project are to add more features to the CSS package.
 This includes adding support for more CSS properties when the need arises.
 What I don't want to do is to add support for all CSS functionality as some things are better in CSS, but I do want to be able to create 
 a few UI components that are configurable using Go.
-
-## What I don't need
-
-* I don't need UI libs that are written for the purpose of JS frameworks. 
-* I don't need linters when I have Go's static typing.
-* I don't need javascript to generate CSS.
-* I don't need templates with 400 css classes in them.
-* I don't need css with more variables in them than actual css properties.
-
-## What I do need
-
-* Go's static typing.
 
 ## Installation
 
