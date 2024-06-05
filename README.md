@@ -225,11 +225,10 @@ Hopefully this will get you going. The rest is up to you.
 
 For example usage see the [examples](./examples) directory that include:
 
+* [Full example](./examples/full) - A full example including base and themed styles with a `sync.Mutex` for caching the css in a `http.HandleFunc`.
 * [CSS resets](./examples/css-resets) - A simple example collection of css resets.
 * [Templ integration](./examples/integration-templ) - An example of how to load styles from gcss with the [templ](https://templ.guide) package.
 * [Media queries](./examples/media-queries) - An example of how to use media queries.
-* [Themed CSS using multiple HTTP handlers](./examples/themed-multiple-http-handlers) - An example of how to use multiple http handlers to serve different themes.
-* [Themed CSS using a single HTTP handler](./examples/themed-single-http-handler) - An example of how to use a single http handler to serve different themes using media queries.
 * [Write to a file](./examples/to-file) - An example of how to write to a file.
 * [Write to an HTTP handler](./examples/to-http-handler) - An example of how to write to an http handler.
 * [Write to stdout](./examples/to-stdout) - An example of how to write to stdout.

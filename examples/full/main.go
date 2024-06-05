@@ -2,28 +2,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/AccentDesign/gcss/variables"
+	"github.com/AccentDesign/gcss/examples/full/styles"
 	"net/http"
 )
 
 var (
-	stylesheet = &Stylesheet{
-		Dark: &Theme{
-			MediaQuery:        "@media (prefers-color-scheme: dark)",
-			Background:        variables.Zinc800,
-			Foreground:        variables.White,
-			Primary:           variables.White,
-			PrimaryForeground: variables.Zinc800,
-		},
-		Light: &Theme{
-			MediaQuery:        "@media (prefers-color-scheme: light)",
-			Background:        variables.White,
-			Foreground:        variables.Zinc800,
-			Primary:           variables.Zinc800,
-			PrimaryForeground: variables.White,
-		},
-	}
-	html = `
+	stylesheet = styles.NewStyleSheet()
+	html       = `
 		<!DOCTYPE html>
 		<html>
 		<head>
@@ -31,7 +16,7 @@ var (
 		</head>
 		<body>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-			<button class="button-primary">Click me</button>
+			<button class="button button-primary">Click me</button>
 		</body>
 		</html>
 	`
@@ -46,7 +31,7 @@ func main() {
 
 	http.HandleFunc("/stylesheet.css", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "text/css")
-		if err := stylesheet.WriteCSS(w); err != nil {
+		if err := stylesheet.CSS(w); err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 		}
 	})
