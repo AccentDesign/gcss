@@ -39,6 +39,12 @@ func (ss *StyleSheet) CSS(w io.Writer) error {
 			return err
 		}
 	}
+	// Generate the CSS for the media queries.
+	for _, media := range ss.Media() {
+		if err := media.CSS(&ss.css); err != nil {
+			return err
+		}
+	}
 	// Generate the CSS for the themes.
 	for _, theme := range ss.Themes {
 		if err := theme.CSS(&ss.css); err != nil {

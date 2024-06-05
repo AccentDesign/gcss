@@ -4,11 +4,34 @@ This example hase the following:
 
 * A `StyleSheet` that generates global resets, base styles and includes themes.
 * The `Stylesheet` has a `Mutex` that generates the CSS only once to avoid multiple builds.
+* The `main` element has media queries for different screen sizes.
 * Both `body` and `buttons` have styles attached to the `StyleSheet` as well as the `Theme` to ensure the css is loaded in the most appropriate places.
 
-## Example output
+## HTML
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/stylesheet.css">
+</head>
+<body>
+    <main>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div>
+            <button class="button button-primary">Click me</button>
+        </div>
+    </main>
+</body>
+</html>
+```
+
+## CSS
 
 ```css
+/* formatted for visual clarity */
+
+/* resets */
 *, ::after, ::before, ::backdrop, ::file-selector-button {
     border: 0 solid;
     box-sizing: border-box;
@@ -27,6 +50,7 @@ body {
     line-height: inherit;
 }
 
+/* base */
 body {
     min-height: 100vh;
 }
@@ -46,6 +70,24 @@ body {
     padding-top: 0.500rem;
 }
 
+/* media */
+@media screen and (max-width: 768px) {
+    main {
+        display: grid;
+        gap: 1.500rem;
+        padding: 2.000rem;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    main {
+        display: grid;
+        gap: 2.000rem;
+        padding: 4.000rem;
+    }
+}
+
+/* themes */
 @media (prefers-color-scheme: light) {
     body {
         background-color: rgba(255, 255, 255, 1.00);
@@ -69,4 +111,5 @@ body {
         color: rgba(23, 23, 23, 1.00);
     }
 }
+
 ```

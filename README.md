@@ -209,7 +209,7 @@ Hopefully this will get you going. The rest is up to you.
 
 For example usage see the [examples](./examples) directory that include:
 
-* [Full example](./examples/full) - A full example including base and themed styles with a `sync.Mutex` for caching the css in a `http.HandleFunc`.
+* [Full example](./examples/full) - A full example including base, media and themed styles with a `sync.Mutex` for caching the css in a `http.HandleFunc`.
 * [CSS resets](./examples/css-resets) - A simple example collection of css resets.
 * [Templ integration](./examples/integration-templ) - An example of how to load styles from gcss with the [templ](https://templ.guide) package.
 * [Media queries](./examples/media-queries) - An example of how to use media queries.

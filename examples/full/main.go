@@ -15,8 +15,12 @@ var (
 			<link rel="stylesheet" href="/stylesheet.css">
 		</head>
 		<body>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-			<button class="button button-primary">Click me</button>
+			<main>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<div>
+					<button class="button button-primary">Click me</button>
+				</div>
+			</main>
 		</body>
 		</html>
 	`
