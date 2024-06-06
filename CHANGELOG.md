@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+### v0.1.2
+
+- Move the `Props` CSS writing into a `Props.CSS` func, so it can be used in isolation of the `Style` struct.
+  - This allows for the `Props` CSS to be used in other contexts, such as in a `style` attribute in HTML.
+
 ### v0.1.1
 
 Added new props:

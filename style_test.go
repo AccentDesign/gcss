@@ -20,6 +20,25 @@ func runTest(t *testing.T, st *Style, expected string) {
 	}
 }
 
+func TestProps_CSS(t *testing.T) {
+	testCases := map[Props]string{
+		{}: "",
+		{BackgroundColor: props.ColorRGBA(0, 0, 0, 255)}:      "background-color:rgba(0,0,0,1.00);",
+		{Margin: props.UnitPx(10), Padding: props.UnitPx(10)}: "margin:10px;padding:10px;",
+	}
+	for prop, expected := range testCases {
+		var buf bytes.Buffer
+		err := prop.CSS(&buf)
+		if err != nil {
+			t.Errorf("unexpected error: %v", err)
+		}
+
+		if buf.String() != expected {
+			t.Errorf("expected %q, got %q", expected, buf.String())
+		}
+	}
+}
+
 func TestStyle_Empty(t *testing.T) {
 	st := &Style{Selector: ".test", Props: Props{}}
 	css := ".test{}"

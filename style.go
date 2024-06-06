@@ -118,19 +118,15 @@ type (
 	}
 )
 
-// CSS writes the CSS representation of the style to the writer.
-func (s *Style) CSS(w io.Writer) error {
-	propsValue := reflect.ValueOf(s.Props)
-	propsType := reflect.TypeOf(s.Props)
-
-	if _, err := fmt.Fprintf(w, "%s{", s.Selector); err != nil {
-		return err
-	}
+// CSS writes the CSS representation of the props to the writer.
+func (p *Props) CSS(w io.Writer) error {
+	value := reflect.ValueOf(*p)
+	typ := reflect.TypeOf(*p)
 
 	// Iterate over the fields of the Props struct and write the CSS properties to the writer.
-	for i := 0; i < propsValue.NumField(); i++ {
-		fieldValue := propsValue.Field(i)
-		fieldType := propsType.Field(i)
+	for i := 0; i < value.NumField(); i++ {
+		fieldValue := value.Field(i)
+		fieldType := typ.Field(i)
 
 		if fieldValue.IsZero() {
 			continue
@@ -143,6 +139,20 @@ func (s *Style) CSS(w io.Writer) error {
 				return err
 			}
 		}
+	}
+
+	return nil
+}
+
+// CSS writes the CSS representation of the style to the writer.
+func (s *Style) CSS(w io.Writer) error {
+	if _, err := fmt.Fprintf(w, "%s{", s.Selector); err != nil {
+		return err
+	}
+
+	// Write the standard properties to the writer.
+	if err := s.Props.CSS(w); err != nil {
+		return err
 	}
 
 	// Write the custom properties to the writer.
