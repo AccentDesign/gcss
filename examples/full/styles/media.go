@@ -19,6 +19,11 @@ const (
 	Desktop MediaType = "desktop"
 )
 
+var (
+	mobileMedia  = &Media{MediaType: Mobile, Query: "@media (max-width: 768px)"}
+	desktopMedia = &Media{MediaType: Desktop, Query: "@media (min-width: 769px)"}
+)
+
 // CSS Writes the CSS for the media to the writer.
 func (m *Media) CSS(w io.Writer) error {
 	if _, err := fmt.Fprintf(w, "%s{", m.Query); err != nil {

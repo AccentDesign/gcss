@@ -57,13 +57,7 @@ func (ss *StyleSheet) CSS(w io.Writer) error {
 // NewStyleSheet returns a new stylesheet. It includes the media queries and themes.
 func NewStyleSheet() *StyleSheet {
 	return &StyleSheet{
-		Media: []*Media{
-			{MediaType: Mobile, Query: "@media (max-width: 768px)"},
-			{MediaType: Desktop, Query: "@media (min-width: 769px)"},
-		},
-		Themes: []*Theme{
-			lightTheme,
-			darkTheme,
-		},
+		Media:  []*Media{mobileMedia, desktopMedia},
+		Themes: []*Theme{lightTheme, darkTheme},
 	}
 }
