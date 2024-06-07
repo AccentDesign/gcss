@@ -2,26 +2,31 @@ package styles
 
 import (
 	"fmt"
+	"github.com/AccentDesign/gcss/props"
+	"github.com/AccentDesign/gcss/variables"
 	"io"
 	"slices"
 )
 
 type (
 	Media struct {
-		MediaType
-		Query string
+		Query       string
+		Padding     props.Unit
+		VerticalGap props.Unit
 	}
-	MediaType int
-)
-
-const (
-	Mobile MediaType = iota
-	Desktop
 )
 
 var (
-	mobileMedia  = &Media{MediaType: Mobile, Query: "@media (max-width: 768px)"}
-	desktopMedia = &Media{MediaType: Desktop, Query: "@media (min-width: 769px)"}
+	mobileMedia = &Media{
+		Query:       "@media (max-width: 768px)",
+		Padding:     variables.Size8,
+		VerticalGap: variables.Size6,
+	}
+	desktopMedia = &Media{
+		Query:       "@media (min-width: 769px)",
+		Padding:     variables.Size16,
+		VerticalGap: variables.Size8,
+	}
 )
 
 // CSS Writes the CSS for the media to the writer.

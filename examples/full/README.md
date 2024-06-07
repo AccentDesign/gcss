@@ -20,14 +20,7 @@ func (ss *StyleSheet) Form() Styles {
 
 // Form returns the styles for the layout for the media.
 func (m *Media) Form() Styles {
-	switch m.MediaType {
-	case Mobile:
-		return Styles{}
-	case Desktop:
-		return Styles{}
-	default:
-		return Styles{}
-	}
+	return Styles{}
 }
 
 // Form returns the styles for the layout for the theme.
@@ -113,15 +106,15 @@ main {
 /* media */
 @media (max-width: 768px) {
     main {
-        gap: 1.500rem;
         padding: 2.000rem;
+        row-gap: 1.500rem;
     }
 }
 
 @media (min-width: 769px) {
     main {
-        gap: 2.000rem;
         padding: 4.000rem;
+        row-gap: 2.000rem;
     }
 }
 
