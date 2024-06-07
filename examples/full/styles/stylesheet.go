@@ -3,7 +3,6 @@ package styles
 import (
 	"bytes"
 	"github.com/AccentDesign/gcss"
-	"github.com/AccentDesign/gcss/variables"
 	"io"
 	"slices"
 	"sync"
@@ -12,14 +11,14 @@ import (
 type (
 	Styles     []gcss.Style
 	StyleSheet struct {
+		Media  []*Media
 		Themes []*Theme
 		css    bytes.Buffer
 		mutex  sync.Mutex
 	}
 )
 
-// CSS writes the stylesheet to the writer.
-// It will generate the CSS for the stylesheet if it has not been generated yet.
+// CSS Writes the CSS for the stylesheet to the writer.
 func (ss *StyleSheet) CSS(w io.Writer) error {
 	ss.mutex.Lock()
 	defer ss.mutex.Unlock()
@@ -29,51 +28,42 @@ func (ss *StyleSheet) CSS(w io.Writer) error {
 		return err
 	}
 
-	// Generate the CSS for the global styles.
 	for _, style := range slices.Concat(
 		ss.Resets(),
-		ss.Base(),
+		ss.Layout(),
 		ss.Buttons(),
 	) {
 		if err := style.CSS(&ss.css); err != nil {
 			return err
 		}
 	}
-	// Generate the CSS for the media queries.
-	for _, media := range ss.Media() {
+
+	for _, media := range ss.Media {
 		if err := media.CSS(&ss.css); err != nil {
 			return err
 		}
 	}
-	// Generate the CSS for the themes.
+
 	for _, theme := range ss.Themes {
 		if err := theme.CSS(&ss.css); err != nil {
 			return err
 		}
 	}
-	// Write the CSS to the writer.
+
 	_, err := w.Write(ss.css.Bytes())
 	return err
 }
 
-// NewStyleSheet returns a new stylesheet.
+// NewStyleSheet returns a new stylesheet. It includes the media queries and themes.
 func NewStyleSheet() *StyleSheet {
 	return &StyleSheet{
+		Media: []*Media{
+			{MediaType: Mobile, Query: "@media (max-width: 768px)"},
+			{MediaType: Desktop, Query: "@media (min-width: 769px)"},
+		},
 		Themes: []*Theme{
-			{
-				MediaQuery:        "@media (prefers-color-scheme: light)",
-				Background:        variables.White,
-				Foreground:        variables.Neutral900,
-				Primary:           variables.Neutral900,
-				PrimaryForeground: variables.White,
-			},
-			{
-				MediaQuery:        "@media (prefers-color-scheme: dark)",
-				Background:        variables.Neutral900,
-				Foreground:        variables.Neutral100,
-				Primary:           variables.White,
-				PrimaryForeground: variables.Neutral900,
-			},
+			lightTheme,
+			darkTheme,
 		},
 	}
 }

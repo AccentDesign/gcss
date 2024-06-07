@@ -6,7 +6,7 @@ import (
 	"github.com/AccentDesign/gcss/variables"
 )
 
-// Resets returns the resets styles for the stylesheet.
+// Resets returns the styles for resets for the base stylesheet.
 func (ss *StyleSheet) Resets() Styles {
 	return Styles{
 		{

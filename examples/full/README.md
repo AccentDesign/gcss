@@ -2,26 +2,62 @@
 
 This example hase the following:
 
-* A `StyleSheet` that generates global resets, base styles and includes themes.
-* The `Stylesheet` has a `Mutex` that generates the CSS only once to avoid multiple builds.
-* The `main` element has media queries for different screen sizes.
-* Both `body` and `buttons` have styles attached to the `StyleSheet` as well as the `Theme` to ensure the css is loaded in the most appropriate places.
+* A `StyleSheet` that has has global resets, base styles, media queries for devices, themes and a `Mutex` that generates the CSS only once to avoid multiple builds.
+* The `main` element has base styles and media queries for different screen sizes.
+* Both `body` and `buttons` have base styles as well as themed for the likes of background and foreground variations.
+
+## Usage
+
+For an example of adding form styles.
+
+1. Create a new `form.go` file. and add the following code (or add what you need):
+
+```go
+// Form returns the styles for buttons for the base stylesheet.
+func (ss *StyleSheet) Form() Styles {
+	return Styles{}
+}
+
+// Form returns the styles for the layout for the media.
+func (m *Media) Form() Styles {
+	switch m.MediaType {
+	case Mobile:
+		return Styles{}
+	case Desktop:
+		return Styles{}
+	default:
+		return Styles{}
+	}
+}
+
+// Form returns the styles for the layout for the theme.
+func (t *Theme) Form() Styles {
+	return Styles{}
+}
+```
+
+2. Then add the functions to the `CSS` function in `StyleSheet`, `Media` and `Theme`.
+
 
 ## HTML
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Example starting point written in gcss." name="description" />
+    <title>Theme</title>
     <link rel="stylesheet" href="/stylesheet.css">
 </head>
 <body>
-    <main>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <div>
-            <button class="button button-primary">Click me</button>
-        </div>
-    </main>
+<main>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <div>
+        <button class="button button-primary">Click me</button>
+    </div>
+</main>
 </body>
 </html>
 ```
@@ -55,6 +91,10 @@ body {
     min-height: 100vh;
 }
 
+main {
+    display: grid;
+}
+
 .button {
     align-items: center;
     border-radius: 0.375rem;
@@ -71,17 +111,15 @@ body {
 }
 
 /* media */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     main {
-        display: grid;
         gap: 1.500rem;
         padding: 2.000rem;
     }
 }
 
-@media screen and (min-width: 769px) {
+@media (min-width: 769px) {
     main {
-        display: grid;
         gap: 2.000rem;
         padding: 4.000rem;
     }

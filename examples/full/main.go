@@ -9,20 +9,24 @@ import (
 var (
 	stylesheet = styles.NewStyleSheet()
 	html       = `
-		<!DOCTYPE html>
-		<html>
-		<head>
-			<link rel="stylesheet" href="/stylesheet.css">
-		</head>
-		<body>
-			<main>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-				<div>
-					<button class="button button-primary">Click me</button>
-				</div>
-			</main>
-		</body>
-		</html>
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	  <meta charset="UTF-8">
+	  <meta content="width=device-width, initial-scale=1" name="viewport" />
+	  <meta content="Example starting point written in gcss." name="description" />
+	  <title>Theme</title>
+	  <link rel="stylesheet" href="/stylesheet.css">
+	</head>
+	<body>
+	  <main>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		<div>
+		  <button class="button button-primary">Click me</button>
+		</div>
+	  </main>
+	</body>
+	</html>
 	`
 )
 
