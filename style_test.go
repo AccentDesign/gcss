@@ -41,7 +41,7 @@ func TestProps_CSS(t *testing.T) {
 
 func TestStyle_Empty(t *testing.T) {
 	st := &Style{Selector: ".test", Props: Props{}}
-	css := ".test{}"
+	css := ""
 	runTest(t, st, css)
 }
 

@@ -1,6 +1,7 @@
 package gcss
 
 import (
+	"bytes"
 	"fmt"
 	"github.com/AccentDesign/gcss/props"
 	"io"
@@ -146,23 +147,22 @@ func (p *Props) CSS(w io.Writer) error {
 
 // CSS writes the CSS representation of the style to the writer.
 func (s *Style) CSS(w io.Writer) error {
-	if _, err := fmt.Fprintf(w, "%s{", s.Selector); err != nil {
-		return err
-	}
+	var buf bytes.Buffer
 
 	// Write the standard properties to the writer.
-	if err := s.Props.CSS(w); err != nil {
+	if err := s.Props.CSS(&buf); err != nil {
 		return err
 	}
 
 	// Write the custom properties to the writer.
 	for _, prop := range s.CustomProps {
-		if _, err := fmt.Fprintf(w, "%s:%s;", prop.Attr, prop.Value); err != nil {
+		if _, err := fmt.Fprintf(&buf, "%s:%s;", prop.Attr, prop.Value); err != nil {
 			return err
 		}
 	}
 
-	if _, err := fmt.Fprint(w, "}"); err != nil {
+	if buf.Len() > 0 {
+		_, err := fmt.Fprintf(w, "%s{%s}", s.Selector, buf.String())
 		return err
 	}
 
