@@ -11,12 +11,12 @@ type (
 		MediaType
 		Query string
 	}
-	MediaType string
+	MediaType int
 )
 
 const (
-	Mobile  MediaType = "mobile"
-	Desktop MediaType = "desktop"
+	Mobile MediaType = iota
+	Desktop
 )
 
 var (
