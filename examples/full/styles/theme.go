@@ -1,6 +1,7 @@
 package styles
 
 import (
+	"bytes"
 	"fmt"
 	"github.com/AccentDesign/gcss/props"
 	"github.com/AccentDesign/gcss/variables"
@@ -37,18 +38,17 @@ var (
 
 // CSS Writes the CSS for the theme to the writer.
 func (t *Theme) CSS(w io.Writer) error {
-	if _, err := fmt.Fprintf(w, "%s{", t.MediaQuery); err != nil {
-		return err
-	}
+	var buf bytes.Buffer
 	for _, style := range slices.Concat(
 		t.Layout(),
 		t.Buttons(),
 	) {
-		if err := style.CSS(w); err != nil {
+		if err := style.CSS(&buf); err != nil {
 			return err
 		}
 	}
-	if _, err := fmt.Fprint(w, "}"); err != nil {
+	if buf.Len() > 0 {
+		_, err := fmt.Fprintf(w, "%s{%s}", t.MediaQuery, buf.String())
 		return err
 	}
 	return nil

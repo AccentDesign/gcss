@@ -1,6 +1,7 @@
 package styles
 
 import (
+	"bytes"
 	"fmt"
 	"github.com/AccentDesign/gcss/props"
 	"github.com/AccentDesign/gcss/variables"
@@ -31,17 +32,16 @@ var (
 
 // CSS Writes the CSS for the media to the writer.
 func (m *Media) CSS(w io.Writer) error {
-	if _, err := fmt.Fprintf(w, "%s{", m.Query); err != nil {
-		return err
-	}
+	var buf bytes.Buffer
 	for _, style := range slices.Concat(
 		m.Layout(),
 	) {
-		if err := style.CSS(w); err != nil {
+		if err := style.CSS(&buf); err != nil {
 			return err
 		}
 	}
-	if _, err := fmt.Fprint(w, "}"); err != nil {
+	if buf.Len() > 0 {
+		_, err := fmt.Fprintf(w, "%s{%s}", m.Query, buf.String())
 		return err
 	}
 	return nil
