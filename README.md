@@ -205,6 +205,31 @@ Hopefully this will get you going. The rest is up to you.
 * I recently saw a button component on an html page 10 times with over 1800 characters in the class attribute of each. This is not maintainable nor debuggable.
 * Keeps the css clean and easy to debug with no overrides like the above.
 
+## Quickstart
+
+There is a separate repo with the full example [here](https://github.com/AccentDesign/gcss-starter) which will evolve over time.
+
+```bash
+git clone https://github.com/AccentDesign/gcss-starter.git
+```
+
+install the dependencies:
+
+```bash
+# for hot reloading
+go install github.com/cosmtrek/air@latest
+```
+
+```bash
+go mod tidy
+```
+
+run the server:
+
+```bash
+air
+```
+
 ## Examples
 
 For example usage see the [examples](./examples) directory that include:
