@@ -32,6 +32,31 @@ a few UI components that are configurable using Go.
 go get github.com/AccentDesign/gcss
 ```
 
+## Quickstart
+
+There is a separate repo with the full example [here](https://github.com/AccentDesign/gcss-starter) which will evolve over time.
+
+```bash
+git clone https://github.com/AccentDesign/gcss-starter.git
+```
+
+install the dependencies:
+
+```bash
+# for hot reloading
+go install github.com/cosmtrek/air@latest
+```
+
+```bash
+go mod tidy
+```
+
+run the server:
+
+```bash
+air
+```
+
 ## Usage
 
 ### Basic usage
@@ -204,31 +229,6 @@ Hopefully this will get you going. The rest is up to you.
 * Keeps html free of classes like `bg-gray-50 text-black dark:bg-slate-800 dark:text-white` and eliminates the need to remember to add the dark variant.
 * I recently saw a button component on an html page 10 times with over 1800 characters in the class attribute of each. This is not maintainable nor debuggable.
 * Keeps the css clean and easy to debug with no overrides like the above.
-
-## Quickstart
-
-There is a separate repo with the full example [here](https://github.com/AccentDesign/gcss-starter) which will evolve over time.
-
-```bash
-git clone https://github.com/AccentDesign/gcss-starter.git
-```
-
-install the dependencies:
-
-```bash
-# for hot reloading
-go install github.com/cosmtrek/air@latest
-```
-
-```bash
-go mod tidy
-```
-
-run the server:
-
-```bash
-air
-```
 
 ## Examples
 
