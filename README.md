@@ -238,6 +238,7 @@ For example usage see the [examples](./examples) directory that include:
 * [CSS resets](./examples/css-resets) - A simple example collection of css resets.
 * [Templ integration](./examples/integration-templ) - An example of how to load styles from gcss with the [templ](https://templ.guide) package.
 * [Media queries](./examples/media-queries) - An example of how to use media queries.
+* [Template function](./examples/template-function) - An example of how to write css to the template directly via `template.FuncMap` and `template.CSS`.
 * [Write to a file](./examples/to-file) - An example of how to write to a file.
 * [Write to an HTTP handler](./examples/to-http-handler) - An example of how to write to an http handler.
 * [Write to stdout](./examples/to-stdout) - An example of how to write to stdout.
